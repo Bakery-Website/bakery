@@ -1,0 +1,231 @@
+/* chỉnh lề đề video không thừa mép trắng */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* ----- PHẦN PRIMARY HEADER ----- */
+/* thiết lập cho phần header */
+#main-header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+/* thiết lập video làm bg */
+#header-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  z-index: -1 ;
+}
+
+/* font của brand */
+.my-pacifico {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* tên brand */
+.brand {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: -1rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* danh sách menu */
+.nav-links {
+  display: flex; /* nằm ngang */
+  justify-content: center;
+  align-items: center;
+  list-style: none; /* bỏ dấu chấm */
+  gap: 30px;
+  padding: 0;
+  margin-top: -2rem;
+}
+
+/* mục */
+.nav-links li {
+  position: relative;
+}
+
+/* mấy cái mục */
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 26px;
+  padding: 8px 30px;
+}
+
+/* gạch ngăn cách */
+.nav-links li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 25px;
+  background-color: #999;
+}
+
+/* ----- PHẦN STICKY HEADER ----- */
+/* menu ẩn */
+#sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: opacity 0.3s ease;
+  z-index: 900;
+}
+
+/* ẩn header */
+#sticky-header.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* hiện header */
+#sticky-header.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* căn giữa tên */
+.sub-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 30px;
+}
+
+/* thu hẹp trên dưới sub-brand */
+.sub-brand h1.my-pacifico {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* 3 sọc bên phải */
+.hamburger {
+  position: absolute;
+  right: 20px; 
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 35px; 
+}
+
+/* ẩn menu 3 sọc */
+.nav-menu {
+  display: none;
+}
+
+
+
+/* làm mờ */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* menu trượt */
+.side-menu {
+  position: fixed;
+  /* Giả sử header của bạn cao 60px. 
+     Hãy thay 60px này bằng chiều cao thật của #sticky-header */
+  top: 60px; 
+  
+  /* Căn nó ở bên phải. 
+     Bạn có thể dùng right: 0; để nó sát mép phải màn hình,
+     hoặc right: 20px; để nó thẳng hàng với icon hamburger (giống trong hình).
+  */
+  right: 20px;
+  
+  /* Giảm chiều rộng cho giống trong hình */
+  width: 180px; 
+
+  /* ĐÂY LÀ THAY ĐỔI QUAN TRỌNG NHẤT:
+     Bỏ "height: 100%" và dùng "height: auto"
+     để nó tự co dãn theo nội dung bên trong. */
+  height: auto;
+
+  /* Xóa dòng "left: -300px;" đi */
+
+  background: #fff;
+  z-index: 1000;
+  padding: 10px 0; /* Giảm padding trên dưới, bỏ padding trái phải */
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  border-radius: 8px; /* Thêm bo góc cho đẹp, giống trong hình */
+
+  /* Phần này dùng để tạo hiệu ứng mờ/hiện (dropdown)
+     thay vì hiệu ứng trượt (slide-in) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px); /* Hiệu ứng trượt xuống 1 chút */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Khi .side-menu có thêm class "show", nó sẽ hiện ra */
+.side-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.side-menu ul {
+  list-style: none; /* Xóa dấu chấm đầu dòng */
+  margin: 0;
+  padding: 0;
+}
+
+.side-menu ul li a {
+  display: block; /* Để link chiếm toàn bộ chiều rộng của <li> */
+  padding: 12px 20px; /* Thêm đệm cho các mục menu */
+  text-decoration: none;
+  color: #333;
+  font-size: 18px; /* Chỉnh cỡ chữ cho vừa mắt */
+}
+
+.side-menu ul li a:hover {
+  background-color: #f4f4f4; /* Thêm hiệu ứng khi di chuột vào */
+}
+
+/* đóng menu */
+#closeBtn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
