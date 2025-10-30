@@ -1,0 +1,514 @@
+/* chỉnh lề để ảnh không thừa mép trắng */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+/* ----- PHẦN HEADER ----- */
+/* thiết lập cho phần header */
+#main-header {
+  position: relative;
+  height: 67dvh;
+  overflow: hidden;
+  color: white;
+  background-image: url('images/b1-small.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* font của brand */
+.my-pacifico {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* tên brand */
+.brand {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: -3rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* danh sách menu */
+.nav-links {
+  display: flex; /* nằm ngang */
+  justify-content: center;
+  align-items: center;
+  list-style: none; /* bỏ dấu chấm */
+  gap: 30px;
+  padding: 0;
+  margin-top: -2.5rem;
+}
+
+/* mục */
+.nav-links li {
+  position: relative;
+}
+
+/* mấy cái mục */
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 26px;
+  padding: 8px 30px;
+  position: relative;
+}
+
+/* gạch chân của link active */
+.nav-links li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+/* gạch ngăn cách */
+.nav-links li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 25px;
+  background-color: #999;
+}
+
+/* ----- THANH DANH MỤC MÀU VÀNG ----- */
+/* thanh màu vàng */
+.category-bar {
+  background-color: #f7e8c3;
+  padding: 25px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* căn giữa và chia cột */
+.category {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+  /* dùng Flexbox để đẩy 2 mục ra 2 bên */
+  display: flex;
+  justify-content: space-between; /* đẩy search sang trái và list sang phải */
+  align-items: center;
+}
+
+/* chỗ chứa 5 mục*/
+.list {
+  display: flex;
+  flex-grow: 1; /* .list chiếm hết không gian trống */
+  justify-content: center;
+  gap: 100px;
+}
+
+/* mấy cái mục <a> */
+.list a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+}
+
+/* mấy cái icon ảnh */
+.list a .category-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+/* chữ của mấy cái mục */
+.list a p {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+/* ----- KHI HOVER MẤY CÁI MỤC ----- */
+
+/* hiệu ứng chuyển động */
+.list a {
+  /* Cho phép thẻ <a> là điểm neo cho các vị trí (position) con */
+  position: relative;
+  /* Làm mượt mọi thay đổi vị trí/kích thước */
+  transition: transform 0.3s ease-out; 
+}
+
+.list a .category-icon {
+  /* Làm mượt hiệu ứng phóng to của icon */
+  transition: transform 0.3s ease-out; 
+}
+
+.list a p {
+  /* Làm mượt hiệu ứng di chuyển của chữ và đổi màu chữ */
+  transition: transform 0.3s ease-out, color 0.3s ease-out; 
+  /* Cần position: relative để gạch chân (::after) căn theo chữ */
+  position: relative; 
+  /* Tạo khoảng trống 5px giữa chữ và gạch chân */
+  padding-bottom: 5px; 
+}
+
+/* tạo gạch chân ẩn */
+.list a p::after {
+  content: ''; /* Bắt buộc để pseudo-element hiển thị */
+  position: absolute;
+  left: 50%; /* Đặt gạch chân ở giữa theo chiều ngang */
+  bottom: 0; /* Nằm sát chân chữ */
+  /* Trạng thái ban đầu: ẩn */
+  width: 0; /* Chiều rộng bằng 0 */
+  height: 2px; /* Độ dày gạch chân */
+  background-color: #5d4037; /* Màu nâu sẫm */
+  transform: translateX(-50%); /* Dịch chuyển ngược lại để căn giữa hoàn hảo */
+  /* Làm mượt hiệu ứng dãn ra/thu nhỏ của gạch chân */
+  transition: width 0.3s ease-out; 
+}
+
+/* thay đổi khi hover */
+.list a:hover .category-icon {
+  transform: scale(1.5);
+}
+
+.list a:hover p {
+  transform: translateY(5px);
+  color: #a0522d;
+}
+
+.list a:hover p::after {
+  width: 100%;
+}
+
+/* ---- THANH SEARCH ---- */
+/* khối search */
+.search {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  z-index: 10;
+}
+
+/* lớp bọc cái */
+.search .search-bar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background-color: transparent; 
+  box-shadow: none;              
+  border-radius: 50px; 
+  width: 45px; 
+  height: 45px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: width 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* nút icon */
+.search .search-toggle-btn {
+  position: absolute; 
+  left: 0;           
+  z-index: 2;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* icon search */
+.search .search-icon {
+  width: 35px;
+  height: 35px;
+}
+
+/* ô nhập */
+.search .search-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 15px 0 45px; 
+  box-sizing: border-box;
+  opacity: 0;
+  z-index: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+  transition: opacity 0.3s ease;
+}
+
+/* thanh search khi active */
+.search .search-bar-wrapper.active {
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: default;
+}
+
+/* hiện cái ô nhập khi thanh search active */
+.search .search-bar-wrapper.active .search-input {
+  opacity: 1;
+}
+
+/* ----- PHẦN STICKY HEADER ----- */
+/* menu ẩn */
+#sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: opacity 0.3s ease;
+  z-index: 900;
+}
+
+/* ẩn header */
+#sticky-header.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* hiện header */
+#sticky-header.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* khung chứa header */
+.nav-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* căn giữa tên */
+.sub-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 30px;
+}
+
+/* thu hẹp trên dưới sub-brand */
+.sub-brand h1.my-pacifico {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* 3 sọc bên phải */
+.hamburger {
+  position: absolute;
+  right: 20px; 
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 35px; 
+}
+
+/* làm mờ khi bật side menu*/
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+/* làm mờ được kích hoạt*/
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ----- PHẦN SIDE MENU ----- */
+/* menu trượt */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  
+  width: 220px;
+  height: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  margin-top: 35px;
+  padding: 66px 0 15px 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+/* menu trượt được kích hoạt */
+.side-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* nút đóng menu */
+#closeBtn {
+  position: absolute;
+  right: 20px;
+  font-size: 35px;
+  top: 8px;
+  font-weight: normal;
+  color: #555;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* des cái ul trong menu */
+.side-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side-menu ul li a {
+  display: block;
+  padding: 10px 15px; 
+  text-decoration: none;
+  color: #333;
+  font-family: 'Times New Roman', Times, serif; 
+  font-size: 24px;
+}
+
+.side-menu ul li a:hover {
+  background-color: #f4f4f4;
+  border-radius: 4px;
+}
+
+/*
+=========================================
+  PHẦN CODE RESPONSIVE (CHO MÀN HÌNH NHỎ)
+=========================================
+*/
+@media (max-width: 768px) {
+
+  /* 1. XỬ LÝ HEADER (THU NHỎ) */
+  
+  /* Giảm chiều cao của ảnh bìa */
+  #main-header {
+    height: 12.5vh; /* Giảm từ 60vh xuống 40vh */
+  }
+  
+  /* Ẩn menu nav chính (vì đã có hamburger) */
+  #main-header .nav-links {
+    display: none;
+  }
+
+  /* Giảm font chữ của brand chính */
+  #main-header .brand {
+    font-size: 24px;
+    margin-top: -1rem;
+  }
+
+  /* LUÔN HIỆN STICKY HEADER TRÊN MOBILE */
+  #sticky-header,
+  #sticky-header.hidden {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Giảm font chữ của brand trên sticky header */
+  .sub-brand {
+    font-size: 24px;
+  }
+  .hamburger {
+    font-size: 30px; 
+  }
+
+  /* 2. XỬ LÝ THANH CATEGORY (YÊU CẦU CỦA BẠN) */
+
+  /* "Dính" vào ảnh:
+     Vì .category-bar là khối ngay sau #main-header,
+     nó sẽ tự động "dính" vào (chạm) mà không cần code thêm.
+  */
+
+  /* "Search ra giữa":
+     Chúng ta xếp 2 khối (Search, List) theo chiều dọc
+  */
+  .category {
+    flex-direction: column; 
+    gap: 30px; /* Khoảng cách giữa Search và List */
+    padding-top: 0;
+  }
+
+  /* 3. XỬ LÝ THANH SEARCH (LUÔN HIỆN) */
+
+  /* Cho .search chiếm 100% để căn giữa */
+  .search {
+    width: 100%; 
+  }
+  
+  /* Ghi đè CSS active/inactive */
+  .search .search-bar-wrapper {
+    position: relative; /* Bỏ absolute */
+    width: 100%; /* Thanh trắng chiếm 100% */
+    max-width: 400px; /* Giới hạn chiều rộng thanh search */
+    margin: 0 auto; /* Tự động căn giữa */
+    
+    /* Cho nó hiện luôn, không cần active */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 50px; 
+    transition: none; /* Tắt hiệu ứng dãn ra */
+  }
+  
+  .search .search-input {
+    opacity: 1; /* Cho ô nhập liệu hiện ra luôn */
+    padding: 0 15px 0 45px; 
+    height: 50px;
+    box-sizing: border-box;
+    transition: none; /* Tắt hiệu ứng */
+  }
+
+  .search .search-toggle-btn {
+    height: 50px; /* Cho nút icon khớp chiều cao */
+  }
+
+  /* 4. XỬ LÝ 5 MỤC (LIST) */
+  .list {
+    flex-wrap: wrap; /* Cho 5 mục tự xuống dòng nếu chật */
+    gap: 30px; /* Giảm khoảng cách */
+    width: 100%; /* Cho nó chiếm 100% */
+  }
+  
+  .list a .category-icon {
+    width: 30px; /* Thu nhỏ icon 1 chút */
+    height: 30px;
+  }
+}
