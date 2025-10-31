@@ -215,3 +215,70 @@ html, body {
   background-color: #f4f4f4;
   border-radius: 4px;
 }
+
+/* ----- PHẦN NỘI DUNG "QỦA TRỨNG & DISCOVER"  ----- */
+
+.discover-section {
+  background-color: #FBF3E3;
+  padding: 60px 20px;
+  text-align: center;
+  /* Đảm bảo nó nằm ngay dưới header video */
+  position: relative; 
+  z-index: 10;
+  font-family: 'Taviraj', serif;/* Áp dụng font Taviraj cho toàn bộ section */
+}
+
+.discover-content {
+  max-width: 1200px; /* Giới hạn chiều rộng nội dung */
+  margin: 0 auto;  /* Căn giữa */
+}
+
+.egg-icon {
+  width: 40px; 
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.passion-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; 
+  margin-bottom: 20px;
+}
+
+.sparkle-icon {
+  width: 25px; 
+  height: 25px;
+}
+
+.passion-text {
+  font-size: 24px;
+  font-weight: 700; 
+  color: #4A3E3E; 
+  letter-spacing: 2px; 
+  margin: 0;
+}
+
+.discover-text {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: italic;
+
+  color: #4A3E3E;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  max-width: 880px; 
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.discover-line {
+  border: none;
+  height: 2px;
+  background-color: #4A3E3E;
+  width: 100%;
+ 
+  margin: 0 auto;
+}
