@@ -1,4 +1,4 @@
-/* chỉnh lề đề video không thừa mép trắng */
+/* chỉnh lề để video không thừa mép trắng */
 html, body {
   margin: 0;
   padding: 0;
@@ -63,6 +63,18 @@ html, body {
   color: #ffffff;
   font-size: 26px;
   padding: 8px 30px;
+  position: relative;
+}
+
+/* gạch chân của link active */
+.nav-links li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Đặt gạch chân ở đáy thẻ <a> (cách 8px so với chữ) */
+  left: 30px;  /* Khớp với padding trái 30px */
+  right: 30px; /* Khớp với padding phải 30px */
+  height: 2px; /* Độ dày gạch chân */
+  background-color: #ffffff; /* Màu trắng */
 }
 
 /* gạch ngăn cách */
@@ -264,7 +276,6 @@ html, body {
   font-size: 40px;
   font-weight: 700;
   font-style: italic;
-
   color: #4A3E3E;
   line-height: 1.4;
   margin-bottom: 30px;
@@ -279,6 +290,5 @@ html, body {
   height: 2px;
   background-color: #4A3E3E;
   width: 100%;
- 
   margin: 0 auto;
 }
