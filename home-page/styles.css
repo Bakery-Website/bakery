@@ -215,3 +215,249 @@ html, body {
   background-color: #f4f4f4;
   border-radius: 4px;
 }
+
+
+
+
+
+/* css cho footer */
+footer {
+  background-image: url('images/FooterBackground.jpg');
+  background-size: cover;
+ 
+}
+
+
+.footer-content-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+ .footer-column2, .footer-column3{   
+  width: 100px;    
+  margin: 10px;            
+}
+.footer-column1, .footer-column4{
+  width: 300px;    
+  margin: 10px; 
+}
+/* css cho cột 1 trong footer */
+.footer-column1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.footer-brand-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+.footer-brand{
+  font-family: "Pacifico", cursive;
+  font-size: 2rem;
+  color: #333333;
+  
+}
+.footer-logo{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.footer-socials img{
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+
+}
+
+.footer-socials img:hover{
+  transform: scale(1.1);
+}
+
+.footer-contact {
+  display: flex;
+  gap: 8px;
+  color: #333333;
+  font-size: 1.5rem;
+}
+
+.footer-contact img{
+  width: 20px;
+  height: 20px;
+}
+
+/* css cột Company của footer */
+.footer-column2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.footer-title2{
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  margin-top: 50px;
+
+}
+.footer-column2 ul{
+  padding: 0;
+  margin: 0;
+}
+.footer-column2 li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+/* Css cho cột 3 help của footer */
+
+.footer-column3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.footer-title3{
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  margin-top: 50px;
+
+}
+.footer-column3 ul{
+  padding: 0;
+  margin: 0;
+}
+.footer-column3 li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+/* Css cho cột 4 */
+
+.footer-column4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.footer-title4{
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-wrap: nowrap;
+  margin-top: 50px;
+}
+.footer-column4 ul{
+  padding: 0;
+  margin: 0;
+}
+.footer-column4 li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.footer-column4 form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+.footer-column4 input[type='email']{
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #f5f5f5; /* 👈 Nền xám nhạt */
+  font-size: 14px;
+  outline: none; /* Ẩn viền xanh khi focus */
+  box-sizing: border-box;
+
+}
+.footer-column4 input[type="email"]::placeholder {
+  color: #999; /* 👈 Màu placeholder nhạt */
+}
+
+.footer-column4 input[type="email"]:focus {
+  background-color: #fff; /* Khi click vào thì nền sáng hơn chút */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-column4 input[type="submit"] {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #000;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.footer-column4 input[type="submit"]:hover {
+  background-color: #333;
+}
+
+.footer-bottom {
+  /* Căn giữa 2 dòng text */
+  text-align: center; 
+  margin-top: 0px; 
+  padding-top: 0px;
+  padding-bottom: 20px;
+  color: #333333;
+  width: 100%;
+
+}
+
+.footer-legal-links {
+  /* Tạo khoảng cách giữa hàng link và hàng copyright */
+  margin-bottom: 15px; 
+}
+
+.footer-legal-links a {
+  /* Bỏ gạch chân */
+  text-decoration: none;
+  
+  /* Lấy màu chữ từ cha (.footer-bottom) */
+  color: inherit; 
+  margin: 0 10px; 
+  font-weight: 600;
+}
+
+/* Thêm dấu gạch đứng "|" vào sau mỗi link (trừ link cuối cùng) */
+.footer-legal-links a:not(:last-child)::after {
+  content: "|";
+  margin-left: 20px; 
+  color: #555;
+  font-weight: normal; 
+}
+
+.footer-legal-links a:hover {
+  text-decoration: underline; /* Thêm gạch chân khi di chuột vào */
+}
+
+.footer-copyright {
+  font-size: 0.9rem; /* Cho chữ copyright nhỏ hơn một chút */
+  color: #555; /* Cho chữ mờ hơn một chút */
+  margin: 0; /* Xóa margin mặc định của thẻ <p> */
+}
