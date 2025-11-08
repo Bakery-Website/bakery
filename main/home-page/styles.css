@@ -646,4 +646,8 @@ footer {
  .footer-contact {
   font-size: 1.3rem; /* Giảm từ 1.5rem xuống 1.3rem */
  }
+ /* Giảm khoảng cách của logo với icon socials */
+ .footer-brand-container{
+  margin-bottom: 10px;
+ }
 }
