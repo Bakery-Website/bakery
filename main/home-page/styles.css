@@ -302,9 +302,6 @@ footer {
  
 }
 
-
-
-
 .footer-content-container{
   display: flex;
   flex-wrap: wrap;
@@ -566,4 +563,87 @@ footer {
   font-size: 0.9rem; /* Cho chữ copyright nhỏ hơn một chút */
   color: #555; /* Cho chữ mờ hơn một chút */
   margin: 0; /* Xóa margin mặc định của thẻ <p> */
+}
+@media (max-width: 768px) {
+
+ /* 1. Chuyển container chính sang layout cột */
+ .footer-content-container {
+ flex-direction: column; /* Xếp 4 cột chồng lên nhau */
+ align-items: center;  /* Căn giữa các cột theo chiều ngang */
+ gap: 40px;  /* Tăng khoảng cách dọc giữa các cột */
+ }
+
+ /* 2. Cho tất cả các cột chiếm 90% chiều rộng và căn giữa */
+ .footer-column1,
+ .footer-column2,
+ .footer-column3,
+ .footer-column4 {
+  width: 90%;    /* Đặt chiều rộng là 90% */
+  max-width: 350px;  /* Giới hạn chiều rộng tối đa cho đẹp */
+  align-items: center;  /* Căn giữa nội dung bên trong cột (logo, text) */
+  text-align: center; /* Căn giữa tất cả chữ */
+  margin: 0; /* Xóa margin cũ */
+ }
+
+ /* 3. Reset lề của các tiêu đề (vì đã có 'gap' ở container) */
+ .footer-title2,
+ .footer-title3,
+ .footer-title4 {
+  margin-top: 0; /* Xóa lề trên 50px */
+  margin-bottom: 20px;/* Giảm lề dưới 1 chút */
+ }
+
+ /* 4. Chuyển form (email + submit) thành layout cột */
+ .footer-column4 form {
+  flex-direction: column; /* Ô input và nút submit chồng lên nhau */
+ }
+
+ /* 5. Cho nút submit chiếm 100% chiều rộng của form */
+ .footer-column4 input[type="submit"] {
+ width: 100%;
+ }
+
+ /* 6. Chuyển các link (Privacy, Terms) thành layout cột */
+ .footer-legal-links {
+  display: flex;
+  flex-direction: column; /* Xếp các link chồng lên nhau */
+  gap: 10px; /* Khoảng cách giữa các link */
+  margin-bottom: 20px;
+ }
+
+ /* 7. Xóa dấu gạch đứng "|" giữa các link */
+ .footer-legal-links a:not(:last-child)::after {
+  content: none; /* Ẩn dấu | đi */
+ }
+}
+/* Áp dụng cho màn hình từ 480px trở xuống (Điện thoại nhỏ) */
+@media (max-width: 480px) {
+
+ /* 1. Cho logo và tên thương hiệu nhỏ lại 1 chút */
+ .footer-logo {
+  width: 80px; /* Giảm từ 100px xuống 80px */
+  height: 80px;
+ }
+
+ .footer-brand {
+  font-size: 1.8rem; /* Giảm từ 2rem xuống 1.8rem */
+ }
+
+ /* 2. Giảm cỡ chữ của các tiêu đề cột */
+ .footer-title2,
+ .footer-title3,
+ .footer-title4 {
+  font-size: 1.3rem; /* Giảm từ 1.5rem xuống 1.3rem */
+ }
+
+ .footer-socials img{
+  width: 20px;
+  height: 20px;
+
+}
+
+ /* 3. Giảm cỡ chữ của icon liên hệ */
+ .footer-contact {
+  font-size: 1.3rem; /* Giảm từ 1.5rem xuống 1.3rem */
+ }
 }
