@@ -7,99 +7,238 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700;900&family=Pacifico&family=Taviraj:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- header -->
-<header id="main-header">
-  <!-- ảnh -->
-  <nav class="primary">
-    <!-- nội dung header -->
-    <div class="brand"><h1 class="my-pacifico">Choco Hoho</h1></div>
-    <ul class="nav-links">
-      <li><a href="../home-page/index.html">Home</a></li>
-      <li><a href="../menu-page/index.html" class="active">Menu</a></li>
-      <li><a href="#">Cart</a></li>
-    </ul>
-  </nav>
-</header>
+    <header id="main-header">
+        <nav class="primary">
+            <div class="brand"><h1 class="my-pacifico">Choco Hoho</h1></div>
+            <ul class="nav-links">
+                <li><a href="../home-page/index.html">Home</a></li>
+                <li><a href="../menu-page/index.html" class="active-page">Menu</a></li> 
+                <li><a href="#">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- thanh lựa chọn mục -->
-<section class="category-bar">
-  <div class="category">
-    <!-- tìm kiếm -->
-    <div class="search">
-  <form class="search-bar-wrapper" id="searchWrapper">
-    
-    <button type="button" class="search-toggle-btn" id="searchToggleBtn">
-      <img src="../menu-page/images/search.png" alt="Tìm kiếm" class="search-icon">
-    </button>
-    
-    <input type="text" placeholder="Food" class="search-input">
-  </form>
-</div>
-    <!-- các mục -->
-    <nav class="list">
-      <!-- bread -->
-      <a href="#" class="bread">
-        <img src="../menu-page/images/bread.png" alt="Bánh mì" class="category-icon">
-        <p class="item-bread">Bread</p>
-      </a>
-      <!-- cake -->
-      <a href="#" class="cake">
-        <img src="../menu-page/images/cake.png" alt="Bánh kem" class="category-icon">
-        <p class="item-cake">Cake</p>
-      </a>
-      <!-- pastry -->
-      <a href="#" class="pastry">
-        <img src="../menu-page/images/pastry.png" alt="Bánh ngọt" class="category-icon">
-        <p class="item-pastry">Pastry</p>
-      </a>
-      <!-- coffee -->
-      <a href="#" class="coffee">
-        <img src="../menu-page/images/coffee.png" alt="Cà phê" class="category-icon">
-        <p class="item-coffee">Coffee</p>
-      </a>
-      <!-- tea -->
-      <a href="#" class="tea">
-        <img src="../menu-page/images/tea.png" alt="Trà" class="category-icon">
-        <p class="item-tea">Tea</p>
-      </a>
-    </nav>
-  </div>
-</section>
-
-    <!-- header phụ-->
-  <header id="sticky-header" class="hidden">
-    <!-- header ẩn-->
-    <nav class="sticky">
-      <div class="nav-container">
-        <div class="hamburger" id="hamburger">&#9776;</div>
-        <div class="sub-brand"><h1 class="my-pacifico">Choco Hoho</h1></div>
-      </div>
-    </nav>
-  </header>
-  
-<!-- làm mờ -->
-<div class="overlay" id="overlay"></div>
-
-<!-- menu trượt của cái 3 sọc -->
-<aside class="side-menu" id="sideMenu" >
-  <button id="closeBtn">&#9776;</button>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Menu</a></li>
-    <li><a href="#">Cart</a></li>
-  </ul>
-</aside>
-
-  <main>
-    <!-- nội dung -->
-    <section style="height:2000px; padding:20px;">
-      <p>hihi haha hehe</p>
+    <section class="category-bar">
+        <div class="category">
+            <div class="search">
+                <form class="search-bar-wrapper" id="searchWrapper">
+                    <button type="button" class="search-toggle-btn" id="searchToggleBtn">
+                        <img src="../menu-page/images/search.png" alt="Tìm kiếm" class="search-icon">
+                    </button>
+                    <input type="text" placeholder="Food" class="search-input">
+                </form>
+            </div>
+            <nav class="list">
+                <a href="#" class="bread"><img src="../menu-page/images/bread.png" alt="Bánh mì" class="category-icon"><p>Bread</p></a>
+                <a href="#" class="cake"><img src="../menu-page/images/cake.png" alt="Bánh kem" class="category-icon"><p>Cake</p></a>
+                <a href="#" class="pastry"><img src="../menu-page/images/pastry.png" alt="Bánh ngọt" class="category-icon"><p>Pastry</p></a>
+                <a href="#" class="coffee"><img src="../menu-page/images/coffee.png" alt="Cà phê" class="category-icon"><p>Coffee</p></a>
+                <a href="#" class="tea"><img src="../menu-page/images/tea.png" alt="Trà" class="category-icon"><p>Tea</p></a>
+            </nav>
+        </div>
     </section>
-  </main>
 
-  <script src="script.js" defer></script>
+    <header id="sticky-header" class="hidden">
+        <nav class="sticky">
+            <div class="nav-container">
+                <div class="hamburger" id="hamburger">&#9776;</div>
+                <div class="sub-brand"><h1 class="my-pacifico">Choco Hoho</h1></div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="side-menu" id="sideMenu" >
+        <button id="closeBtn">&#9776;</button>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Cart</a></li>
+        </ul>
+    </aside>
+
+    <section class="breadcrumb-bar hidden" id="breadcrumbBar">
+        <div class="breadcrumb-content">
+            </div>
+    </section>
+
+    <main id="main-content-area">
+    
+        <section id="bread" class="content-block intro-block my-overlock bg-left">
+            <div class="content-wrapper"> 
+                <div class="image-block">
+                    <img src="images/banhmi.jpg" alt="Basket of fresh bread" class="intro-image">
+                </div>
+                <div class="text-block">
+                    <h2 class="title">Bread — The Original Flavor, Fresh from the Oven</h2>
+                    <p class="description">
+                        From the simplest ingredients, we craft loaves full of character – where the aroma of flour, yeast, and heat blends into perfection.
+                    </p>
+                    <ul class="summary-list">
+                        <li><strong>Classic Breads:</strong> Baguette, Ciabatta, Focaccia – crisp crust and soft, airy crumb.</li>
+                        <li><strong>Sourdough & Rye Breads:</strong> Naturally fermented, slightly tangy and gut-friendly.</li>
+                        <li><strong>Whole Wheat & Multigrain:</strong> Rich in fiber, hearty and wholesome taste.</li>
+                        <li><strong>Stuffed & Cheese Breads:</strong> Buttery aroma, rich and flavorful in every bit.</li>
+                    </ul>
+                    <p class="description button-spacing">
+                        Perfect for breakfast, picnics, or a quick, energizing snack – a good slice of bread can brighten your entire day.
+                    </p>
+                    <button class="btn bread-link">Discover more</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="pastry" class="content-block intro-block my-overlock bg-right">
+            <div class="content-wrapper layout-right">
+                <div class="image-block">
+                    <img src="images/banhngot.jpg" alt="Assortment of fresh pastries" class="intro-image">
+                </div>
+                <div class="text-block">
+                    <h2 class="title">Pastry — Buttery Layers of Delicate Perfection</h2>
+                    <p class="description">
+                        From golden, flaky layers to rich buttery aroma, each pastry is baked to bring a taste of pure indulgence.
+                    </p>
+                    <ul class="summary-list">
+                        <li><strong>Croissant & Pain au Chocolate:</strong> Flaky and golden, rich in buttery aroma.</li>
+                        <li><strong>Danish Pastries:</strong> Sweet layers filled with custard, fruit or cream cheese.</li>
+                        <li><strong>Puff Pastry Treats:</strong> Light, crispy, and melts gently in every bite.</li>
+                        <li><strong>Savory Pastries:</strong> Cheese, ham, or mushroom fillings with rich flavors.</li>
+                    </ul>
+                    <p class="description button-spacing">
+                        Ideal for an elegant tea time or a sweet indulgence, each pastry adds a touch of joy and elegance to your day.
+                    </p>
+                    <button class="btn pastry-link">Discover more</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="cake" class="content-block intro-block my-overlock bg-left">
+            <div class="content-wrapper">
+                <div class="image-block">
+                    <img src="images/banhkem.jpg" alt="Celebration Cake" class="intro-image">
+                </div>
+                <div class="text-block">
+                    <h2 class="title">Cake — Sweet Creations for Every Celebration</h2>
+                    <p class="description">
+                        Soft, moist, and artfully crafted — each cake is a blend of flavor, texture, and beauty made to delight every occasion.
+                    </p>
+                    <ul class="summary-list">
+                        <li><strong>Classic Cakes:</strong> Tiramisu, Cheesecake, Chocolate Cake – smooth, rich, and timeless.</li>
+                        <li><strong>Fruit & Mousse Cakes:</strong> Fresh fruit, light mousse, perfectly balanced sweetness.</li>
+                        <li><strong>Layer & Cream Cakes:</strong> Soft sponge layers with creamy, delicate fillings.</li>
+                        <li><strong>Mini & Specialty Cakes:</strong> Cupcakes, Roll Cakes, and signature creations.</li>
+                    </ul>
+                    <p class="description button-spacing">
+                        Perfect for birthdays, gatherings, or a quiet afternoon treat – our cakes bring joy, sweetness, and a touch of celebration to every moment.
+                    </p>
+                    <button class="btn cake-link">Discover more</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="story" class="content-block my-pacifico"> 
+            <div class="story-wrap bg-left">
+                <h3 class="story-title">"Freshly Baked Every Day"</h3>
+                <div class="story-body">
+                    <div class="story-logo-box">
+                        <img src="images/logo-choco.png" alt="Choco Hoho Bakery Logo" class="story-logo">
+                    </div>
+                    <p class="story-desc">
+                        It's more than just a promise — it's our way of baking. Each morning, our bakers craft everything from scratch using only quality, handpicked ingredients. From golden breads to buttery pastries and soft cakes, every piece is made with care and warmth. So every visit feels like the first — fresh, comforting, and full of flavor.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="banner" class="content-block my-overlock">
+            <div class="banner-wrap">
+                <h2 class="banner-title">Find CHOCO HOHO Near Me</h2>
+                <button class="btn banner-btn">Find a store</button>
+            </div>
+        </section>
+
+        <section id="product-grid-area" class="content-block hidden"></section>
+
+    </main>
+    
+    <footer>
+    <div class='footer-content-container'>
+      <!-- Cột 1 -->
+      <div class='footer-column1'>
+        <!-- Dòng chứ logo và brand -->
+        <div class="footer-brand-container">
+          <img src="images/logo-choco.png" alt="Logo Choco Hoho" class="footer-logo">
+          <h2 class="footer-brand">Choco Hoho</h2>
+        </div>
+        <!-- Dòng chứa icon mạng xã hội -->
+        <div class='footer-socials'>
+          <a href="" ><img src="images/facebook.png" alt="icon facebook"></a>
+          <a href="" ><img src="images/youtube.png" alt="icon youtube"></a>
+          <a href="" ><img src="images/trello.png" alt="icon trello"></a>
+          <a href="" ><img src="images/slack.png" alt="icon slack"></a>
+          <a href="" ><img src="images/envelope.png" alt="icon envelope"></a>
+        </div>
+        <!-- Dòng điện thoại -->
+        <div class="footer-contact">
+          <img src="images/phone-call.png" alt="icon phone">
+          <span>113-114-115-911</span>
+        </div>
+      </div>
+     
+      <!-- Cột 2 Company -->
+      <div class='footer-column2'>
+        <h3 class="footer-title2">COMPANY</h3>
+        <ul>
+          <li>Locations</li>
+          <li>Community</li>
+          <li>Careers</li>
+        </ul>
+      </div>
+     
+      <!-- Cột 3 Help -->
+      <div class='footer-column3'>
+        <h3 class="footer-title3">HELP</h3>
+        <ul>
+          <li>FAQs</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+     
+      <!-- Cột 4 Choco's in your box -->
+      <div class='footer-column4'>
+        <h3 class="footer-title4">CHOCO'S IN YOURS INBOX</h3>
+        <ul>
+          <li>Our story</li>
+          <li>For special offers, new goodies, and the latest news join our mailing list.</li>
+        </ul>
+       
+        <form>
+          <input type="email" id="email" name="email" placeholder="Enter your email here" />
+          <input type="submit" value="Send" />
+        </form>
+      </div>
+
+
+      <div class="footer-bottom">
+        <nav class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">CA Privacy Act</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Terms</a>
+        </nav>
+        <p class="footer-copyright">
+          &copy;2025 Choco Hoho's Bakery & Cafe&trade; All rights reserved.
+        </p>
+      </div>
+    </div>
+
+
+  </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
