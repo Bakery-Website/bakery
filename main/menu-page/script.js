@@ -1,159 +1,329 @@
-document.addEventListener("DOMContentLoaded", function() {
+// =======================================================
+// PHẦN 1: DỮ LIỆU GIẢ LẬP (MOCK DATA)
+// =======================================================
 
-  // --- PHẦN 1: XỬ LÝ MENU TRƯỢT (SIDE MENU) ---
-  
-  // 1. Tìm các phần tử
-  const hamburgerButton = document.getElementById('hamburger');
-  const sideMenu = document.getElementById('sideMenu');
-  const closeButton = document.getElementById('closeBtn');
-  const overlay = document.getElementById('overlay');
+// Khai báo một hằng số (const) tên 'PRODUCTS'.
+// Đây là một mảng (Array) chứa các đối tượng (Object) đại diện cho sản phẩm.
+// 'const' nghĩa là biến 'PRODUCTS' không thể được gán lại giá trị mới.
+const PRODUCTS = [
+    // Mỗi đối tượng (trong dấu {}) đại diện cho một sản phẩm
+    { id: 'BREAD01', category: 'Bread', name: 'Bánh Mì Ngũ Cốc', image: 'images/bread01.jpg', price: 35000 },
+    { id: 'CAKE01', category: 'Cake', name: 'Bánh Kem Vani Dâu', image: 'images/cake01.jpg', price: 150000 },
+    { id: 'PASTRY01', category: 'Pastry', name: 'Croissant Bơ', image: 'images/pastry01.jpg', price: 30000 },
+    { id: 'COFFEE01', category: 'Coffee', name: 'Espresso Ý', image: 'images/coffee01.jpg', price: 40000 },
+    { id: 'TEA01', category: 'Tea', name: 'Trà Sữa Khoai Môn', image: 'images/tea01.jpg', price: 45000 },
+];
 
-  // Kiểm tra lỗi (thêm `if` để tránh lỗi 'null')
-  if (!hamburgerButton || !sideMenu || !closeButton || !overlay) {
-    console.warn("Cảnh báo: Không tìm thấy đủ các phần tử menu (hamburger, sideMenu, closeBtn, overlay).");
-  }
+// =======================================================
+// PHẦN 2: CACHING CÁC THAM CHIẾU DOM (DOM REFERENCES)
+// =======================================================
+// Lưu trữ các phần tử DOM vào biến để tăng hiệu suất.
+// Thay vì tìm kiếm (query) DOM mỗi lần cần, chúng ta chỉ tìm 1 lần lúc tải trang.
 
-  // 2. Hàm để MỞ menu
-  function openMenu() {
-    if (sideMenu) sideMenu.classList.add('show');
-    if (overlay) overlay.classList.add('active'); 
-    if (hamburgerButton) hamburgerButton.style.opacity = '0'; 
-  }
+// --- Các khối nội dung SPA (Single Page Application) ---
+// 'getElementById' tìm 1 phần tử duy nhất dựa trên ID của nó.
+const mainContent = document.getElementById('main-content-area');
+const breadBlock = document.getElementById('bread');
+const pastryBlock = document.getElementById('pastry');
+const cakeBlock = document.getElementById('cake');
+const storyBlock = document.getElementById('story');
+const bannerBlock = document.getElementById('banner');
+const productGridArea = document.getElementById('product-grid-area'); // Khu vực tải sản phẩm
 
-  // 3. Hàm để ĐÓNG menu
-  function closeMenu() {
-    if (sideMenu) sideMenu.classList.remove('show');
-    if (overlay) overlay.classList.remove('active'); 
-    if (hamburgerButton) hamburgerButton.style.opacity = '1'; 
-  }
+// --- Breadcrumb ---
+const breadcrumbBar = document.getElementById('breadcrumbBar');
+// 'querySelector' tìm phần tử đầu tiên khớp với CSS selector.
+const breadcrumbContent = document.querySelector('#breadcrumbBar .breadcrumb-content');
 
-  // 4. Gán sự kiện click (chỉ gán nếu tìm thấy)
-  if (hamburgerButton) {
-    hamburgerButton.addEventListener('click', openMenu);
-  }
-  if (closeButton) {
-    closeButton.addEventListener('click', closeMenu);
-  }
-  if (overlay) {
-    overlay.addEventListener('click', closeMenu);
-  }
-
-  // --- PHẦN 2: XỬ LÝ HEADER CUỘN (STICKY HEADER) ---
-
-  // 1. Tìm phần tử
-  const stickyHeader = document.getElementById('sticky-header');
-
-  // Chỉ chạy nếu tìm thấy stickyHeader
-  if (stickyHeader) {
-    // 2. Lắng nghe sự kiện cuộn chuột của trang
-    window.addEventListener('scroll', function() {
-      // Nếu người dùng cuộn xuống quá 100px
-      if (window.pageYOffset > 100) {
-        stickyHeader.classList.add('visible');
-        stickyHeader.classList.remove('hidden');
-      } else {
-        // Khi ở gần đỉnh
-        stickyHeader.classList.add('hidden');
-        stickyHeader.classList.remove('visible');
-        
-        // **TỰ ĐỘNG ĐÓNG MENU (ĐÃ THÊM)**
-        closeMenu(); 
-      }
-    });
-  } else {
-    console.warn("Cảnh báo: Không tìm thấy #sticky-header.");
-  }
-
-});
+// --- Navigation & Menu ---
+// 'querySelectorAll' tìm TẤT CẢ phần tử khớp, trả về một NodeList.
+const navLinks = document.querySelectorAll('.primary .nav-links li a');
+// Tìm link "Menu" bằng cách kết hợp CSS selector (tìm thẻ <a> có href chứa "menu-page").
+const menuLink = document.querySelector('.primary .nav-links li a[href*="menu-page"]'); 
+const sideMenu = document.getElementById('sideMenu');
+const overlay = document.getElementById('overlay');
+const hamburgerButton = document.getElementById('hamburger');
 
 
+// =======================================================
+// PHẦN 3: ĐỊNH NGHĨA CÁC HÀM XỬ LÝ
+// =======================================================
+// Định nghĩa các hàm (functions) để tái sử dụng logic.
 
+// --- SIDE MENU ---
 
-document.addEventListener("DOMContentLoaded", function() {
+/**
+ * Hiển thị side menu và lớp phủ (overlay).
+ */
+function openMenu() {
+    // 'if (sideMenu)' kiểm tra xem biến có tồn tại (khác null) không trước khi sử dụng.
+    if (sideMenu) sideMenu.classList.add('show'); // Thêm class 'show' để CSS hiển thị menu
+    if (overlay) overlay.classList.add('active'); // Thêm class 'active' để CSS hiển thị lớp mờ
+    if (hamburgerButton) hamburgerButton.style.opacity = '0'; // Ẩn nút 3 sọc
+}
 
-  // --- PHẦN 1: XỬ LÝ MENU TRƯỢT (SIDE MENU) ---
-  
-  // 1. Tìm các phần tử
-  const hamburgerButton = document.getElementById('hamburger');
-  const sideMenu = document.getElementById('sideMenu');
-  const closeButton = document.getElementById('closeBtn');
-  const overlay = document.getElementById('overlay');
+/**
+ * Ẩn side menu và lớp phủ (overlay).
+ */
+function closeMenu() {
+    if (sideMenu) sideMenu.classList.remove('show'); // Xóa class 'show' để ẩn menu
+    if (overlay) overlay.classList.remove('active'); // Xóa class 'active' để ẩn lớp mờ
+    if (hamburgerButton) hamburgerButton.style.opacity = '1'; // Hiện lại nút 3 sọc
+}
 
-  // 2. Hàm để MỞ menu
-  function openMenu() {
-    sideMenu.classList.add('show');
-    overlay.classList.add('active'); 
-    hamburgerButton.style.opacity = '0'; /* THÊM DÒNG NÀY (ẩn nút gốc) */
-  }
+// --- SPA (SINGLE PAGE APPLICATION) ---
 
-  // 3. Hàm để ĐÓNG menu
-  function closeMenu() {
-    sideMenu.classList.remove('show');
-    overlay.classList.remove('active'); 
-    hamburgerButton.style.opacity = '1'; /* THÊM DÒNG NÀY (hiện nút gốc) */
-  }
-
-  // 4. Gán sự kiện click
-  if (hamburgerButton) {
-    hamburgerButton.addEventListener('click', openMenu);
-  }
-  
-  if (closeButton) {
-    closeButton.addEventListener('click', closeMenu);
-  }
-  
-  if (overlay) {
-    overlay.addEventListener('click', closeMenu); // Nhấn ra ngoài để đóng
-  }
-
-  // --- PHẦN 2: XỬ LÝ HEADER CUỘN (STICKY HEADER) ---
-
-  // 1. Tìm phần tử
-  const stickyHeader = document.getElementById('sticky-header');
-
-  // 2. Lắng nghe sự kiện cuộn chuột của trang
-  window.addEventListener('scroll', function() {
-    // Nếu người dùng cuộn xuống quá 100px (bạn có thể đổi số này)
-    if (window.pageYOffset > 100) {
-      stickyHeader.classList.add('visible');
-      stickyHeader.classList.remove('hidden');
-    } else {
-      stickyHeader.classList.add('hidden');
-      stickyHeader.classList.remove('visible');
-    }
-  });
-
-});
-
-
-
-// --- PHẦN 3: XỬ LÝ SEARCH TOGGLE ---
-  const searchToggleBtn = document.getElementById('searchToggleBtn');
-  const searchWrapper = document.getElementById('searchWrapper');
-  const searchInput = searchWrapper ? searchWrapper.querySelector('.search-input') : null;
-
-  if (searchToggleBtn && searchWrapper && searchInput) {
+/**
+ * Cập nhật và hiển thị thanh breadcrumb.
+ * @param {string} category - Tên category (Bread, Cake, ...)
+ */
+function renderBreadcrumb(category) {
+    // Sử dụng template literals (dấu `) để chèn biến ${category} vào chuỗi HTML.
+    const breadcrumbHtml = `
+        <nav class="breadcrumb">
+            <ul>
+                <li><a href="../home-page/index.html">Home</a></li> 
+                <li><a href="javascript:void(0)" onclick="loadHomePage()">Menu</a></li> 
+                <li>${category}</li>
+            </ul>
+        </nav>
+    `; 
     
-    // Khi nhấn nút icon
-    searchToggleBtn.addEventListener('click', function(e) {
-      e.preventDefault(); // Ngăn hành vi mặc định
-      
-      // Nếu thanh search chưa mở, thì mở nó ra
-      if (!searchWrapper.classList.contains('active')) {
-        searchWrapper.classList.add('active');
+    // Ghi đè nội dung HTML của phần tử breadcrumbContent.
+    if (breadcrumbContent) breadcrumbContent.innerHTML = breadcrumbHtml;
+    // Hiển thị thanh breadcrumb.
+    if (breadcrumbBar) breadcrumbBar.classList.remove('hidden'); 
+    
+    // Xóa gạch chân 'active-page' khỏi tất cả link nav.
+    navLinks.forEach(a => a.classList.remove('active-page'));
+    // Thêm gạch chân 'active-page' cho link "Menu".
+    if (menuLink) menuLink.classList.add('active-page'); 
+}
+
+/**
+ * Tải và hiển thị nội dung cho một category sản phẩm cụ thể.
+ * @param {string} category - Tên category (Bread, Cake, ...)
+ */
+function loadCategory(category) {
+    // 1. Gọi hàm để tạo breadcrumb
+    renderBreadcrumb(category);
+
+    // 2. Ẩn tất cả các khối nội dung tĩnh của trang chủ
+    if (breadBlock) breadBlock.classList.add('hidden');
+    if (pastryBlock) pastryBlock.classList.add('hidden');
+    if (cakeBlock) cakeBlock.classList.add('hidden');
+    if (storyBlock) storyBlock.classList.add('hidden');
+    if (bannerBlock) bannerBlock.classList.add('hidden');
+    
+    // 3. Hiển thị khu vực (trống) sẽ chứa sản phẩm
+    if (productGridArea) productGridArea.classList.remove('hidden');
+
+    // 4. Cập nhật trạng thái 'active' cho thanh category (hiệu ứng phóng to)
+    const categoryLinks = document.querySelectorAll('.list a');
+    categoryLinks.forEach(link => {
+        // Lấy class đầu tiên (vd: 'bread')
+        const rawCategory = link.classList[0]; 
+        // Chuyển 'bread' thành 'Bread'
+        const linkCategory = rawCategory.charAt(0).toUpperCase() + rawCategory.slice(1);
         
-        // SỬA LẠI: Đợi 400ms (bằng thời gian transition) rồi mới focus
-        setTimeout(function() {
-          searchInput.focus();
-        }, 400); 
-      }
+        // Xóa 'category-active' (trạng thái phóng to) khỏi tất cả
+        link.classList.remove('category-active');
+        // Chỉ thêm 'category-active' cho link được click
+        if (linkCategory === category) {
+            link.classList.add('category-active');
+        }
     });
 
-    // Tùy chọn: Đóng lại khi nhấn ra ngoài
-    document.addEventListener('click', function(e) {
-      // Nếu nhấn ra ngoài thanh search VÀ thanh search đang mở
-      if (!searchWrapper.contains(e.target) && searchWrapper.classList.contains('active')) {
-        searchWrapper.classList.remove('active');
-      }
+    // 5. Lọc mảng 'PRODUCTS' để chỉ lấy sản phẩm thuộc category này
+    const filteredProducts = PRODUCTS.filter(p => p.category === category);
+    
+    // Tạo HTML (mẫu) cho danh sách sản phẩm
+    let contentHtml = `
+        <section class="product-listing" style="min-height: 500px; padding: 40px; background-color: #FBF3E3;">
+            <h2 class="category-title my-overlock" style="font-size: 35px; color: #4C5332; margin-bottom: 30px;">
+                ${category} Collection
+            </h2>
+            <p style="font-family: 'Overlock', cursive; font-size: 18px;">
+                Đã tải danh mục <strong>${category}</strong>. Số sản phẩm tìm thấy: ${filteredProducts.length}.
+            </p>
+        </section>
+    `;
+    
+    // Đưa HTML vừa tạo vào khu vực sản phẩm
+    if (productGridArea) productGridArea.innerHTML = contentHtml;
+}
+
+/**
+ * Tải (reset) lại nội dung trang chủ SPA (gồm các khối story).
+ */
+function loadHomePage() {
+    // 1. Ẩn breadcrumb (vì đang ở trang chủ, không cần)
+    if (breadcrumbBar) breadcrumbBar.classList.add('hidden');
+
+    // 2. Hiển thị lại các khối nội dung tĩnh
+    if (breadBlock) breadBlock.classList.remove('hidden');
+    if (pastryBlock) pastryBlock.classList.remove('hidden');
+    if (cakeBlock) cakeBlock.classList.remove('hidden');
+    if (storyBlock) storyBlock.classList.remove('hidden');
+    if (bannerBlock) bannerBlock.classList.remove('hidden');
+    
+    // 3. Ẩn khu vực sản phẩm (vì đang ở trang chủ)
+    if (productGridArea) productGridArea.classList.add('hidden');
+    
+    // 4. Reset trạng thái 'active' của thanh category
+    document.querySelectorAll('.list a').forEach(link => {
+        link.classList.remove('category-active');
     });
-  }
+
+    // 5. Đặt trạng thái 'active' cho link "Menu" trên header chính
+    navLinks.forEach(a => a.classList.remove('active-page'));
+    if (menuLink) menuLink.classList.add('active-page'); 
+}
+
+
+// =======================================================
+// PHẦN 4: KHỞI TẠO CÁC TRÌNH LẮNG NGHE SỰ KIỆN
+// =======================================================
+// Gán các hàm xử lý cho sự kiện (click, scroll) sau khi DOM đã tải xong.
+
+// 'DOMContentLoaded' là sự kiện bắn ra khi HTML đã được tải và phân tích xong.
+// Code bên trong chỉ chạy sau khi trang đã sẵn sàng.
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- I. SỰ KIỆN SIDE MENU ---
+    const closeButton = document.getElementById('closeBtn'); // Cache nút đóng
+    // Gán hàm 'openMenu' cho sự kiện 'click' của nút 3 sọc
+    if (hamburgerButton) hamburgerButton.addEventListener('click', openMenu);
+    // Gán hàm 'closeMenu' cho sự kiện 'click' của nút X
+    if (closeButton) closeButton.addEventListener('click', closeMenu);
+    // Gán hàm 'closeMenu' cho sự kiện 'click' của lớp phủ
+    if (overlay) overlay.addEventListener('click', closeMenu); 
+
+    
+    // --- II. SỰ KIỆN STICKY HEADER ---
+    const stickyHeader = document.getElementById('sticky-header'); // Cache header
+    if (stickyHeader) {
+        // Gán sự kiện 'scroll' cho cửa sổ (window)
+        window.addEventListener('scroll', function() {
+            const scrollThreshold = 100; // Ngưỡng cuộn (px)
+            // 'window.pageYOffset' là vị trí cuộn dọc hiện tại
+            if (window.pageYOffset > scrollThreshold) {
+                // Nếu đã cuộn qua 100px
+                stickyHeader.classList.add('visible'); // Hiện header
+                stickyHeader.classList.remove('hidden');
+            } else {
+                // Nếu cuộn ngược lại (gần đầu trang)
+                stickyHeader.classList.add('hidden'); // Ẩn header
+                stickyHeader.classList.remove('visible');
+                closeMenu(); // Tự động đóng side menu
+            }
+        });
+    }
+    
+    // --- III. SỰ KIỆN THANH SEARCH ---
+    const searchWrapper = document.querySelector('.search .search-bar-wrapper');
+    const searchInput = searchWrapper ? searchWrapper.querySelector('.search-input') : null;
+    const searchIconBtn = searchWrapper ? searchWrapper.querySelector('.search-toggle-btn') : null; 
+
+    // Chỉ chạy nếu tìm thấy đủ 3 thành phần
+    if (searchWrapper && searchInput && searchIconBtn) {
+        
+        // Gán sự kiện 'click' cho icon kính lúp
+        searchIconBtn.addEventListener('click', function(e) {
+            // 'e.preventDefault()' ngăn hành vi mặc định (ví dụ: submit form nếu nút là type="submit")
+            e.preventDefault(); 
+            
+            // 'toggle' tự động thêm/xóa class. Trả về 'true' nếu class được thêm.
+            const isActive = searchWrapper.classList.toggle('active'); 
+            
+            if (isActive) { // Nếu vừa bật (thêm class)
+                // 'setTimeout' chạy code sau một khoảng trễ (400ms)
+                setTimeout(() => {
+                    searchInput.focus(); // Tự động trỏ con trỏ chuột vào ô input
+                }, 400); // 400ms khớp với transition trong CSS
+            }
+        });
+        
+        // Gán sự kiện 'click' cho toàn bộ tài liệu (document) để xử lý "click outside"
+        document.addEventListener('click', function(e) {
+            // 'e.target' là phần tử bị click
+            
+            // Nếu click KHÔNG nằm trong 'searchWrapper' VÀ 'searchWrapper' đang mở
+            if (!searchWrapper.contains(e.target) && searchWrapper.classList.contains('active')) {
+                searchWrapper.classList.remove('active'); // Đóng thanh search
+            }
+        });
+    }
+    
+    // --- IV. SỰ KIỆN ĐIỀU HƯỚNG SPA ---
+    
+    // 1. Gán sự kiện cho 5 icon (Category Bar)
+    // Lấy tất cả link <a> trong '.list' và lặp qua chúng
+    document.querySelectorAll('.list a').forEach(link => {
+        // Gán sự kiện 'click' cho mỗi link
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Ngăn trình duyệt tải lại trang (thẻ <a>)
+            
+            // Lấy class đầu tiên của link (ví dụ: 'bread', 'cake')
+            const categoryClass = link.classList[0]; 
+            // Chuyển chữ cái đầu thành viết hoa (ví dụ: 'bread' -> 'Bread')
+            const categoryName = categoryClass.charAt(0).toUpperCase() + categoryClass.slice(1);
+            
+            // Gọi hàm tải nội dung với tên category đã chuẩn hóa
+            loadCategory(categoryName);
+        });
+    });
+
+    // 2. Gán sự kiện cho link "Menu" (Header chính)
+    // Lặp qua các link trong nav chính
+    navLinks.forEach(link => {
+        // Kiểm tra xem link có phải là link "Menu" không
+        if (link.textContent.trim() === 'Menu' && link.href.includes('menu-page')) {
+             // Gán sự kiện 'click'
+             link.addEventListener('click', (e) => {
+                 e.preventDefault(); // Ngăn tải lại trang
+                 loadHomePage(); // Gọi hàm reset về trang chủ SPA
+             });
+        }
+    });
+
+    // 3. Gán sự kiện cho các nút "Discover more"
+    // Định nghĩa danh sách các nút và category tương ứng
+    const discoverButtons = [
+        { selector: '.btn.bread-link', category: 'Bread' },
+        { selector: '.btn.pastry-link', category: 'Pastry' },
+        { selector: '.btn.cake-link', category: 'Cake' }
+    ];
+
+    // Cache lại thanh category để dùng cho việc cuộn (scroll)
+    const categoryBar = document.querySelector('.category-bar'); 
+
+    // Lặp qua danh sách 3 nút
+    discoverButtons.forEach(item => {
+        // Tìm nút trong tài liệu dựa trên selector
+        const button = document.querySelector(item.selector);
+        
+        if (button) { // Nếu nút tồn tại
+            // Gán sự kiện 'click' cho nút
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Ngăn hành vi mặc định
+                
+                // 1. Tải nội dung category
+                loadCategory(item.category);
+                
+                // 2. Cuộn (scroll) lên
+                if (categoryBar) { // Kiểm tra xem thanh category có tồn tại không
+                    // Yêu cầu trình duyệt cuộn đến 'categoryBar'
+                    categoryBar.scrollIntoView({
+                        behavior: 'smooth', // Cuộn mượt
+                        block: 'start'      // Căn lề trên cùng của 'categoryBar' với lề trên của viewport
+                    });
+                }
+            });
+        }
+    });
+    
+    // 4. Khởi chạy trang (Hiển thị nội dung trang chủ SPA khi tải)
+    // Đây là hàm chạy đầu tiên, thiết lập trạng thái ban đầu của trang.
+    loadHomePage();
+});
