@@ -108,7 +108,8 @@
         /* Chuyển 2 cột thành 2 hàng (xếp dọc) */
         flex-direction: column; 
         gap: 20px;
-        margin-top: 0px;
+        margin: 30px;
+        padding: 0;
     }
     
     .Fresh-content {
@@ -118,6 +119,11 @@
 
     .Fresh-title {
         font-size: 2rem; /* Giảm cỡ chữ tiêu đề */
+    }
+
+    .Fresh-content p {
+        font-size: 1.5rem;
+    
     }
 
     /* Ẩn hình mờ trên di động cho đỡ rối */

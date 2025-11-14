@@ -112,9 +112,7 @@
 
     /* 1. Giảm padding cho cả section */
     .Quality-section {
-        /* Giảm padding từ 5em xuống 3em (trên/dưới) 
-           và 1.5em (trái/phải) */
-        padding: 3em 1.5em;
+        padding: 0;
     }
 
     /* 2. Ẩn các icon trang trí nền cho gọn */
