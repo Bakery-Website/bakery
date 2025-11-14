@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Choco Hoho</title>
   <link rel="stylesheet" href="styles.css">
+
   <link rel="stylesheet" href="Quality_styles.css">
   <link rel="stylesheet" href="Pure_quality.css">
   <link rel="stylesheet" href="Sweetness-quote.css">
@@ -12,6 +13,8 @@
   <link rel="stylesheet" href="Fresh.css">
   <link rel="stylesheet" href="Categories.css">
   <link rel="stylesheet" href="Buynow.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />  
+  <link rel="stylesheet" href="hot-selling.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -109,7 +112,59 @@
       <img src="images/OurStory.jpeg" alt="Ảnh của phần Our Story">
     </div>
   </secton>
+  <!------------Phần Hot selling--------------->
+  <section class="hot-selling-wrapper">
+    <div class="hot-selling">
+      <h2>Hot Selling</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="badge">OUR CHOICE</div>
+              <div class="product-image">
+                <img src="images/GreenTeaCloudCake.webp" alt="Green Tea Cloud Cake">
+              </div>
+              <h3>Green Tea Cloud Cake</h3>
+            </div>
+          </div>
 
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/Orange20Piece.png" alt="Orange Cream Piece">
+              </div>
+              <h3>Orange Cream Piece</h3>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/ChocolateCroissant.webp" alt="Chocolate Croissant">
+              </div>
+              <h3>Chocolate Croissant</h3>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/PurpleSweetPotatoLoaf.webp" alt="Purple Sweet Potato Loaf">
+              </div>
+              <h3>Purple Sweet Potato Loaf</h3>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
 
   <!------------Phần Crafted quote------------->
   <section class="Quality-section">
@@ -307,7 +362,8 @@
 
 
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
+  <script src="hot-selling.js"></script>
 </body>
 </html>
