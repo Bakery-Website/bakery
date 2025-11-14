@@ -673,12 +673,8 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-<<<<<<< HEAD
   align-items: center;
   margin: 1rem;
-=======
-  margin: 5rem;
->>>>>>> 36b56c68724a0bda97a63b7b22e7708b14d1a9ff
   padding: 1rem;
   gap:2rem;
   background-color: #FBF3E3;
