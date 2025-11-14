@@ -45,5 +45,12 @@
     z-index: 5;
     position: relative;
 }
+@media (max-width: 768px) {
+.section-title {
+  font-size: 2em;
+  
+}
+    
 
+}
 

@@ -79,7 +79,6 @@
 .bread-title,
 .cake-title,
 .pastry-title {
-    font-family: 'Lora', serif; /* Font có chân cho tiêu đề */
     font-size: 24px;
     color: #d4a373; /* Màu nâu cam */
     margin: 0 0 10px 0;
@@ -108,6 +107,16 @@
 
 /* Trên màn hình TABLET (Max-width: 768px) */
 @media (max-width: 768px) {
+    .category-intro {
+        font-size: 1.5rem;
+    }
+    .category-intro h2 { 
+    font-size: 2rem; 
+
+    }
+    .category-intro p {
+    font-size: 1.5rem;
+}
     .Categories-content {
         gap: 20px; /* Giảm khoảng cách giữa các thẻ */
     }
@@ -136,6 +145,7 @@
 
     .Categories-content {
         gap: 25px; /* Khoảng cách dọc khi xếp chồng */
+        max-width: 350px;
     }
 
     .bread-card,
@@ -143,7 +153,7 @@
     .pastry-card {
         /* Ép thẻ chiếm gần như toàn bộ chiều rộng (1 thẻ/hàng) */
         flex: 1 1 100%; 
-        max-width: 90%; /* Chiếm 90% chiều rộng màn hình */
+        max-width: 80%; /* Chiếm 90% chiều rộng màn hình */
         margin: 0 auto; /* Căn giữa */
     }
 
