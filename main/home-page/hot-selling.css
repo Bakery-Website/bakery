@@ -1,0 +1,146 @@
+.hot-selling-wrapper {
+  width: 100%;
+  background-color: #F1DAB2; 
+  padding-top: 10px;    
+  padding-bottom: 30px; 
+  margin-top: 30px;     
+  margin-bottom: 10px;  
+}
+
+/* --- LỚP .hot-selling (CŨ) ĐÃ SỬA --- */
+/* Class này bây giờ CHỈ CĂN GIỮA NỘI DUNG */
+.hot-selling {
+  width: 100%;
+  max-width: 1000px; /* Giữ nguyên max-width */
+  margin: 0 auto;      /* CHỈ căn giữa, xóa margin dọc */
+  padding: 0 20px;     /* CHỈ lót ngang, xóa padding dọc */
+  /* background-color: transparent; */ /* Xóa màu nền ở đây */
+}
+
+/* --- TẤT CẢ CODE CÒN LẠI GIỮ NGUYÊN --- */
+
+.hot-selling h2 {
+  font-size: 5rem;
+  color: #a52a2a; /* Màu đỏ sậm */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* --- Cấu trúc Slider (Swiper) --- */
+.swiper {
+  width: 100%;
+  padding-top: 20px; /* Thêm không gian cho badge */
+  padding-bottom: 40px; /* Thêm không gian cho pagination */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Kiểu dáng Card Sản Phẩm --- */
+.product-card {
+  width: 100%; /* Kích thước LINH HOẠT (tự co theo slide) */
+  max-width: 300px;
+  background-color: #fcf6e8;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px; /* Khoảng cách cho pagination */
+}
+
+.product-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 2rem;
+  color: #333;
+  padding: 20px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* --- Badge "Our Choice" --- */
+.badge {
+  position: absolute;
+  top: -15px; /* Đẩy badge lên trên */
+  left: 15px;
+  background-color: #a52a2a; /* Màu đỏ của badge */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 50%;
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Tùy chỉnh Nút Bấm và Dấu chấm --- */
+:root {
+  --swiper-theme-color: #a52a2a; /* Màu đỏ sậm */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--swiper-theme-color);
+  transform: scale(0.8); /* Thu nhỏ nút một chút */
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--swiper-theme-color);
+}
+
+@media (max-width: 768px) {
+  
+  /* Giảm cỡ chữ tiêu đề "Hot Selling" */
+  .hot-selling h2 {
+    font-size: 3.5rem; /* Giảm từ 5rem */
+  }
+
+  /* Giảm cỡ chữ tên sản phẩm */
+  .product-card h3 {
+    font-size: 1.5rem; /* Giảm từ 2rem */
+    padding: 15px;
+  }
+
+  /* Thu nhỏ cái badge "Our Choice" */
+  .badge {
+    font-size: 0.8rem; /* Giảm từ 1rem */
+    width: 50px;   /* Giảm từ 60px */
+    height: 50px;  /* Giảm từ 60px */
+    top: -10px;    /* Đẩy lên ít hơn một chút */
+    left: 10px;
+  }
+}
+
+/* Tùy chỉnh thêm cho màn hình điện thoại rất nhỏ */
+@media (max-width: 480px) {
+  
+  .hot-selling h2 {
+    font-size: 2.5rem; /* Giảm thêm */
+  }
+
+  .product-card h3 {
+    font-size: 1.2rem; /* Giảm thêm */
+  }
+}
