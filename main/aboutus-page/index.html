@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>About Us | Choco Hoho</title>
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700;900&family=Pacifico&family=Taviraj:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Header -->
+    <header id="main-header">
+        <!-- Phần nav Home | Menu | About Us -->
+        <nav class="primary">
+            <div class="brand"><h1 class="my-pacifico">Choco Hoho</h1></div>
+            <ul class="nav-links">
+                <li><a href="../home-page/index.html">Home</a></li>
+                <li><a href="../menu-page/index.html">Menu</a></li>
+                <li><a href="../aboutus-page/index.html" class="active-page">About Us</a></li> 
+            </ul>
+        </nav>
+
+        <!-- Thêm khối tiêu đề "About Us" bự -->
+        <div class="header-title-overlay">
+            <h2 class="page-title my-overlock">About Us</h2>
+        </div>
+    </header>
+    
+    <!-- Sticky Header -->
+    <header id="sticky-header" class="hidden">
+        <nav class="sticky">
+            <div class="nav-container">
+                <div class="hamburger" id="hamburger">&#9776;</div>
+                <div class="sub-brand"><h1 class="my-pacifico">Choco Hoho</h1></div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="side-menu" id="sideMenu" >
+        <button id="closeBtn">&#9776;</button>
+        <ul>
+            <li><a href="../home-page/index.html">Home</a></li>
+            <li><a href="../menu-page/index.html">Menu</a></li>
+            <li><a href="./aboutus-page/index.html">About Us</a></li>
+        </ul>
+    </aside>
+
+    <main id="main-content-area">
+        <section   section class="about-content" style="padding: 50px 20px; max-width: 900px; margin: auto; font-family: 'Overlock', cursive; font-size: 18px; line-height: 1.7;">
+            <h2 style="font-size: 30px; color: #4C5332; font-weight: 900;">Our Story</h2>
+            <p>Nội dung </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </section>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer>
+    <div class='footer-content-container'>
+      <!-- Cột 1 -->
+      <div class='footer-column1'>
+        <!-- Dòng chứ logo và brand -->
+        <div class="footer-brand-container">
+          <img src="images/logo-choco.png" alt="Logo Choco Hoho" class="footer-logo">
+          <h2 class="footer-brand">Choco Hoho</h2>
+        </div>
+        <!-- Dòng chứa icon mạng xã hội -->
+        <div class='footer-socials'>
+          <a href="" ><img src="images/facebook.png" alt="icon facebook"></a>
+          <a href="" ><img src="images/youtube.png" alt="icon youtube"></a>
+          <a href="" ><img src="images/trello.png" alt="icon trello"></a>
+          <a href="" ><img src="images/slack.png" alt="icon slack"></a>
+          <a href="" ><img src="images/envelope.png" alt="icon envelope"></a>
+        </div>
+        <!-- Dòng điện thoại -->
+        <div class="footer-contact">
+          <img src="images/phone-call.png" alt="icon phone">
+          <span>113-114-115-911</span>
+        </div>
+      </div>
+     
+      <!-- Cột 2 Company -->
+      <div class='footer-column2'>
+        <h3 class="footer-title2">COMPANY</h3>
+        <ul>
+          <li>Locations</li>
+          <li>Community</li>
+          <li>Careers</li>
+        </ul>
+      </div>
+     
+      <!-- Cột 3 Help -->
+      <div class='footer-column3'>
+        <h3 class="footer-title3">HELP</h3>
+        <ul>
+          <li>FAQs</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+     
+      <!-- Cột 4 Choco's in your box -->
+      <div class='footer-column4'>
+        <h3 class="footer-title4">CHOCO'S IN YOURS INBOX</h3>
+        <ul>
+          <li>Our story</li>
+          <li>For special offers, new goodies, and the latest news join our mailing list.</li>
+        </ul>
+       
+        <form>
+          <input type="email" id="email" name="email" placeholder="Enter your email here" />
+          <input type="submit" value="Send" />
+        </form>
+      </div>
+
+
+      <div class="footer-bottom">
+        <nav class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">CA Privacy Act</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Terms</a>
+        </nav>
+        <p class="footer-copyright">
+          &copy;2025 Choco Hoho's Bakery & Cafe&trade; All rights reserved.
+        </p>
+      </div>
+    </div>
+
+
+  </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
