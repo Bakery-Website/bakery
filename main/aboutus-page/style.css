@@ -507,7 +507,7 @@ nav.primary {
     margin: 0 auto; 
 }
 
-/* THÊM MỚI: Vẽ 2 hình thoi bằng pseudo-elements */
+/* Vẽ 2 hình thoi bằng pseudo-elements */
 .story-highlight-banner::before,
 .story-highlight-banner::after {
     content: '';
@@ -561,7 +561,7 @@ nav.primary {
         margin: 30px auto;
     }
 
-    /* QUAN TRỌNG: Sửa line-height cho mobile */
+    /* Sửa line-height cho mobile */
     .story-text p,
     .story-highlight-banner p {
         line-height: 1.7; /* Reset về 1.7 (45px quá lớn) */
@@ -570,6 +570,203 @@ nav.primary {
 
     .story-divider {
         margin: 60px auto;
+    }
+}
+
+/*=========================================
+ ----------- PHẦN  WHO WE ARE ------------
+=========================================*/
+.who-we-are {
+    padding: 60px 0;
+    background-color: #FBF3E3; 
+}
+
+.who-we-are-grid {
+    display: grid;
+    /* 3 cột bằng nhau */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    /* Giữ nguyên max-width giống .story-container */
+    max-width: 1290px; 
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* --- Cột Intro (Cột 1) --- */
+.who-we-are-intro {
+    /* Cho nó kéo dài 2 hàng */
+    grid-row: 1 / 3;
+    border-right: 15px solid #DBA276;
+    padding-right: 50px;
+    /* Căn lề trên cùng */
+    align-self: start;
+}
+
+.who-we-are-intro h2 {
+    /* Copy từ .story-text h2 */
+    font-family: 'Overlock', cursive;
+    font-size: 64px;
+    line-height: 45px;
+    color: #4C5332;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.who-we-are-intro .divider-small {
+    /* Copy từ .divider-small */
+    width: 92px;
+    height: 9px;
+    background-color: #DBA276; 
+    margin-bottom: 25px;
+}
+
+.who-we-are-intro p {
+    /* Copy từ .story-text p nhưng sửa lại 1 chút */
+    font-family: 'Overlock', cursive;
+    font-size: 20px; 
+    line-height: 45px; 
+    text-align: justify;
+    color: #4C5332;
+    margin: 0;
+}
+
+/* --- Thẻ Profile (Chung) --- */
+.profile-card {
+    width: 100%;
+}
+
+.profile-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    display: block;
+}
+
+.profile-card h3 {
+    font-family: 'Overlock', cursive;
+    font-weight: 900;
+    font-size: 35px;
+    line-height: 45px;
+    color: #4C5332;
+    margin: 15px 0 10px 0;
+    text-align: center;
+}
+
+.profile-card p {
+    font-family: 'Overlock', cursive;
+    font-size: 20px;
+    line-height: 45px;
+    color: #4C5332; 
+    text-align: justify;
+    margin: 0;
+}
+
+/* --- Profile Khoa (Text) (Cột 2, Hàng 2) --- */
+.profile-khoa-text {
+    /* Căn lề lại cho Khoa */
+    text-align: left;
+    padding-top: 20px; /* Thêm khoảng cách */
+    /* Căn cho nó nằm giữa theo chiều dọc */
+    align-self: start; 
+}
+
+.profile-khoa-text p {
+    text-align: left; /* Ghi đè text-align: center */
+}
+
+/*Ghi đè text-align cho p của Khoa */
+.profile-khoa-text p {
+    text-align: justify;
+}
+
+
+/* --- Profile Khoa (Image) (Cột 3, Hàng 2) --- */
+.profile-khoa-image {
+    padding-top: 20px; /* Thêm khoảng cách */
+     /* Căn cho nó nằm giữa theo chiều dọc */
+    align-self: center;
+}
+
+/* --- Responsive cho "Who We Are" --- */
+
+/* Tablet */
+@media (max-width: 1100px) {
+    .who-we-are-grid {
+        /* Gãy thành 2 cột */
+        grid-template-columns: 1fr 1fr;
+    }
+    .who-we-are-intro {
+        /* Intro chiếm 2 cột, 1 hàng */
+        grid-column: 1 / 3;
+        grid-row: 1;
+        border-right: none;
+        border-bottom: 15px solid #DBA276;
+        padding-right: 0;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    /* Khoa text (hàng 3, cột 1) */
+    .profile-khoa-text {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    /* Khoa image (hàng 3, cột 2) */
+    .profile-khoa-image {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+/* Canh giữa gạch ngang của "Who We Are" trên tablet */
+    .who-we-are-intro .divider-small {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .who-we-are-grid {
+        /* Gãy thành 1 cột */
+        grid-template-columns: 1fr;
+    }
+    .who-we-are-intro {
+        /* Intro (hàng 1, cột 1) */
+        grid-column: 1;
+        grid-row: 1;
+        padding-bottom: 20px;
+    }
+    
+    /* Tự động xếp các profile card */
+    .profile-card {
+         grid-column: 1;
+         grid-row: auto; 
+    }
+
+    /* Đảo thứ tự Khoa cho mobile (Image trước, Text sau) */
+    .profile-khoa-text {
+         grid-row: 5; /*  Đẩy text Khoa xuống hàng 5 */
+         padding-top: 0;
+    }
+    .profile-khoa-image {
+         grid-row: 4; /* Đẩy ảnh Khoa lên hàng 4 */
+         padding-top: 0;
+    }
+
+    /* Reset line-height 45px trên Mobile */
+    .who-we-are-intro p,
+    .profile-card p {
+        line-height: 1.8; /* Reset về 1.8 (45px quá lớn) */
+        text-align: left; /* Canh trái cho dễ đọc */
+    }
+
+    .profile-card h3 {
+        font-size: 28px; /* Giảm size H3 lại cho mobile */
+        line-height: 1.5;
+    }
+    .who-we-are-intro h2 {
+        font-size: 40px; /* Giảm size H2 lại cho mobile */
+        text-align: center;
     }
 }
 
