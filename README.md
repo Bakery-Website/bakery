@@ -1,9 +1,7 @@
 <p align="center">
-  <img src="https://daa.uit.edu.vn/sites/daa.uit.edu.vn/files/uploads/logo-uit.png" width="150">
+  <img src="https://camo.githubusercontent.com/b16ecdcac9c3d21ec3a49459430f747b46b3a37acc95ee468d87d0ec61ff2392/68747470733a2f2f692e696d6775722e636f6d2f576d4d6e5352742e706e67">
 </p>
 
-<h1 align="center">ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH</h1>
-<h2 align="center">TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN</h2>
 <h1 align="center">BÁO CÁO ĐỒ ÁN MÔN HỌC</h1>
 <h2 align="center">INTERNET VÀ CÔNG NGHỆ WEB</h2>
 
