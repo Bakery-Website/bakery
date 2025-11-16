@@ -194,7 +194,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- III. SỰ KIỆN ĐIỀU HƯỚNG SPA ---
      // 1. Gán sự kiện cho link "About Us" (Header chính)
     // Lặp qua các link trong nav chính
- 
+    navLinks.forEach(link => {
+        // Kiểm tra xem link có phải là link "About Us" không
+        if (link.textContent.trim() === 'About Us' && link.href.includes('aboutus-page')) {
+             // Gán sự kiện 'click'
+             link.addEventListener('click', (e) => {
+                 e.preventDefault(); // Ngăn tải lại trang
+                 loadHomePage(); // Gọi hàm reset về trang chủ SPA
+             });
+        }
+    });
     // 2. Khởi chạy trang (Hiển thị nội dung trang chủ SPA khi tải)
     // Đây là hàm chạy đầu tiên, thiết lập trạng thái ban đầu của trang.
     loadHomePage();
