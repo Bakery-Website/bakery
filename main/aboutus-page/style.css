@@ -1,0 +1,1229 @@
+/*=========================================
+ ----- CÀI ĐẶT CHUNG ----- 
+=========================================*/
+/* chỉnh lề để ảnh không thừa mép trắng */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #FBF3E3;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  display: block; /* Đảm bảo main hiển thị đúng */
+}
+
+/*=========================================
+ ----- PHẦN HEADER ----- 
+=========================================*/
+/* thiết lập cho phần header */
+/* 1. THÊM QUY TẮC MỚI CHO NAV.PRIMARY */
+/* (Thêm vào ngay dưới #main-header) */
+nav.primary {
+  position: relative; /* Bắt buộc phải có để z-index hoạt động */
+  z-index: 10;      /* Đặt cao hơn z-index: 5 của .header-title-overlay */
+  padding-top: 3rem;  /* Thêm khoảng đệm thay cho margin-top âm */
+}
+
+/* ... (Các quy tắc khác giữ nguyên) ... */
+
+/* 2. SỬA LẠI .brand */
+.brand {
+  font-size: 30px;
+  font-weight: bold;
+  /* XÓA DÒNG NÀY: margin-top: -3rem; */
+  color: #ffffff;
+  text-align: center;
+}
+
+/* 3. THÊM QUY TẮC MỚI NÀY (để xóa lề mặc định của H1) */
+.brand h1 {
+  margin: 0;
+}
+
+#main-header {
+  position: relative;
+  height: 67dvh;
+  overflow: hidden;
+  color: white;
+  background-image: url('images/HeaderBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* font của brand */
+.my-pacifico {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* tên brand */
+.brand {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: -3rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* danh sách menu */
+.nav-links {
+  display: flex;
+  /* nằm ngang */
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  /* bỏ dấu chấm */
+  gap: 30px;
+  padding: 0;
+  margin-top: 0.5rem; /
+}
+
+/* mục */
+.nav-links li {
+  position: relative;
+}
+
+/* mấy cái mục */
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 26px;
+  padding: 8px 30px;
+  position: relative;
+}
+
+/* gạch chân của link active */
+.nav-links li a.active-page::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+/* gạch ngăn cách */
+.nav-links li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 25px;
+  background-color: #999;
+}
+
+/* Khối tiêu đề "About Us" */
+.header-title-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    /* Lớp phủ mờ để chữ rõ hơn */
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 5;   /* Đảm bảo nó nằm trên nav */
+}
+
+.page-title {
+  font-family: 'Taviraj', cursive; 
+  font-size: 95px;  
+  font-weight: 900; 
+  color: #ffffff;  
+  margin: 0;        /* Xóa lề mặc định của thẻ h2 */
+}
+
+/*=========================================
+ ----- PHẦN STICKY HEADER ----- 
+=========================================*/
+/* menu ẩn */
+#sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease;
+  z-index: 900;
+}
+
+/* ẩn header */
+#sticky-header.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* hiện header */
+#sticky-header.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* khung chứa header */
+.nav-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* căn giữa tên */
+.sub-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 30px;
+}
+
+/* thu hẹp trên dưới sub-brand */
+.sub-brand h1.my-pacifico {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* 3 sọc bên phải */
+.hamburger {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 35px;
+}
+
+/* làm mờ khi bật side menu*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+/* làm mờ được kích hoạt*/
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*=========================================
+ ----- PHẦN SIDE MENU ----- 
+=========================================*/
+/* menu trượt */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin-top: 35px;
+  padding: 66px 0 15px 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+/* menu trượt được kích hoạt */
+.side-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* nút đóng menu */
+#closeBtn {
+  position: absolute;
+  right: 20px;
+  font-size: 35px;
+  top: 8px;
+  font-weight: normal;
+  color: #555;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* des cái ul trong menu */
+.side-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side-menu ul li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+}
+
+.side-menu ul li a:hover {
+  background-color: #f4f4f4;
+  border-radius: 4px;
+}
+
+/*=========================================
+ ----- PHẦN PROMO BANNER: WE MAKE IT ----- 
+=========================================*/
+
+.promo-banner {
+  background-color: #FFEDCA; 
+  position: relative;
+  z-index: 10; 
+}
+
+/*Thanh chữ nhật dài dài phía trên banner */
+.promo-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Chiều cao thanh ngang */
+  background-color:  #DBA276; 
+}
+
+.promo-container {
+  display: flex;
+  gap: 25px; 
+}
+
+.promo-image {
+  flex: 1; 
+  min-width: 0; 
+}
+
+.promo-image img {
+  width: 100%;
+  height: 100%; 
+  display: block;
+  object-fit: cover; /* Tự động cắt ảnh vừa khung, không bị méo */
+}
+
+
+.promo-text {
+  flex: 1.2; 
+  font-family: 'Overlock', cursive;
+  padding-right: 20px; 
+  padding-left: 20px;
+  padding-top: 60px; 
+  padding-bottom: 30px; 
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Dòng We make it, you eat it! */
+.promo-text h2 {
+  font-family: 'Overlock', cursive; 
+  font-size: 55px;
+  color: #4C5332; 
+  font-weight: 900;
+  margin-top: 80px; 
+  margin-bottom: 20px;
+}
+
+/*Dòng Our pastry chefs work hard ...together. */
+.promo-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #4C5332; 
+  max-width: 600px; 
+}
+
+/* Thanh gạch ngang trang trí */
+.promo-text .divider {
+  width: 80px;
+  height: 9px;
+  background-color: #DBA276; 
+}
+
+/* Hình thoi trang trí */
+.promo-banner::after {
+  content: '';
+  width: 60px;  
+  height: 60px; 
+  background-color: #FFEDCB; 
+  /* Viền hình thoi */
+  border: 10px solid #FBF3E3;
+  /* Position: Inside (để viền nằm bên trong 60px) */
+  box-sizing: border-box;
+  transform: rotate(45deg); 
+  position: absolute;
+  left: 50%;
+  z-index: 20; /* Nằm trên cùng */
+
+  /* CANH GIỮA*/
+  bottom: -30px; /* Đẩy 1 nửa chiều cao ra ngoài */
+  margin-left: -30px; /* Lùi lại 1 nửa chiều rộng  */
+}
+
+
+/* Responsive*/
+@media (max-width: 768px) {
+  .promo-container {
+      flex-direction: column; /* Xếp chồng 2 cột */
+      gap: 20px;
+  }
+  .promo-text {
+      padding-left: 20px;  /* Giữ padding 2 bên cho mobile */
+      padding-right: 20px;
+      /* Giảm padding-top cho mobile */
+      padding-top: 40px; 
+      /*Chừa chỗ cho hình thoi */
+      padding-bottom: 50px; 
+  }
+
+  .promo-text h2 {
+    font-size: 40px; 
+    margin-top: 0;   
+  }
+
+  .promo-image {
+    height: auto; /* Reset chiều cao về tự động cho mobile */
+    overflow: hidden; /* Đảm bảo ảnh không bị tràn */
+  }
+}
+
+/*=========================================
+ ------------- PHẦN  OUR STORY ------------
+=========================================*/
+.story-container {
+    max-width: 1290px; 
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* Tạo khoảng cách cho story-container đầu tiên */
+.story-container:first-of-type {
+  padding-top: 120px; /* Thêm khoảng đệm trên */
+}
+
+
+.story-row {
+    display: flex;
+    align-items: center;
+    /* Tăng khoảng cách giữa các cột */
+    gap: 100px; 
+    margin-bottom: 50px;
+    margin-top: 100px;
+  
+}
+
+.story-text {
+    flex: 1;
+    font-family: 'Overlock', cursive;
+    font-size: 20px;
+    line-height: 45px;
+    text-align: justify;
+    color: #4C5332;
+}
+
+.story-text h2 {
+    font-family: 'Overlock', cursive;
+    font-size: 64px;
+    line-height: 45px;
+    color: #4C5332;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.story-text p {
+    margin: 0;
+}
+
+/* Gạch ngang nhỏ */
+.divider-small {
+    width: 92px;
+    height: 9px;
+    background-color: #DBA276; 
+    margin-bottom: 25px;
+}
+
+.story-image {
+    flex: 1.1; 
+    min-width: 0; 
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px; 
+}
+
+/* Dải banner text */
+.story-highlight-banner {
+    background-color: #FFEDCA; 
+    padding: 60px 40px;
+    text-align: center;
+    width: 100%; /* Cho banner full chiều rộng */
+    box-sizing: border-box; /* Đảm bảo padding không làm vỡ layout */
+    position: relative; /* Thêm: Để làm "mẹ" cho hình thoi */
+    /* Tăng margin để chừa chỗ cho hình thoi */
+    margin: 100px auto;
+}
+
+.story-highlight-banner p {
+    font-family: 'Overlock', cursive;
+    font-size: 20px;
+    line-height: 45px;
+    text-align: justify;
+    color: #4C5332;
+    max-width: 1289px;
+    margin: 0 auto; 
+}
+
+/* Vẽ 2 hình thoi bằng pseudo-elements */
+.story-highlight-banner::before,
+.story-highlight-banner::after {
+    content: '';
+    width: 60px;  
+    height: 60px; 
+    background-color: #FFEDCB; 
+    border: 10px solid #FBF3E3;
+    box-sizing: border-box;
+    transform: rotate(45deg); 
+
+    /* Định vị tuyệt đối */
+    position: absolute;
+    left: 50%;
+    margin-left: -30px; /* Canh giữa (âm 1/2 chiều rộng) */
+    z-index: 5;
+}
+
+/* Vị trí hình thoi BÊN TRÊN */
+.story-highlight-banner::before {
+    top: -30px; /* Đẩy lên 1/2 chiều cao */
+}
+
+/* Vị trí hình thoi BÊN DƯỚI */
+.story-highlight-banner::after {
+    bottom: -30px; /* Đẩy xuống 1/2 chiều cao */
+}
+
+/* ----- Responsive cho Our Story  ----- */
+@media (max-width: 768px) {
+    .story-row {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .story-row:first-child {
+        flex-direction: column-reverse;
+    }
+
+    .story-text h2 {
+        font-size: 36px;
+        text-align: center; 
+    }
+
+    .divider-small {
+        margin-left: auto; 
+        margin-right: auto;
+    }
+
+    .story-highlight-banner {
+        padding: 30px 20px;
+        margin: 30px auto;
+    }
+
+    /* Sửa line-height cho mobile */
+    .story-text p,
+    .story-highlight-banner p {
+        line-height: 1.7; /* Reset về 1.7 (45px quá lớn) */
+        text-align: left; /* Canh trái cho dễ đọc */
+    }
+
+    .story-divider {
+        margin: 60px auto;
+    }
+}
+
+/*=========================================
+ ----------- PHẦN  WHO WE ARE ------------
+=========================================*/
+.who-we-are {
+    padding: 60px 0;
+    background-color: #FBF3E3; 
+}
+
+.who-we-are-grid {
+    display: grid;
+    /* 3 cột bằng nhau */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    /* Giữ nguyên max-width giống .story-container */
+    max-width: 1290px; 
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* --- Cột Intro (Cột 1) --- */
+.who-we-are-intro {
+    /* Cho nó kéo dài 2 hàng */
+    grid-row: 1 / 3;
+    border-right: 15px solid #DBA276;
+    padding-right: 50px;
+    /* Căn lề trên cùng */
+    align-self: start;
+}
+
+.who-we-are-intro h2 {
+    /* Copy từ .story-text h2 */
+    font-family: 'Overlock', cursive;
+    font-size: 64px;
+    line-height: 45px;
+    color: #4C5332;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.who-we-are-intro .divider-small {
+    /* Copy từ .divider-small */
+    width: 92px;
+    height: 9px;
+    background-color: #DBA276; 
+    margin-bottom: 25px;
+}
+
+.who-we-are-intro p {
+    /* Copy từ .story-text p nhưng sửa lại 1 chút */
+    font-family: 'Overlock', cursive;
+    font-size: 20px; 
+    line-height: 45px; 
+    text-align: justify;
+    color: #4C5332;
+    margin: 0;
+}
+
+/* --- Thẻ Profile (Chung) --- */
+.profile-card {
+    width: 100%;
+}
+
+.profile-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    display: block;
+}
+
+.profile-card h3 {
+    font-family: 'Overlock', cursive;
+    font-weight: 900;
+    font-size: 35px;
+    line-height: 45px;
+    color: #4C5332;
+    margin: 15px 0 10px 0;
+    text-align: center;
+}
+
+.profile-card p {
+    font-family: 'Overlock', cursive;
+    font-size: 20px;
+    line-height: 45px;
+    color: #4C5332; 
+    text-align: justify;
+    margin: 0;
+}
+
+/* --- Profile Khoa (Text) (Cột 2, Hàng 2) --- */
+.profile-khoa-text {
+    /* Căn lề lại cho Khoa */
+    text-align: left;
+    padding-top: 20px; /* Thêm khoảng cách */
+    /* Căn cho nó nằm giữa theo chiều dọc */
+    align-self: start; 
+}
+
+.profile-khoa-text p {
+    text-align: left; /* Ghi đè text-align: center */
+}
+
+/*Ghi đè text-align cho p của Khoa */
+.profile-khoa-text p {
+    text-align: justify;
+}
+
+
+/* --- Profile Khoa (Image) (Cột 3, Hàng 2) --- */
+.profile-khoa-image {
+    padding-top: 20px; /* Thêm khoảng cách */
+     /* Căn cho nó nằm giữa theo chiều dọc */
+    align-self: center;
+}
+
+/* --- Responsive cho "Who We Are" --- */
+
+/* Tablet */
+@media (max-width: 1100px) {
+    .who-we-are-grid {
+        /* Gãy thành 2 cột */
+        grid-template-columns: 1fr 1fr;
+    }
+    .who-we-are-intro {
+        /* Intro chiếm 2 cột, 1 hàng */
+        grid-column: 1 / 3;
+        grid-row: 1;
+        border-right: none;
+        border-bottom: 15px solid #DBA276;
+        padding-right: 0;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    /* Khoa text (hàng 3, cột 1) */
+    .profile-khoa-text {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    /* Khoa image (hàng 3, cột 2) */
+    .profile-khoa-image {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+/* Canh giữa gạch ngang của "Who We Are" trên tablet */
+    .who-we-are-intro .divider-small {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .who-we-are-grid {
+        /* Gãy thành 1 cột */
+        grid-template-columns: 1fr;
+    }
+    .who-we-are-intro {
+        /* Intro (hàng 1, cột 1) */
+        grid-column: 1;
+        grid-row: 1;
+        padding-bottom: 20px;
+    }
+    
+    /* Tự động xếp các profile card */
+    .profile-card {
+         grid-column: 1;
+         grid-row: auto; 
+    }
+
+    /* Đảo thứ tự Khoa cho mobile (Image trước, Text sau) */
+    .profile-khoa-text {
+         grid-row: 5; /*  Đẩy text Khoa xuống hàng 5 */
+         padding-top: 0;
+    }
+    .profile-khoa-image {
+         grid-row: 4; /* Đẩy ảnh Khoa lên hàng 4 */
+         padding-top: 0;
+    }
+
+    /* Reset line-height 45px trên Mobile */
+    .who-we-are-intro p,
+    .profile-card p {
+        line-height: 1.8; /* Reset về 1.8 (45px quá lớn) */
+        text-align: left; /* Canh trái cho dễ đọc */
+    }
+
+    .profile-card h3 {
+        font-size: 28px; /* Giảm size H3 lại cho mobile */
+        line-height: 1.5;
+    }
+    .who-we-are-intro h2 {
+        font-size: 40px; /* Giảm size H2 lại cho mobile */
+        text-align: center;
+    }
+}
+
+/*=========================================
+ ----- PHẦN SPECIAL APPRECIATION (ĐÃ SỬA) -----
+=========================================*/
+.special-appreciation {
+    background-color: #FFEDCA; /* Màu nền be */
+    padding: 60px 0 60px 0; /* Đệm trên/dưới (Sửa lỗi khoảng trống) */
+    position: relative; 
+    margin-top: 60px; /* Khoảng cách với phần Who We Are */
+    margin-bottom: 60px;/*Khoảng cách với phần Find a location ở dưới*/
+}
+
+/* Vẽ hình thoi (Giống code cũ) */
+.special-appreciation::before {
+    content: '';
+    width: 60px;  
+    height: 60px; 
+    background-color: #FFEDCB; 
+    border: 10px solid #FBF3E3; 
+    box-sizing: border-box;
+    transform: rotate(45deg); 
+    position: absolute;
+    left: 50%;
+    margin-left: -30px; 
+    top: -30px; 
+    z-index: 5;
+}
+
+/* Container MỚI */
+.appreciation-container {
+    max-width: 1290px; 
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* Row MỚI (Tái sử dụng style từ .story-row) */
+.appreciation-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Cột Text MỚI */
+.appreciation-text {
+    flex: 1.5; /* Cho text rộng hơn */
+    font-family: 'Overlock', cursive;
+    color: #4C5332;
+}
+
+/* Cột Image MỚI */
+.appreciation-image {
+    flex: 1; /* Cho ảnh hẹp hơn */
+    min-width: 0;
+}
+
+.appreciation-image img {
+    width: 100%;
+    max-width: 535px; /* Giới hạn kích thước ảnh */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Canh giữa ảnh */
+    border-radius: 30px; /* Yêu cầu bo góc 30px */
+}
+
+/* Style cho chữ (dùng line-height 1.8 thay vì 45px) */
+.appreciation-text p {
+    font-size: 20px;
+    line-height: 1.8; /* Dùng 1.8 cho dễ đọc */
+    text-align: left; /* Canh trái */
+    margin: 0;
+}
+
+/* Responsive cho section MỚI */
+@media (max-width: 768px) {
+    .appreciation-row {
+        flex-direction: column; /* Xếp chồng */
+    }
+}
+
+/*=========================================
+  ----- KHỐI BANNER TÌM CỬA HÀNG ----- 
+  =========================================*/
+/* vỏ bọc bên ngoài */
+#banner {
+  position: relative;
+  background-color: #FBF3E3;
+  padding: 0;
+  border-radius: 8px;
+}
+
+/* khối chứa ảnh nền và nội dung */
+.banner-wrap {
+  background-image: url('images/shoppic.png');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  height: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* tiêu đề */
+.banner-title {
+  font-size: 60px;
+  color: #ffffff;
+  font-weight: 900;
+  margin: 0 0 30px 0;
+  z-index: 2;
+  font-family: 'Taviraj', serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;
+}
+
+/* nút */
+.banner-btn {
+  background-color: #F7E8C3;
+  color: #000000;
+  font-size: 30px;
+  font-family: 'Taviraj', serif;
+  padding: 15px 100px;
+  border-radius: 20px;
+  font-weight: 900;
+  z-index: 2;
+  margin-top: 0;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* hover cho nút */
+.banner-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: none;
+  box-shadow: none;
+  border-color: #000000;
+  border-style: solid;
+}
+
+/* responsive cho banner */
+@media (max-width: 768px) {
+  .banner-wrap {
+    height: 300px;
+  }
+
+  .banner-title {
+    font-size: 35px;
+  }
+
+  .banner-btn {
+    font-size: 18px;
+    padding: 10px 25px;
+  }
+}
+
+
+/*=========================================
+----- PHẦN FOOTER -----
+=========================================*/
+footer {
+  background-image: url('images/FooterBackground.jpg');
+  background-size: cover;
+}
+
+.footer-content-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+ .footer-column2, .footer-column3{  
+  width: 100px;    
+  margin: 10px;            
+}
+
+.footer-column1, .footer-column4{
+  width: 300px;    
+  margin: 10px;
+}
+
+/* css cho cột 1 trong footer */
+.footer-column1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.footer-brand-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.footer-brand{
+  font-family: "Pacifico", cursive;
+  font-size: 2rem;
+  color: #333333;
+}
+
+.footer-logo{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.footer-socials img{
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.footer-socials img:hover{
+  transform: scale(1.1);
+}
+
+.footer-contact {
+  display: flex;
+  gap: 8px;
+  color: #333333;
+  font-size: 1.5rem;
+}
+
+.footer-contact img{
+  width: 20px;
+  height: 20px;
+}
+
+/* css cột Company của footer */
+.footer-column2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.footer-title2{
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.footer-column2 ul{
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column2 li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+/* Css cho cột 3 help của footer */
+.footer-column3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.footer-title3{
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.footer-column3 ul{
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column3 li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+/* Css cho cột 4 */
+.footer-column4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.footer-title4{
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-wrap: nowrap;
+  margin-top: 50px;
+}
+
+.footer-column4 ul{
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column4 li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.footer-column4 form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+
+.footer-column4 input[type='email']{
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #f5f5f5; /* Nền xám nhạt */
+  font-size: 14px;
+  outline: none; /* Ẩn viền xanh khi focus */
+  box-sizing: border-box;
+}
+
+.footer-column4 input[type="email"]::placeholder {
+  color: #999; /* Màu placeholder nhạt */
+}
+
+.footer-column4 input[type="email"]:focus {
+  background-color: #fff; /* Khi click vào thì nền sáng hơn chút */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-column4 input[type="submit"] {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #000;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.footer-column4 input[type="submit"]:hover {
+  background-color: #333;
+}
+
+.footer-bottom {
+  /* Căn giữa 2 dòng text */
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  color: #333333;
+  width: 100%;
+}
+
+.footer-legal-links {
+  /* Tạo khoảng cách giữa hàng link và hàng copyright */
+  margin-bottom: 15px;
+}
+
+.footer-legal-links a {
+  /* Bỏ gạch chân */
+  text-decoration: none;
+ 
+  /* Lấy màu chữ từ cha (.footer-bottom) */
+  color: inherit;
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+/* Thêm dấu gạch đứng "|" vào sau mỗi link (trừ link cuối cùng) */
+.footer-legal-links a:not(:last-child)::after {
+  content: "|";
+  margin-left: 20px;
+  color: #555;
+  font-weight: normal;
+}
+
+.footer-legal-links a:hover {
+  text-decoration: underline; /* Thêm gạch chân khi di chuột vào */
+}
+
+.footer-copyright {
+  font-size: 0.9rem; /* Cho chữ copyright nhỏ hơn một chút */
+  color: #555; /* Cho chữ mờ hơn một chút */
+  margin: 0; /* Xóa margin mặc định của thẻ <p> */
+}
+
+/*=========================================
+  PHẦN CODE RESPONSIVE (CHO MÀN HÌNH NHỎ)
+=========================================*/
+@media (max-width: 768px) {
+
+/* XỬ LÝ HEADER (THU NHỎ) */
+ /* Giảm chiều cao của ảnh bìa */
+ #main-header {
+ height: 12.5vh;
+ }
+
+ /* Ẩn menu nav chính */
+ #main-header .nav-links {
+ display: none;
+ }
+
+ /* Giảm font chữ của brand chính */
+ #main-header .brand {
+ font-size: 24px;
+ margin-top: -1rem;
+ }
+
+ /* Luôn hiện sticky header trên mobile */
+ #sticky-header,
+ #sticky-header.hidden {
+ opacity: 1;
+ visibility: visible;
+ }
+
+ /* Giảm font chữ của brand trên sticky header */
+ .sub-brand {
+ font-size: 24px;
+ }
+
+ .hamburger {
+ font-size: 30px; }
+
+   /* Responsive cho banner "Find Store" */
+  #banner-find-store .banner-wrap {
+    height: 300px;
+  }
+
+  #banner-find-store .banner-title {
+    font-size: 35px;
+  }
+
+  #banner-find-store .btn.banner-btn {
+    font-size: 18px;
+    padding: 10px 25px;
+  }
+}
+
+
+

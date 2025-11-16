@@ -2,8 +2,19 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Choco Hoho</title>
   <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="Quality_styles.css">
+  <link rel="stylesheet" href="Pure_quality.css">
+  <link rel="stylesheet" href="Sweetness-quote.css">
+  <link rel="stylesheet" href="Location_styles.css">
+  <link rel="stylesheet" href="Fresh.css">
+  <link rel="stylesheet" href="Categories.css">
+  <link rel="stylesheet" href="Buynow.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />  
+  <link rel="stylesheet" href="hot-selling.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -71,11 +82,21 @@
 
     </div>
   </section>
-  <section style="height:1000px; padding:20px;">
-    <p>Máy cái ni ai làm </p>
+
+
+  <!--Phần Location--->
+  <section class="location-section">
+    <h2 class="section-title">LOCATION</h2>
+    <img src="images/Location.png" alt="Ảnh địa chỉ" class="location">
+    <img src="images/Cookies.png" alt="icon" class="bg-icon cookies">
+    <img src="images/Empanada.png" alt="icon" class="bg-icon empanada">
+    <img src="images/Croissant.png" alt="icon" class="bg-icon croissant">
+    <img src="images/Cake.png" alt="icon" class="bg-icon cake">
+    
   </section>
 
-  <!--Phần Our Story-->
+
+  <!------------Phần Our Story------------->
   <secton class="OurStory">
 
     <div class="OurStory-content">
@@ -91,7 +112,181 @@
       <img src="images/OurStory.jpeg" alt="Ảnh của phần Our Story">
     </div>
   </secton>
+  <!------------Phần Hot selling--------------->
+  <section class="hot-selling-wrapper">
+    <div class="hot-selling">
+      <h2>Hot Selling</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="badge">OUR CHOICE</div>
+              <div class="product-image">
+                <img src="images/GreenTeaCloudCake.webp" alt="Green Tea Cloud Cake">
+              </div>
+              <h3>Green Tea Cloud Cake</h3>
+            </div>
+          </div>
 
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/Orange20Piece.png" alt="Orange Cream Piece">
+              </div>
+              <h3>Orange Cream Piece</h3>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/ChocolateCroissant.webp" alt="Chocolate Croissant">
+              </div>
+              <h3>Chocolate Croissant</h3>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/PurpleSweetPotatoLoaf.webp" alt="Purple Sweet Potato Loaf">
+              </div>
+              <h3>Purple Sweet Potato Loaf</h3>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
+
+  <!------------Phần Crafted quote------------->
+  <section class="Quality-section">
+    <img src="images/wheat.png" alt="icon wheat" class="wheat">
+    <blockquote class="crafted-text">“Crafted with Care, Shared with Love.”</blockquote>
+    <div class="Quality-content">
+      <p>Our cakes are crafted with care and passion, using only the freshest ingredients to create treats that delight both the eyes and the taste buds. Every bite is a little celebration of natural goodness and timeless sweetness.</p>
+      <img src="images/flour.png" alt="icon flour" class="flour">
+    </div>
+    
+    <img src="images/cupcake.png" alt="icon cupcake" class="bg-icon-quality cupcake">
+    <img src="images/donut.png" alt="icon donut" class="bg-icon-quality donut">
+    <img src="images/creamcake.png" alt="icon creamcake" class="bg-icon-quality creamcake">
+
+  </section>
+
+  <!-----------Phần Pure Quality---------->
+  <section class="Pure-quality">
+    <div class="Pure-gif">
+      <img src="images/cakespin.gif" alt="gif xoay quanh bánh">
+    </div>
+    <div class="Pure-content">
+      <h2 class="Pure-title">Pure Quality</h2>
+      <p>From the first glance to the very last crumb, each cake reflects our commitment to quality. Made with handpicked ingredients and baked to perfection, it’s a masterpiece of flavor and freshness.</p>
+    </div>
+  </section>
+
+  <!-----------Phần Fresh Out of the Oven---------->
+  <section class="Fresh">
+    <div class="Fresh-content">
+      <h2 class="Fresh-title">Fresh Out of the Oven</h2>
+      <p>Feel the joy as the cakes come straight out of the oven—soft, fragrant, and ready to share. Every slice carries the warmth of our kitchen and the happiness of a moment worth savoring.</p>
+    </div>
+
+    <div class="Fresh-gif">
+      <img src="images/takecakeout.gif" alt="gif lấy bánh ra lò">
+    </div>
+  </section>
+
+  <!-------------Phần ảnh phân chia trang web------->
+  <section class="banner-image-full">
+    <picture>
+        <source 
+            media="(max-width: 768px)" 
+            srcset="images/bake768px.png">
+        <img 
+            src="images/bake.png" 
+            alt="Người thợ làm bánh đang cán bột với dâu tây bên cạnh">
+    </picture>
+
+  </section>
+  <!------------Phần Sweetness quote---------------->
+<section class="Sweetness-quote-section">
+    <div class="sweetness-text-wrapper">
+        <blockquote>“Sweetness in every bite, making a better life.”</blockquote>
+        <p>We carefully select fresh ingredients, with no preservatives, and bake every day with dedication. Each cake is not only beautiful but also preserves its natural flavor, bringing you both peace of mind and pure sweetness.</p>
+        
+        <p>Let our cakes turn your ordinary days into something special. Place your order today and savor the sweetness in every moment!</p>
+    </div>
+</section>
+
+
+
+
+<!-----------Phần categories------------>
+
+<section class="Categories-section">
+    <div class="category-intro">
+        <h2>Bakery</h2>
+        <p>
+            At <strong>CHOCO HOHO</strong>, we offer a wide range of bakery items that are perfect for any occasion. From
+            our freshly baked breads to our decadent cakes and pastries, each of our products is made with
+            the finest ingredients and the utmost care.
+        </p>
+    </div>
+    <div class="Categories-content">
+        
+        <div class="bread-card">
+            <img src="images/Breadmainpage.webp" alt="Một ổ bánh mì" class="product-image">
+            <div class="bread-info">
+                <h3 class="bread-title">Bread</h3>
+                <p class="bread-description">
+                Soft, fluffy, and lightly sweet with a delicate milky aroma. The golden-brown crust contrasts...
+                </p>
+            </div>
+        </div>
+
+        <div class="cake-card">
+            <img src="images/Cakemainpage.jpg" alt="Một chiếc bánh kem dâu" class="product-image">
+            <div class="cake-info">
+                <h3 class="cake-title">Cake</h3>
+                <p class="cake-description">
+                    A smooth layer of fresh cream paired with juicy strawberries and assorted berries, bringing a...
+                </p>
+            </div>
+        </div>
+
+        <div class="pastry-card">
+            <img src="images/Croissantmainpage.webp" alt="Một chiếc bánh sừng bò dâu" class="product-image">
+            <div class="pastry-info">
+                <h3 class="pastry-title">Pastry</h3>
+                <p class="pastry-description">
+                    A buttery, flaky croissant filled with smooth cream and juicy fresh strawberries. This...
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!----------Phần buy now------------->
+<section class="hero-section">
+    <div class="hero-content">
+        <h2>Choco Hoho</h2>
+        <p class="slogan">Where sweetness meets happiness</p>
+        <a href="/shop" class="cta-button">BUY NOW</a>
+    </div>
+</section>
+
+
+
+</section>
 
   </main>
 <footer>
@@ -167,7 +362,8 @@
 
 
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
+  <script src="hot-selling.js"></script>
 </body>
 </html>

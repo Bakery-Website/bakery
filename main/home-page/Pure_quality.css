@@ -1,0 +1,125 @@
+.Pure-quality {
+    /* 1. Dùng Flexbox để chia cột */
+    display: flex;
+    
+    /* 2. Căn các cột ở giữa theo chiều dọc */
+    align-items: center; 
+    /* 3. Khoảng cách giữa 2 cột */
+    gap: 40px; 
+    
+    /* 4. Giới hạn chiều rộng và căn giữa section */
+    max-width: 1300px;
+    margin: 60px auto; /* Cách lề trên/dưới và tự động căn giữa */
+    margin-top: 10px;
+    padding: 40px 0;
+}
+
+/* ----- CỘT HÌNH ẢNH (.Pure-gif) ----- */
+.Pure-gif {
+    /* 5. Cho cột này chiếm 1 phần (50%) */
+    flex: 1; 
+    min-width: 0;
+
+    
+}
+
+.Pure-gif img {
+    /* 6. Ảnh tự lấp đầy 100% cột chứa nó */
+    width: 100%; 
+    height: auto;
+    display: block; /* Xóa khoảng trắng thừa bên dưới ảnh */
+    border-radius: 20px; 
+}
+
+/* ----- CỘT NỘI DUNG (.Pure-content) ----- */
+.Pure-content {
+    /* 8. Cho cột này cũng chiếm 1 phần (50%) */
+    flex: 1; 
+    
+    /* 9. Cần có để chứa hình mờ (xem ở dưới) */
+    position: relative; 
+}
+
+/* 10. Tiêu đề H2 */
+.Pure-title {
+    font-size: 5rem;
+    /* Màu đỏ gạch từ thiết kế */
+    color: #a64a3d; 
+    margin-top: 0;
+    margin-bottom: 30px;
+    
+    /* Đảm bảo tiêu đề nổi lên trên hình mờ */
+    position: relative;
+    z-index: 2;
+}
+
+/* 11. Đoạn văn P */
+.Pure-content p {
+    font-size: 2rem;
+    line-height: 1.6;
+    color: #555;
+    
+    /* Đảm bảo chữ nổi lên trên hình mờ */
+    position: relative;
+    z-index: 2;
+    max-width: 45rem;
+    text-align: justify;
+}
+
+
+/* ----- 12. THÊM HÌNH MỜ (WATERMARK) ----- */
+.Pure-content p::before {
+    content: ''; 
+    
+    background-image: url('images/bread.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* Căn giữa hình mờ */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    
+    /* Chỉnh kích thước hình mờ tùy ý */
+    width: 250px; 
+    height: 250px;
+    
+    /* Cho nó mờ đi */
+    opacity: 0.1; 
+    
+    /* Cho nó chìm xuống dưới chữ */
+    z-index: 1; 
+}
+
+
+/* ----- 13. RESPONSIVE CHO DI ĐỘNG ----- */
+@media (max-width: 768px) {
+    .Pure-quality {
+        /* Chuyển 2 cột thành 2 hàng (xếp dọc) */
+        flex-direction: column-reverse; 
+        gap: 20px;
+        margin-top: 30px;
+        margin-bottom: 0px;
+        padding: 0;
+    }
+    
+    .Pure-content {
+        /* Căn giữa chữ trên di động */
+        text-align: center;
+    }
+
+    .Pure-title {
+        font-size: 2rem; /* Giảm cỡ chữ tiêu đề */
+    }
+    
+    .Pure-content p {
+        font-size: 1.5rem;
+
+    }
+    /* Ẩn hình mờ trên di động cho đỡ rối */
+    .Pure-content::before {
+        display: none;
+    }
+}

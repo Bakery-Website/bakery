@@ -1,0 +1,152 @@
+/* ----- 1. KHỐI SECTION CHÍNH (CHA) ----- */
+.Sweetness-quote-section {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa cái div bọc chữ */
+    text-align: center;
+    
+    padding: 5em;
+    overflow: hidden; 
+    margin: 0;
+}
+
+
+/* ----- 2. ICON WATERMARK (LỚP 1 - DƯỚI CÙNG) ----- */
+.Sweetness-quote-section::before {
+    content: '';
+    position: absolute;
+    background-image: url('images/caramel.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+
+    /* SỬA LỖI 1 & 2: Thêm tọa độ và height cố định */
+    top: -9%;
+    left: 0;
+    width: 200px;
+    height: 300px; /* <-- Đã sửa từ 'auto' */
+    
+    /* SỬA LỖI 3: z-index thấp nhất */
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* ----- 3. KHỐI BỌC CHỮ (LỚP 2 - NỔI LÊN TRÊN) ----- */
+.sweetness-text-wrapper {
+    position: relative; 
+    z-index: 2;
+}
+
+/* ----- 4. TRÍCH DẪN (BLOCKQUOTE) ----- */
+.Sweetness-quote-section blockquote {
+    font-size: 4em;
+    font-weight: 600;
+    position: relative; /* Bắt buộc cho dấu ngoặc ::before/::after */
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    margin: 0; /* Xóa margin mặc định của blockquote */
+}
+
+/* ----- 5. ĐOẠN VĂN (P) ----- */
+.Sweetness-quote-section p {
+    font-size: 2em;
+    line-height: 1.4;
+    letter-spacing: 0.1rem;
+    margin-top: 0.5em; /* Thêm chút khoảng cách với blockquote */
+    color: #555;
+
+    max-width: 58rem;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ----- 6. DẤU NGOẶC VUÔNG (Giữ nguyên) ----- */
+.Sweetness-quote-section blockquote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 5px solid black;
+    border-right: 5px solid black;
+}
+
+.Sweetness-quote-section blockquote::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+}
+
+.sweetness-text-wrapper::before{
+    content: '';
+    top: 0; 
+    left: 0;
+
+    background-image: url('images/tiramisu.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    
+    /* Chỉnh kích thước hình mờ tùy ý */
+    width: 300px; 
+    height: 300px;
+    
+    /* Cho nó mờ đi */
+    opacity: 0.08; 
+    
+    /* Cho nó chìm xuống dưới chữ */
+    z-index: 1; 
+}
+@media (max-width: 768px) {
+
+    /* 1. Giảm padding cho cả section */
+    .Sweetness-quote-section {
+        /* Giảm padding từ 5em xuống 3em (trên/dưới) 
+           và 1.5em (trái/phải) */
+        padding: 3em 1.5em;
+    }
+
+    /* 2. Ẩn icon trang trí (caramel) cho gọn */
+    .Sweetness-quote-section::before {
+        display: none;
+    }
+
+    /* 3. Giảm cỡ chữ của Trích dẫn */
+    .Sweetness-quote-section blockquote {
+        font-size: 2.5em; /* Giảm từ 4em */
+    }
+
+    /* 4. Giảm cỡ chữ của Đoạn văn */
+    .Sweetness-quote-section p {
+        font-size: 1.25em; /* Giảm từ 2em */
+        max-width: 40rem;
+    }
+
+    /* 5. Giảm kích thước dấu ngoặc vuông */
+    .Sweetness-quote-section blockquote::before,
+    .Sweetness-quote-section blockquote::after {
+        width: 15px;
+        height: 15px;
+        border-width: 3px; /* Mỏng hơn một chút */
+    }
+
+    /* 6. Giảm kích thước watermark (tiramisu) sau lưng chữ */
+    .sweetness-text-wrapper::before {
+        width: 200px;
+        height: 200px;
+    }
+}

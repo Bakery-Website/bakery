@@ -1,0 +1,170 @@
+/* --- Cài đặt chung & Fonts --- */
+
+/* Đừng quên import font này vào <head> của file HTML nhé!
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Roboto:wght@400&display=swap" rel="stylesheet">
+*/
+
+.category-intro {
+    color: #4a3e36; /* Màu chữ nâu đậm */
+    text-align: center;
+    margin-bottom: 50px; /* Khoảng cách giữa Header và các thẻ sản phẩm */
+
+}
+
+/* CẬP NHẬT TỪ h1 THÀNH h2 */
+.category-intro h2 { 
+    font-size: 60px; 
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.category-intro p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 40px; 
+}
+.category-intro strong {
+    font-family: "Pacifico", cursive;
+}
+.Categories-section {
+    padding: 50px 20px;
+    background-color: #F1DAB2;
+}
+
+/* --- Container (Flexbox) --- */
+.Categories-content {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống hàng trên màn hình nhỏ */
+    justify-content: center; /* Căn giữa các thẻ */
+    gap: 5vw; /* Khoảng cách giữa các thẻ */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Kiểu dáng chung cho 3 thẻ (Ghép nhóm) --- */
+.bread-card,
+.cake-card,
+.pastry-card {
+    flex: 1 1 300px; 
+    max-width: 300px;
+    height: auto;
+    background-color: #fff;
+    text-align: center;
+    /* Chuẩn bị cho hiệu ứng hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    
+
+}
+
+/* --- Hình ảnh chung --- */
+.product-image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 6/7;
+}
+
+/* --- Khối thông tin chung (Ghép nhóm) --- */
+.bread-info,
+.cake-info,
+.pastry-info {
+    padding: 25px;
+}
+
+/* --- Tiêu đề chung (Ghép nhóm) --- */
+.bread-title,
+.cake-title,
+.pastry-title {
+    font-size: 24px;
+    color: #d4a373; /* Màu nâu cam */
+    margin: 0 0 10px 0;
+}
+
+/* --- Mô tả chung (Ghép nhóm) --- */
+.bread-description,
+.cake-description,
+.pastry-description {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- HIỆU ỨNG HOVER (Ghép nhóm) --- */
+.bread-card:hover,
+.cake-card:hover,
+.pastry-card:hover {
+    transform: scale(1.05); /* Phóng to thẻ lên 5% */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Tăng bóng mờ */
+}
+/* ========================================================= */
+/* === MEDIA QUERIES (Responsive cho điện thoại và tablet) === */
+/* ========================================================= */
+
+/* Trên màn hình TABLET (Max-width: 768px) */
+@media (max-width: 768px) {
+    .category-intro {
+        font-size: 1.5rem;
+    }
+    .category-intro h2 { 
+    font-size: 2rem; 
+
+    }
+    .category-intro p {
+    font-size: 1.5rem;
+}
+    .Categories-content {
+        gap: 20px; /* Giảm khoảng cách giữa các thẻ */
+    }
+
+    .bread-card,
+    .cake-card,
+    .pastry-card {
+        /* Cho phép thẻ chiếm diện tích lớn hơn nếu chỉ còn 2 thẻ trên hàng */
+        max-width: 45%; 
+        /* Ép thẻ chỉ hiển thị tối đa 2 thẻ/hàng */
+        flex: 1 1 calc(50% - 30px); 
+    }
+
+    .product-image {
+        /* Giảm chiều cao ảnh trên tablet */
+        height: 180px; 
+    }
+}
+
+
+/* Trên màn hình ĐIỆN THOẠI (Max-width: 576px) */
+@media (max-width: 576px) {
+    .Categories-section {
+        padding: 30px 10px; /* Giảm padding tổng thể */
+    }
+
+    .Categories-content {
+        gap: 25px; /* Khoảng cách dọc khi xếp chồng */
+        max-width: 350px;
+    }
+
+    .bread-card,
+    .cake-card,
+    .pastry-card {
+        /* Ép thẻ chiếm gần như toàn bộ chiều rộng (1 thẻ/hàng) */
+        flex: 1 1 100%; 
+        max-width: 80%; /* Chiếm 90% chiều rộng màn hình */
+        margin: 0 auto; /* Căn giữa */
+    }
+
+    .product-image {
+        /* Tăng chiều cao ảnh lên một chút để trông rõ hơn trên màn hình đơn */
+        height: 220px; 
+    }
+    
+    .bread-info,
+    .cake-info,
+    .pastry-info {
+        padding: 20px 15px; /* Giảm padding nội dung */
+    }
+}

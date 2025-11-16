@@ -1,0 +1,56 @@
+/* ----- PHẦN NỘI DUNG LOCATION---- */
+
+.location-section {
+  background-color: #FBF3E3;
+  padding: 20px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Overlock', cursive;
+  margin: 2em;
+}
+
+/* Các icon trang trí nền */
+.bg-icon {
+  position: absolute;
+  opacity: 0.05;
+  z-index: 0;
+  width: 250px;
+  height: auto;
+}
+.cookies { top: 30px; left: 300px; width: 130px; height: 130px;}
+.empanada { top: 20px; right: 100px; width: 199px; height: 199px; 
+    transform: rotate(-90deg);
+}
+.croissant { top: 450px; left: 200px; width: 220px; height: 220px; }
+.cake { bottom: 20px; right: 400px; width: 140px; height: 140px; 
+    transform: rotate(-20deg);
+}
+
+/* Tiêu đề chung của section */
+.section-title {
+  font-size: 5em;
+  color: #972828;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 0 4em;
+  font-family: 'Overlock', cursive;
+  position: relative;
+  z-index: 10;
+}
+
+.location{
+    max-width: 100%;
+    height: auto;
+    z-index: 5;
+    position: relative;
+}
+@media (max-width: 768px) {
+.section-title {
+  font-size: 2em;
+  
+}
+    
+
+}
+

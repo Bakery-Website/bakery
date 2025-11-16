@@ -12,6 +12,7 @@ html, body {
 }
 body {
   background-color: #FBF3E3;
+  font-family: 'Overlock', cursive;
 }
 
 /* ----- PHẦN PRIMARY HEADER ----- */
@@ -241,7 +242,8 @@ body {
 
 .discover-section {
   background-color: #FBF3E3;
-  padding: 60px 20px;
+  padding: 2em 2em;
+  margin: 2em;
   text-align: center;
   /* Đảm bảo nó nằm ngay dưới header video */
   position: relative; 
@@ -304,7 +306,7 @@ body {
 
 
 
-/* Phần footer */
+/* --------Phần footer--------------*/
 footer {
   background-image: url('images/FooterBackground.jpg');
   background-size: cover;
@@ -671,11 +673,12 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   margin: 1rem;
   padding: 1rem;
   gap:2rem;
   background-color: #FBF3E3;
-  
+  font-family: 'Overlock', cursive;
 }
 
 .OurStory-content{
@@ -703,7 +706,7 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
-  opacity: 0.1; 
+  opacity: 0.05; 
   pointer-events: none;
 }
 
@@ -723,6 +726,7 @@ footer {
   letter-spacing: 0.2rem;
   margin-top: 1rem;
   text-align: justify;
+  color: #555;
 }
 
 @media (max-width: 768px) {
@@ -745,9 +749,12 @@ footer {
  .OurStory-content{
   padding-left: 0;
 }
+.OurStory-content h2{
+  font-size: 2rem;
 
+}
 .OurStory > div p{
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.4;
   letter-spacing: 0.1rem;
   margin-top: 1em;
