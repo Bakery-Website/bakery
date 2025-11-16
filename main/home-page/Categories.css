@@ -56,8 +56,8 @@
     /* Chuẩn bị cho hiệu ứng hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    
-
+    text-decoration: none; /* Dòng này sẽ bỏ gạch chân */
+    color: inherit;        /* Dòng này giữ màu chữ gốc (thường là đen) */
 }
 
 /* --- Hình ảnh chung --- */

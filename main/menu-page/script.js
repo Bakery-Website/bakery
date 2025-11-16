@@ -667,11 +667,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- VI. KHỞI CHẠY TRANG ---
-    // Đây là 2 hàm chạy đầu tiên ngay sau khi DOM tải xong.
-    
-    // 1. Tải nội dung trang chủ SPA (hiện khối Story, ẩn lưới sản phẩm...)
+// 1. Lấy các tham số từ URL (ví dụ: ?category=Bread)
+const urlParams = new URLSearchParams(window.location.search);
+const categoryToLoad = urlParams.get('category'); // Sẽ là 'Bread', 'Cake', hoặc null
+
+// 2. Kiểm tra xem có category từ URL không
+if (categoryToLoad) {
+    // Nếu CÓ (ví dụ: ?category=Bread):
+    // Tải thẳng category đó (hàm này cũng tự động xử lý breadcrumb và active link)
+    loadCategory(categoryToLoad);
+} else {
+    // Nếu KHÔNG có tham số:
+    // Tải trang chủ SPA (các khối story, intro) như bình thường
     loadHomePage();
-    
-    // 2. Cập nhật số lượng giỏ hàng (để đảm bảo nó là 0 khi tải trang, hoặc lấy từ localStorage sau này)
-    updateCartCount();
+}
+
+// 3. Khởi tạo số lượng giỏ hàng (luôn chạy, bất kể tải trang nào)
+updateCartCount();
+
+
 });

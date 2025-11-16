@@ -137,7 +137,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  font-size: 30px;
+  font-size: 15px;
 }
 
 /* thu hẹp trên dưới sub-brand */
@@ -186,7 +186,7 @@ body {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  margin-top: 35px;
+  margin-top: 13px;
   padding: 66px 0 15px 15px;
   opacity: 0;
   visibility: hidden;

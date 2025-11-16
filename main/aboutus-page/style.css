@@ -28,8 +28,6 @@ nav.primary {
   padding-top: 3rem;  /* Thêm khoảng đệm thay cho margin-top âm */
 }
 
-/* ... (Các quy tắc khác giữ nguyên) ... */
-
 /* 2. SỬA LẠI .brand */
 .brand {
   font-size: 30px;
@@ -141,7 +139,7 @@ nav.primary {
   font-size: 95px;  
   font-weight: 900; 
   color: #ffffff;  
-  margin: 0;        /* Xóa lề mặc định của thẻ h2 */
+  margin: 0;/* Xóa lề mặc định của thẻ h2 */
 }
 
 /*=========================================
@@ -184,7 +182,7 @@ nav.primary {
   align-items: center;
   justify-content: center;
   width: 100%;
-  font-size: 30px;
+  font-size: 15px;
 }
 
 /* thu hẹp trên dưới sub-brand */
@@ -236,7 +234,7 @@ nav.primary {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  margin-top: 35px;
+  margin-top: 13px;
   padding: 66px 0 15px 15px;
   opacity: 0;
   visibility: hidden;
@@ -599,7 +597,6 @@ nav.primary {
 }
 
 .who-we-are-intro h2 {
-    /* Copy từ .story-text h2 */
     font-family: 'Overlock', cursive;
     font-size: 64px;
     line-height: 45px;
@@ -610,7 +607,6 @@ nav.primary {
 }
 
 .who-we-are-intro .divider-small {
-    /* Copy từ .divider-small */
     width: 92px;
     height: 9px;
     background-color: #DBA276; 
@@ -767,17 +763,17 @@ nav.primary {
 }
 
 /*=========================================
- ----- PHẦN SPECIAL APPRECIATION (ĐÃ SỬA) -----
+ ----- PHẦN SPECIAL APPRECIATION -----
 =========================================*/
 .special-appreciation {
     background-color: #FFEDCA; /* Màu nền be */
-    padding: 60px 0 60px 0; /* Đệm trên/dưới (Sửa lỗi khoảng trống) */
+    padding: 60px 0 60px 0; /* Đệm trên/dưới */
     position: relative; 
     margin-top: 60px; /* Khoảng cách với phần Who We Are */
     margin-bottom: 60px;/*Khoảng cách với phần Find a location ở dưới*/
 }
 
-/* Vẽ hình thoi (Giống code cũ) */
+/* Vẽ hình thoi */
 .special-appreciation::before {
     content: '';
     width: 60px;  
@@ -792,6 +788,15 @@ nav.primary {
     top: -30px; 
     z-index: 5;
 }
+.special-appreciation h2 {
+    font-family: 'Overlock', cursive;
+    font-size: 60px;
+    line-height: 45px;
+    color: #4C5332;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
 
 /* Container MỚI */
 .appreciation-container {
@@ -800,21 +805,21 @@ nav.primary {
     padding: 0 20px; 
 }
 
-/* Row MỚI (Tái sử dụng style từ .story-row) */
+/* Row */
 .appreciation-row {
     display: flex;
     align-items: center;
     gap: 40px;
 }
 
-/* Cột Text MỚI */
+/* Cột Text */
 .appreciation-text {
     flex: 1.5; /* Cho text rộng hơn */
     font-family: 'Overlock', cursive;
     color: #4C5332;
 }
 
-/* Cột Image MỚI */
+/* Cột Image */
 .appreciation-image {
     flex: 1; /* Cho ảnh hẹp hơn */
     min-width: 0;
@@ -829,7 +834,7 @@ nav.primary {
     border-radius: 30px; /* Yêu cầu bo góc 30px */
 }
 
-/* Style cho chữ (dùng line-height 1.8 thay vì 45px) */
+/* Style cho chữ */
 .appreciation-text p {
     font-size: 20px;
     line-height: 1.8; /* Dùng 1.8 cho dễ đọc */
@@ -837,7 +842,7 @@ nav.primary {
     margin: 0;
 }
 
-/* Responsive cho section MỚI */
+/* Responsive cho section */
 @media (max-width: 768px) {
     .appreciation-row {
         flex-direction: column; /* Xếp chồng */
@@ -852,7 +857,6 @@ nav.primary {
   position: relative;
   background-color: #FBF3E3;
   padding: 0;
-  border-radius: 8px;
 }
 
 /* khối chứa ảnh nền và nội dung */
@@ -868,7 +872,6 @@ nav.primary {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -1171,6 +1174,94 @@ footer {
   font-size: 0.9rem; /* Cho chữ copyright nhỏ hơn một chút */
   color: #555; /* Cho chữ mờ hơn một chút */
   margin: 0; /* Xóa margin mặc định của thẻ <p> */
+}
+
+@media (max-width: 768px) {
+
+ /* 1. Chuyển container chính sang layout cột */
+ .footer-content-container {
+ flex-direction: column; /* Xếp 4 cột chồng lên nhau */
+ align-items: center;  /* Căn giữa các cột theo chiều ngang */
+ gap: 40px;  /* Tăng khoảng cách dọc giữa các cột */
+ }
+
+ /* 2. Cho tất cả các cột chiếm 90% chiều rộng và căn giữa */
+ .footer-column1,
+ .footer-column2,
+ .footer-column3,
+ .footer-column4 {
+  width: 90%;    /* Đặt chiều rộng là 90% */
+  max-width: 350px;  /* Giới hạn chiều rộng tối đa cho đẹp */
+  align-items: center;  /* Căn giữa nội dung bên trong cột (logo, text) */
+  text-align: center; /* Căn giữa tất cả chữ */
+  margin: 0; /* Xóa margin cũ */
+ }
+
+ /* 3. Reset lề của các tiêu đề (vì đã có 'gap' ở container) */
+ .footer-title2,
+ .footer-title3,
+ .footer-title4 {
+  margin-top: 0; /* Xóa lề trên 50px */
+  margin-bottom: 20px;/* Giảm lề dưới 1 chút */
+ }
+
+ /* 4. Chuyển form (email + submit) thành layout cột */
+ .footer-column4 form {
+  flex-direction: column; /* Ô input và nút submit chồng lên nhau */
+ }
+
+ /* 5. Cho nút submit chiếm 100% chiều rộng của form */
+ .footer-column4 input[type="submit"] {
+ width: 100%;
+ }
+
+ /* 6. Chuyển các link (Privacy, Terms) thành layout cột */
+ .footer-legal-links {
+  display: flex;
+  flex-direction: column; /* Xếp các link chồng lên nhau */
+  gap: 10px; /* Khoảng cách giữa các link */
+  margin-bottom: 20px;
+ }
+
+ /* 7. Xóa dấu gạch đứng "|" giữa các link */
+ .footer-legal-links a:not(:last-child)::after {
+  content: none; /* Ẩn dấu | đi */
+ }
+}
+/* Áp dụng cho màn hình từ 480px trở xuống (Điện thoại nhỏ) */
+@media (max-width: 480px) {
+
+ /* 1. Cho logo và tên thương hiệu nhỏ lại 1 chút */
+ .footer-logo {
+  width: 80px; /* Giảm từ 100px xuống 80px */
+  height: 80px;
+ }
+
+ .footer-brand {
+  font-size: 1.8rem; /* Giảm từ 2rem xuống 1.8rem */
+ }
+
+ /* 2. Giảm cỡ chữ của các tiêu đề cột */
+ .footer-title2,
+ .footer-title3,
+ .footer-title4 {
+  font-size: 1.3rem; /* Giảm từ 1.5rem xuống 1.3rem */
+ }
+
+ .footer-socials img{
+  width: 20px;
+  height: 20px;
+
+}
+
+ /* 3. Giảm cỡ chữ của icon liên hệ */
+ .footer-contact {
+  font-size: 1.3rem; /* Giảm từ 1.5rem xuống 1.3rem */
+ }
+ /* Giảm khoảng cách của logo với icon socials */
+ .footer-brand-container{
+  margin-bottom: 10px;
+ }
 }
 
 /*=========================================
