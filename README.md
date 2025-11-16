@@ -43,14 +43,32 @@
 ## 5. Hướng dẫn chạy đồ án
 ### 1. Clone dự án
 ```bash
+
+#Bước 1:
 # Thay <your-repo-link> bằng link Git repository của bạn
 git clone <your-repo-link>
 
+#Bước 2: Di chuyển vào thư mục dự án
+Sau khi clone, hãy di chuyển vào thư mục vừa được tải về:
+```bash
 
+# Thay <project-folder-name> bằng tên thư mục dự án của bạn
+cd <project-folder-name>
 
+#Bước 3:  Mở trang web
+Vì đây là dự án web tĩnh (HTML, CSS, JS), bạn không cần cài đặt phức tạp.
 
+Cách 1: Mở trực tiếp file HTML
 
+Chỉ cần tìm đến file index.html (hoặc file HTML chính của bạn) trong thư mục dự án.
 
+Nháy đúp chuột vào file đó, trang web sẽ tự động mở lên bằng trình duyệt web mặc định của bạn.
 
+Cách 2: Sử dụng "Live Server" (Khuyên dùng cho phát triển) Nếu bạn sử dụng trình soạn thảo code như Visual Studio Code, cách tốt nhất là dùng extension "Live Server":
 
+Cài đặt extension Live Server từ VS Code Marketplace.
+
+Sau khi cài đặt, bạn chỉ cần nhấn chuột phải vào file index.html và chọn "Open with Live Server".
+
+Trang web sẽ tự động mở trong trình duyệt và tự động tải lại mỗi khi bạn lưu file, giúp việc code nhanh hơn rất nhiều.
 
