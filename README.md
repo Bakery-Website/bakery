@@ -2,73 +2,59 @@
   <img src="https://camo.githubusercontent.com/b16ecdcac9c3d21ec3a49459430f747b46b3a37acc95ee468d87d0ec61ff2392/68747470733a2f2f692e696d6775722e636f6d2f576d4d6e5352742e706e67">
 </p>
 
-<h1 align="center">BÁO CÁO ĐỒ ÁN MÔN HỌC</h1>
-<h2 align="center">INTERNET VÀ CÔNG NGHỆ WEB</h2>
+# [IE104.P12.CNVN.Group7] - ĐỒ ÁN XÂY DỰNG WEBSITE CỬA HÀNG BÁN BÁNH NGỌT CHOCO HOHO
 
----
+## Giới thiệu
+Dự án này được thực hiện trong khuôn khổ học phần **“Internet và Công nghệ Web” (IE104)**.  
+Mục tiêu của dự án là xây dựng một website bán bánh ngọt với giao diện trực quan, thân thiện và dễ sử dụng.  
+Hệ thống cung cấp các trang thông tin giới thiệu, menu sản phẩm và trang chủ nhằm mô phỏng hoạt động của một tiệm bánh ngọt thực tế.
 
-## 1. Giới thiệu môn học
-* **Tên môn học:** Internet và công nghệ web
-* **Mã môn học:** IE104
-* **Mã lớp:** IE104.Q12.CNVN
-* **Giảng viên:** Ths.Võ Tấn Khoa
+## Thông tin dự án
+* **Trường:** Trường Đại học Công nghệ Thông tin, ĐHQG-HCM  
+* **Khoa:** Công nghệ Thông tin  
+* **Môn học:** Internet và Công nghệ Web (IE104)  
+* **Giảng viên hướng dẫn:** ThS. Võ Tấn Khoa  
+* **Nhóm sinh viên thực hiện:** Nhóm 7
 
---
+## Danh sách thành viên
+| STT | Họ tên | MSSV | Chức vụ |
+|:---:|---|:---:|:---:|
+| 1 | Huỳnh Hải Hiền | 23520457 | Nhóm trưởng |
+| 2 | Lê Thái Khang | 23520691 | Thành viên |
+| 3 | Lã Đăng Khoa | 23520739 | Thành viên |
 
-## 2. Thông tin đồ án
-* **Tên đồ án:** Web bán bánh ngọt 
-* **Công nghệ sử dụng:**
-    * **Frontend :** HTML, CSS, Javascript
-    * **UI/UX:** Figma
 
---
+## Công nghệ sử dụng
+* **Ngôn ngữ:** HTML, CSS, JavaScript  
+* **Thiết kế giao diện:** Figma  
+* **Triển khai:** Chạy trực tiếp file HTML, Live Server (VS Code)  hoặc Vercel
 
-## 3. Thành viên nhóm
 
-| STT | MSSV | Họ và tên | Email |
-| :---: | :---: | :--- | :--- |
-| 1 | 23520457 | Huỳnh Hải Hiền | 23520457@gm.uit.edu.vn |
-| 2 | 23520691 | Lê Thái Khang | 23520691@gm.uit.edu.vn |
-| 3 | 23520739 | Lã Đăng Khoa | 23520729@gm.uit.edu.vn |
-
---
-
-## 4. Thành phần đồ án
- * **Trang chủ (Home):** Giao diện chính, giới thiệu tổng quan về tiệm bánh, hiển thị sản phẩm nổi bật (Hot Selling), câu chuyện (Our Story), và địa chỉ (Location).
- * **Trang thông tin giới thiệu (About Us):** Giới thiệu chi tiết về câu chuyện hình thành, đội ngũ sáng lập (Who We Are), và tầm nhìn của tiệm bánh.
- * **Trang thực đơn (Menu):** Hiển thị danh sách đầy đủ các sản phẩm (Bread, Pastry, Cake) để khách hàng xem và lựa chọn.
-
---
-
-## 5. Hướng dẫn chạy đồ án
-### 1. Clone dự án
+## Hướng dẫn cài đặt 
+1. **Clone repository**:
 ```bash
-
-#Bước 1:
-# Thay <your-repo-link> bằng link Git repository của bạn
-git clone <your-repo-link>
-
-#Bước 2: Di chuyển vào thư mục dự án
-Sau khi clone, hãy di chuyển vào thư mục vừa được tải về:
+https://github.com/Bakery-Website/bakery.git
+```
+2. **Di chuyển vào thư mục**:
 ```bash
+cd IE104.P12.Group7
+```
+3. **Chạy dự án**
 
-# Thay <project-folder-name> bằng tên thư mục dự án của bạn
-cd <project-folder-name>
+**Cách 1:** Mở trực tiếp file HTML
 
-#Bước 3:  Mở trang web
-Vì đây là dự án web tĩnh (HTML, CSS, JS), bạn không cần cài đặt phức tạp.
-
-Cách 1: Mở trực tiếp file HTML
-
-Chỉ cần tìm đến file index.html (hoặc file HTML chính của bạn) trong thư mục dự án.
+Chỉ cần tìm đến file **index.html** (hoặc file HTML chính của bạn) trong thư mục dự án.
 
 Nháy đúp chuột vào file đó, trang web sẽ tự động mở lên bằng trình duyệt web mặc định của bạn.
 
-Cách 2: Sử dụng "Live Server" (Khuyên dùng cho phát triển) Nếu bạn sử dụng trình soạn thảo code như Visual Studio Code, cách tốt nhất là dùng extension "Live Server":
+**Cách 2:** Sử dụng **"Live Server"** (Khuyên dùng cho phát triển) Nếu bạn sử dụng trình soạn thảo code như Visual Studio Code, cách tốt nhất là dùng extension "Live Server":
 
 Cài đặt extension Live Server từ VS Code Marketplace.
 
-Sau khi cài đặt, bạn chỉ cần nhấn chuột phải vào file index.html và chọn "Open with Live Server".
+Sau khi cài đặt, bạn chỉ cần nhấn chuột phải vào file index.html và chọn **"Open with Live Server"**.
 
 Trang web sẽ tự động mở trong trình duyệt và tự động tải lại mỗi khi bạn lưu file, giúp việc code nhanh hơn rất nhiều.
+
+
+<img width="1897" height="910" alt="Screenshot 2025-11-17 014732" src="https://github.com/user-attachments/assets/df27829c-fcfb-4e1c-8003-ad9d49add66b" />
 
