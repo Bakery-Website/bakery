@@ -2,83 +2,292 @@
 // PHẦN 1: DỮ LIỆU GIẢ LẬP (MOCK DATA)
 // =======================================================
 
-// Khai báo một hằng số (const) tên 'PRODUCTS'.
-// Đây là một mảng (Array) chứa các đối tượng (Object) đại diện cho sản phẩm.
-// 'const' nghĩa là biến 'PRODUCTS' không thể được gán lại giá trị mới.
+// Khai báo một mảng hằng số (const) tên là PRODUCTS.
+// Đây là "cơ sở dữ liệu" giả lập của chúng ta, chứa danh sách tất cả sản phẩm.
+// Mỗi sản phẩm là một đối tượng (object) chứa thông tin: id, category, name, image, price.
 const PRODUCTS = [
-    // Mỗi đối tượng (trong dấu {}) đại diện cho một sản phẩm
-    { id: 'BREAD01', category: 'Bread', name: 'Bánh Mì Ngũ Cốc', image: 'images/bread01.jpg', price: 35000 },
-    { id: 'CAKE01', category: 'Cake', name: 'Bánh Kem Vani Dâu', image: 'images/cake01.jpg', price: 150000 },
-    { id: 'PASTRY01', category: 'Pastry', name: 'Croissant Bơ', image: 'images/pastry01.jpg', price: 30000 },
-    { id: 'COFFEE01', category: 'Coffee', name: 'Espresso Ý', image: 'images/coffee01.jpg', price: 40000 },
-    { id: 'TEA01', category: 'Tea', name: 'Trà Sữa Khoai Môn', image: 'images/tea01.jpg', price: 45000 },
+    { id: 'BR01', category: 'Bread', name: 'Purple Sweet Potato Loaf', image: 'images/bread/purples-s-potato.png', price: 3.5 },
+    { id: 'BR02', category: 'Bread', name: 'Blueberry Cream Cheese Bread', image: 'images/bread/blueberry-cream.png', price: 3 },
+    { id: 'BR03', category: 'Bread', name: 'Sorobo Bread', image: 'images/bread/sorobo.png', price: 2 },
+    { id: 'BR04', category: 'Bread', name: 'Taro Cream Bread', image: 'images/bread/taro-cream.png', price: 3 },
+    { id: 'BR05', category: 'Bread', name: 'Red Bean Bread', image: 'images/bread/red-bean.png', price: 3.2 },
+    { id: 'BR06', category: 'Bread', name: 'Milk Cream Bread', image: 'images/bread/milk-cream.png', price: 1.99 },
+    { id: 'BR07', category: 'Bread', name: 'Raisin Bread', image: 'images/bread/raisin.png', price: 1.2 },
+    { id: 'BR08', category: 'Bread', name: 'Potato Cheese Bread', image: 'images/bread/potato.png', price: 2.7 },
+    { id: 'BR09', category: 'Bread', name: 'Buttercream Bread', image: 'images/bread/buttercream.png', price: 2 },
+    { id: 'CK01', category: 'Cake', name: 'Green Tea Cloud Cake', image: 'images/cake/green-cloud.png', price: 20 },
+    { id: 'CK02', category: 'Cake', name: 'Strawberry Cloud Cake', image: 'images/cake/strawberry-cloud.png', price: 23 },
+    { id: 'CK03', category: 'Cake', name: 'Cloud Cake', image: 'images/cake/cloud.png', price: 16.99 },
+    { id: 'CK04', category: 'Cake', name: 'Cheesecake', image: 'images/cake/cheese.png', price: 19.87 },
+    { id: 'CK05', category: 'Cake', name: 'Tiramisu', image: 'images/cake/tiramisu.png', price: 21 },
+    { id: 'CK06', category: 'Cake', name: 'Triple Chocolate Mousse Cake', image: 'images/cake/chocolate.png', price: 29.99 },
+    { id: 'CK07', category: 'Cake', name: 'Peach Cream Piece', image: 'images/cake/peach.png', price: 23 },
+    { id: 'CK08', category: 'Cake', name: 'Orange Cream Piece', image: 'images/cake/orange.png', price: 23 },
+    { id: 'CK09', category: 'Cake', name: 'Chocolate Cloud Piece', image: 'images/cake/choco-pie.png', price: 21.6 },
+    { id: 'PTR01', category: 'Pastry', name: 'Croissant', image: 'images/pastry/croi.png', price: 6 },
+    { id: 'PTR02', category: 'Pastry', name: 'Strawberry Croissant', image: 'images/pastry/straw-croi.png', price: 6.2 },
+    { id: 'PTR03', category: 'Pastry', name: 'Chocolate Croissant', image: 'images/pastry/choco-croi.png', price: 6.2 },
+    { id: 'PTR04', category: 'Pastry', name: 'Almond Croissant', image: 'images/pastry/almond-croi.png', price: 6.2 },
+    { id: 'PTR05', category: 'Pastry', name: 'Caramel Apple Pie', image: 'images/pastry/caramel.png', price: 5 },
+    { id: 'PTR06', category: 'Pastry', name: 'Pain Au Chocolat', image: 'images/pastry/pain-au.png', price: 5 },
+    { id: 'PTR07', category: 'Pastry', name: 'Yuzu Pie', image: 'images/pastry/yuzu.png', price: 5},
+    { id: 'PTR08', category: 'Pastry', name: 'Apple Jam Mont Blanc Pastry', image: 'images/pastry/apple.png', price: 5.25 },
+    { id: 'PTR09', category: 'Pastry', name: 'Fruit Pastry', image: 'images/pastry/fruit.png', price: 5 },
+    { id: 'CF01', category: 'Coffee', name: 'Cafe Mocha', image: 'images/coffee/c-mocha.png', price: 12 },
+    { id: 'CF02', category: 'Coffee', name: 'Cafe Latte', image: 'images/coffee/c-latte.png', price: 12 },
+    { id: 'CF03', category: 'Coffee', name: 'Cappuccino', image: 'images/coffee/cappuccino.png', price: 12 },
+    { id: 'CF04', category: 'Coffee', name: 'Caramel Macchiato', image: 'images/coffee/macchiato.png', price: 12 },
+    { id: 'CF05', category: 'Coffee', name: 'Lavender Latte', image: 'images/coffee/laven-latte.png', price: 12 },
+    { id: 'CF06', category: 'Coffee', name: 'Vanialla Latte', image: 'images/coffee/vanil-latte.png', price: 12 },
+    { id: 'CF07', category: 'Coffee', name: 'Cafe Americano', image: 'images/coffee/c-americano.jpg', price: 12 },
+    { id: 'CF08', category: 'Coffee', name: 'Iced Cafe Mocha', image: 'images/coffee/iced-mocha.png', price: 10.9 },
+    { id: 'CF09', category: 'Coffee', name: 'Iced Cafe Latte', image: 'images/coffee/ice-latte.png', price: 10.9 },
+    { id: 'T01', category: 'Tea', name: 'Matcha Latte', image: 'images/tea/latte.png', price: 16.2 },
+    { id: 'T02', category: 'Tea', name: 'Iced Matcha Latte', image: 'images/tea/iced-latte.png', price: 16.2 },
+    { id: 'T03', category: 'Tea', name: 'Honey Lavender Matcha Latte', image: 'images/tea/honey-latte.png', price: 16.2 },
+    { id: 'T04', category: 'Tea', name: 'Ube Latte', image: 'images/tea/ube-latte.png', price: 18 },
+    { id: 'T05', category: 'Tea', name: 'Iced Ube Latte', image: 'images/tea/iced-ube-latte.png', price: 18 },
+    { id: 'T06', category: 'Tea', name: 'Iced Green Tea', image: 'images/tea/green-tea.png', price: 12 },
+    { id: 'T07', category: 'Tea', name: 'Iced Black Tea', image: 'images/tea/black-tea.png', price: 12 },
+    { id: 'T08', category: 'Tea', name: 'Hot Green Tea', image: 'images/tea/hot-tea.png', price: 10 },
+    { id: 'T09', category: 'Tea', name: 'Chamomile Tea', image: 'images/tea/cham-tea.png', price: 12 },
+
 ];
+
+// Khai báo một biến (let) tên là 'cart', khởi tạo là một mảng rỗng.
+// Biến này sẽ lưu trữ "trạng thái" của giỏ hàng, chứa các sản phẩm mà người dùng đã thêm vào.
+let cart = [];
 
 // =======================================================
 // PHẦN 2: CACHING CÁC THAM CHIẾU DOM (DOM REFERENCES)
 // =======================================================
-// Lưu trữ các phần tử DOM vào biến để tăng hiệu suất.
-// Thay vì tìm kiếm (query) DOM mỗi lần cần, chúng ta chỉ tìm 1 lần lúc tải trang.
+// Mục đích: Lấy các phần tử HTML (elements) từ trang web và lưu vào các biến.
+// Việc này giúp tăng hiệu suất vì chúng ta chỉ cần tìm kiếm (query) DOM 1 lần duy nhất khi trang tải,
+// thay vì tìm lại mỗi khi cần dùng đến.
 
-// --- Các khối nội dung SPA (Single Page Application) ---
-// 'getElementById' tìm 1 phần tử duy nhất dựa trên ID của nó.
+// --- Các khối nội dung chính của trang (cho Single Page Application - SPA) ---
+// Dùng document.getElementById() để tìm 1 phần tử DUY NHẤT có ID tương ứng.
 const mainContent = document.getElementById('main-content-area');
 const breadBlock = document.getElementById('bread');
 const pastryBlock = document.getElementById('pastry');
 const cakeBlock = document.getElementById('cake');
 const storyBlock = document.getElementById('story');
-const bannerBlock = document.getElementById('banner');
-const productGridArea = document.getElementById('product-grid-area'); // Khu vực tải sản phẩm
+const productGridArea = document.getElementById('product-grid-area'); // Khu vực sẽ chứa lưới sản phẩm
 
-// --- Breadcrumb ---
+// --- Thanh Breadcrumb (ví dụ: Home > Menu > Bread) ---
 const breadcrumbBar = document.getElementById('breadcrumbBar');
-// 'querySelector' tìm phần tử đầu tiên khớp với CSS selector.
+// Dùng document.querySelector() để tìm phần tử ĐẦU TIÊN khớp với CSS selector.
 const breadcrumbContent = document.querySelector('#breadcrumbBar .breadcrumb-content');
 
-// --- Navigation & Menu ---
-// 'querySelectorAll' tìm TẤT CẢ phần tử khớp, trả về một NodeList.
-const navLinks = document.querySelectorAll('.primary .nav-links li a');
-// Tìm link "Menu" bằng cách kết hợp CSS selector (tìm thẻ <a> có href chứa "menu-page").
-const menuLink = document.querySelector('.primary .nav-links li a[href*="menu-page"]'); 
-const sideMenu = document.getElementById('sideMenu');
-const overlay = document.getElementById('overlay');
-const hamburgerButton = document.getElementById('hamburger');
+// --- Navigation & Menu (Header chính và Side Menu) ---
+// Dùng document.querySelectorAll() để tìm TẤT CẢ các phần tử khớp, trả về một NodeList.
+const navLinks = document.querySelectorAll('.primary .nav-links li a'); // Lấy tất cả link <a> trong nav chính
+const menuLink = document.querySelector('.primary .nav-links li a[href*="menu-page"]'); // Tìm link "Menu"
+const sideMenu = document.getElementById('sideMenu'); // Menu trượt (dành cho mobile)
+const overlay = document.getElementById('overlay'); // Lớp mờ (dành cho side menu)
+const hamburgerButton = document.getElementById('hamburger'); // Nút 3 sọc
+
+// --- Cart Sidebar (Giỏ hàng trượt từ bên phải) ---
+// Cache (lưu) tất cả các phần tử liên quan đến giỏ hàng
+const cartToggleBtn = document.getElementById('cartToggleBtn'); // Nút icon giỏ hàng
+const cartSidebar = document.getElementById('cartSidebar'); // Toàn bộ khối giỏ hàng
+const cartCloseBtn = document.getElementById('cartCloseBtn'); // Nút đóng giỏ hàng (X)
+const cartOverlay = document.getElementById('cartOverlay'); // Lớp mờ (dành cho giỏ hàng)
+
+const cartBody = document.querySelector('.cart-sidebar .cart-body'); // Khu vực chứa các item trong giỏ hàng
+const cartTotalPriceEl = document.getElementById('cartTotalPrice'); // Phần tử hiển thị tổng tiền
+const cartItemCountEl = document.querySelector('.cart-item-count'); // "Số" màu đỏ trên icon giỏ hàng
 
 
 // =======================================================
 // PHẦN 3: ĐỊNH NGHĨA CÁC HÀM XỬ LÝ
 // =======================================================
-// Định nghĩa các hàm (functions) để tái sử dụng logic.
+// Định nghĩa các hàm (functions) sẽ thực hiện các tác vụ cụ thể.
 
-// --- SIDE MENU ---
+// --- XỬ LÝ SIDE MENU (MENU 3 SỌC) ---
 
 /**
- * Hiển thị side menu và lớp phủ (overlay).
- */
+ * Hàm mở Side Menu (menu trượt) và hiển thị lớp mờ.
+ */
 function openMenu() {
-    // 'if (sideMenu)' kiểm tra xem biến có tồn tại (khác null) không trước khi sử dụng.
-    if (sideMenu) sideMenu.classList.add('show'); // Thêm class 'show' để CSS hiển thị menu
-    if (overlay) overlay.classList.add('active'); // Thêm class 'active' để CSS hiển thị lớp mờ
-    if (hamburgerButton) hamburgerButton.style.opacity = '0'; // Ẩn nút 3 sọc
+    // Kiểm tra xem phần tử 'sideMenu' có tồn tại không (đã cache thành công ở PHẦN 2).
+    if (sideMenu) sideMenu.classList.add('show'); // Thêm class 'show' để CSS (styles.css) làm nó hiện ra.
+    if (overlay) overlay.classList.add('active'); // Thêm class 'active' để CSS hiện lớp mờ.
+    if (hamburgerButton) hamburgerButton.style.opacity = '0'; // Ẩn nút 3 sọc đi.
 }
 
 /**
- * Ẩn side menu và lớp phủ (overlay).
- */
+ * Hàm đóng Side Menu và ẩn lớp mờ.
+ */
 function closeMenu() {
-    if (sideMenu) sideMenu.classList.remove('show'); // Xóa class 'show' để ẩn menu
-    if (overlay) overlay.classList.remove('active'); // Xóa class 'active' để ẩn lớp mờ
-    if (hamburgerButton) hamburgerButton.style.opacity = '1'; // Hiện lại nút 3 sọc
+    if (sideMenu) sideMenu.classList.remove('show'); // Xóa class 'show' để CSS ẩn menu.
+    if (overlay) overlay.classList.remove('active'); // Xóa class 'active' để CSS ẩn lớp mờ.
+    if (hamburgerButton) hamburgerButton.style.opacity = '1'; // Cho nút 3 sọc hiện lại.
 }
 
-// --- SPA (SINGLE PAGE APPLICATION) ---
+
+// --- LOGIC XỬ LÝ GIỎ HÀNG (CART) ---
 
 /**
- * Cập nhật và hiển thị thanh breadcrumb.
+ * Hàm "Tổng" (Master Function) để cập nhật toàn bộ giỏ hàng.
+ * Mỗi khi có thay đổi (thêm, xóa, sửa), chỉ cần gọi hàm này.
+ */
+function updateCart() {
+    renderCartItems(); // 1. Vẽ lại danh sách sản phẩm trong giỏ hàng.
+    renderCartTotal(); // 2. Tính toán và hiển thị lại tổng tiền.
+    updateCartCount(); // 3. Cập nhật lại "số" trên icon giỏ hàng.
+}
+
+/**
+ * Hàm vẽ lại giao diện của các sản phẩm trong giỏ hàng.
+ */
+function renderCartItems() {
+    // Kiểm tra xem mảng 'cart' có rỗng không.
+    if (cart.length === 0) {
+        // Nếu rỗng, hiển thị thông báo.
+        cartBody.innerHTML = '<p>Your cart is empty.</p>';
+        return;
+    }
+
+    // Nếu giỏ hàng không rỗng:
+    // Dùng hàm .map() để lặp qua mảng 'cart'.
+    // Với mỗi 'item' trong 'cart', tạo ra một chuỗi HTML (template literal) cho item đó.
+    cartBody.innerHTML = cart.map(item => `
+        <div class="cart-item" data-id="${item.id}">
+            
+            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+            
+            <div class="cart-item-info">
+                <h4 class="cart-item-name">${item.name}</h4>
+                <div class="cart-item-controls">
+                    <button class="btn-qty-decrease"><img src="images/minus.png" alt="-"></button>
+                    <span class="cart-item-quantity">${item.quantity}</span>
+                    <button class="btn-qty-increase"><img src="images/plus.png" alt="+"></button>
+                    <button class="cart-item-remove"><img src="images/trash.png" alt="X"></button>
+                </div>
+            </div>
+
+            <div class="cart-item-price-total">
+                ${(item.price * item.quantity).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+            </div>
+            
+        </div>
+    `).join(''); // Dùng .join('') để nối tất cả các chuỗi HTML lại thành 1 chuỗi lớn.
+    // Ghi đè chuỗi HTML này vào 'cartBody'.
+}
+
+/**
+ * Hàm tính toán và hiển thị tổng số tiền.
+ */
+function renderCartTotal() {
+    // Dùng hàm .reduce() để tính tổng tiền.
+    // 'sum' là giá trị tích lũy (bắt đầu từ 0).
+    // 'item' là từng phần tử trong mảng 'cart'.
+    const total = cart.reduce((sum, item) => {
+        return sum + (item.price * item.quantity); // Cộng dồn (giá * số lượng) vào 'sum'.
+    }, 0); // 0 là giá trị khởi tạo của 'sum'.
+
+    // Dùng .toLocaleString() để định dạng số tiền (vd: $1,234.56).
+    cartTotalPriceEl.textContent = total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+}
+
+/**
+ * Hàm cập nhật "số" trên icon giỏ hàng.
+ */
+function updateCartCount() {
+        // Dùng .reduce() để tính tổng SỐ LƯỢNG (quantity) của tất cả item.
+    const totalCount = cart.reduce((sum, item) => {
+        return sum + item.quantity;
+    }, 0); // 0 là giá trị khởi tạo.
+
+    // 1. Cập nhật con số
+    cartItemCountEl.textContent = totalCount;
+
+    // 2. Hiển thị hoặc ẩn bằng cách thêm/xóa class 'visible'
+    if (totalCount > 0) {
+        // Nếu có hàng, thêm class 'visible' (CSS sẽ làm nó hiện ra với hiệu ứng).
+        cartItemCountEl.classList.add('visible');
+    } else {
+        // Nếu không có hàng, gỡ class 'visible' (CSS sẽ ẩn nó đi).
+        cartItemCountEl.classList.remove('visible');
+    }
+}
+
+/**
+ * (DATA) Hàm thêm sản phẩm vào mảng 'cart'.
+ * @param {string} productId - ID của sản phẩm cần thêm.
+ */
+function addToCart(productId) {
+    // 1. Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa.
+    // Dùng .find() để tìm item trong 'cart' có 'id' trùng với 'productId'.
+    const existingItem = cart.find(item => item.id === productId);
+
+    // 2. Nếu đã có (existingItem không phải null)
+    if (existingItem) {
+        existingItem.quantity++; // Chỉ tăng số lượng lên 1.
+    } else {
+        // 3. Nếu chưa có
+        // 3a. Tìm thông tin đầy đủ của sản phẩm từ mảng PRODUCTS.
+        const product = PRODUCTS.find(p => p.id === productId);
+        // 3b. Nếu tìm thấy sản phẩm
+        if (product) {
+            // 3c. Thêm sản phẩm mới vào mảng 'cart'.
+            // Dùng spread syntax ({ ...product }) để copy tất cả thuộc tính của 'product'
+            // và thêm thuộc tính 'quantity: 1'.
+            cart.push({ ...product, quantity: 1 });
+        }
+    }
+    // 4. Sau khi thay đổi dữ liệu, gọi hàm "Master" để cập nhật giao diện.
+    updateCart();
+}
+
+/**
+ * (DATA) Hàm xóa hoàn toàn một sản phẩm khỏi mảng 'cart'.
+ * @param {string} productId - ID của sản phẩm cần xóa.
+ */
+function removeFromCart(productId) {
+    // Dùng .filter() để tạo một mảng MỚI.
+    // Mảng mới này sẽ chứa tất cả 'item' KHÁC với 'productId' được truyền vào.
+    cart = cart.filter(item => item.id !== productId);
+
+    // Cập nhật giao diện.
+    updateCart();
+}
+
+/**
+ * (DATA) Hàm cập nhật số lượng (tăng/giảm) của một sản phẩm.
+ * @param {string} productId - ID của sản phẩm.
+ * @param {number} newQuantity - Số lượng mới.
+ */
+function updateCartQuantity(productId, newQuantity) {
+    // 1. Tìm sản phẩm trong giỏ hàng.
+    const itemInCart = cart.find(item => item.id === productId);
+
+    // 2. Nếu tìm thấy
+    if (itemInCart) {
+                // 3. Nếu số lượng mới là 0 hoặc âm
+        if (newQuantity <= 0) {
+                // Thì gọi hàm xóa sản phẩm.
+            removeFromCart(productId);
+        // 4. Nếu số lượng mới > 0
+        } else {
+            // Cập nhật số lượng cho sản phẩm đó.
+            itemInCart.quantity = newQuantity;
+            // Cập nhật giao diện.
+            updateCart();
+        }
+    }
+}
+// ===================================================
+// --- SPA (SINGLE PAGE APPLICATION) ---
+// Logic để thay đổi nội dung trang mà không cần tải lại.
+
+/**
+ * Cập nhật và hiển thị thanh breadcrumb.
  * @param {string} category - Tên category (Bread, Cake, ...)
  */
 function renderBreadcrumb(category) {
-    // Sử dụng template literals (dấu `) để chèn biến ${category} vào chuỗi HTML.
+    // Tạo chuỗi HTML bằng Template Literal (dấu `), cho phép chèn biến ${category}.
     const breadcrumbHtml = `
         <nav class="breadcrumb">
             <ul>
@@ -87,189 +296,219 @@ function renderBreadcrumb(category) {
                 <li>${category}</li>
             </ul>
         </nav>
-    `; 
-    
-    // Ghi đè nội dung HTML của phần tử breadcrumbContent.
+    `;
+
+    // Ghi đè nội dung HTML của 'breadcrumbContent' (đã cache ở PHẦN 2).
     if (breadcrumbContent) breadcrumbContent.innerHTML = breadcrumbHtml;
-    // Hiển thị thanh breadcrumb.
-    if (breadcrumbBar) breadcrumbBar.classList.remove('hidden'); 
-    
-    // Xóa gạch chân 'active-page' khỏi tất cả link nav.
-    navLinks.forEach(a => a.classList.remove('active-page'));
-    // Thêm gạch chân 'active-page' cho link "Menu".
-    if (menuLink) menuLink.classList.add('active-page'); 
+    // Hiển thị thanh breadcrumb bằng cách xóa class 'hidden'.
+    if (breadcrumbBar) breadcrumbBar.classList.remove('hidden');
+
+    // Xử lý gạch chân "active" cho link menu trên header:
+    // 1. Lặp qua TẤT CẢ các link nav.
+    navLinks.forEach(a => a.classList.remove('active-page')); // Xóa gạch chân của tất cả.
+    // 2. Thêm gạch chân CHỈ cho link "Menu".
+    if (menuLink) menuLink.classList.add('active-page');
 }
 
 /**
- * Tải và hiển thị nội dung cho một category sản phẩm cụ thể.
+ * Tải và hiển thị nội dung cho một category sản phẩm cụ thể (Bread, Cake...).
+ * Đây là hàm chính của logic SPA.
  * @param {string} category - Tên category (Bread, Cake, ...)
  */
 function loadCategory(category) {
-    // 1. Gọi hàm để tạo breadcrumb
+    // 1. Cập nhật breadcrumb (ví dụ: "Home > Menu > Bread").
     renderBreadcrumb(category);
 
-    // 2. Ẩn tất cả các khối nội dung tĩnh của trang chủ
+    // 2. Ẩn tất cả các khối nội dung tĩnh của trang chủ (Story, các khối giới thiệu...).
     if (breadBlock) breadBlock.classList.add('hidden');
     if (pastryBlock) pastryBlock.classList.add('hidden');
     if (cakeBlock) cakeBlock.classList.add('hidden');
     if (storyBlock) storyBlock.classList.add('hidden');
-    if (bannerBlock) bannerBlock.classList.add('hidden');
-    
-    // 3. Hiển thị khu vực (trống) sẽ chứa sản phẩm
+
+    // 3. Hiển thị khối 'productGridArea' (đây là khối rỗng để chuẩn bị chứa sản phẩm).
     if (productGridArea) productGridArea.classList.remove('hidden');
 
-    // 4. Cập nhật trạng thái 'active' cho thanh category (hiệu ứng phóng to)
-    const categoryLinks = document.querySelectorAll('.list a');
-    categoryLinks.forEach(link => {
-        // Lấy class đầu tiên (vd: 'bread')
-        const rawCategory = link.classList[0]; 
-        // Chuyển 'bread' thành 'Bread'
+    // 4. Cập nhật trạng thái 'active' cho thanh 5-icon category (hiệu ứng phóng to).
+    const categoryLinks = document.querySelectorAll('.list a'); // Lấy tất cả 5 icon.
+    categoryLinks.forEach(link => { // Lặp qua từng icon.
+        // Lấy tên class đầu tiên (vd: 'bread')
+        const rawCategory = link.classList[0];
+        // Chuyển 'bread' thành 'Bread' để so sánh.
         const linkCategory = rawCategory.charAt(0).toUpperCase() + rawCategory.slice(1);
-        
-        // Xóa 'category-active' (trạng thái phóng to) khỏi tất cả
+
+        // Xóa 'category-active' (trạng thái phóng to) khỏi TẤT CẢ icon.
         link.classList.remove('category-active');
-        // Chỉ thêm 'category-active' cho link được click
+        // Nếu tên category của icon này KHỚP với category đang tải
         if (linkCategory === category) {
-            link.classList.add('category-active');
+            link.classList.add('category-active'); // Thêm class 'active' cho 1 icon duy nhất.
         }
     });
 
-    // 5. Lọc mảng 'PRODUCTS' để chỉ lấy sản phẩm thuộc category này
+    // 5. Lọc dữ liệu: Lấy sản phẩm từ mảng PRODUCTS.
+    // Dùng .filter() để tạo mảng mới chỉ chứa các sản phẩm có 'category' khớp.
     const filteredProducts = PRODUCTS.filter(p => p.category === category);
-    
-    // Tạo HTML (mẫu) cho danh sách sản phẩm
+
+    // 6. Tạo chuỗi HTML cho lưới sản phẩm.
+    // Bắt đầu chuỗi HTML (khung lớn).
     let contentHtml = `
-        <section class="product-listing" style="min-height: 500px; padding: 40px; background-color: #FBF3E3;">
-            <h2 class="category-title my-overlock" style="font-size: 35px; color: #4C5332; margin-bottom: 30px;">
-                ${category} Collection
-            </h2>
-            <p style="font-family: 'Overlock', cursive; font-size: 18px;">
-                Đã tải danh mục <strong>${category}</strong>. Số sản phẩm tìm thấy: ${filteredProducts.length}.
-            </p>
-        </section>
-    `;
-    
-    // Đưa HTML vừa tạo vào khu vực sản phẩm
+        <section class="product-listing my-overlock">
+            <div class="product-grid">
+ `;
+
+    // Dùng .map() lặp qua mảng 'filteredProducts' để tạo HTML cho từng thẻ (card) sản phẩm.
+            const productCardsHtml = filteredProducts.map(product => `
+                <div class="product-card" data-id="${product.id}">
+                    <div class="product-image-container">
+                        <img src="${product.image}" alt="${product.name}" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-price">${product.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
+                        <button class="btn btn-add-to-cart">ADD TO CART
+                            <img src="images/cart.png" >
+                        </button>
+                    </div>
+                </div>
+                `).join(''); // Nối tất cả các thẻ (card) lại thành 1 chuỗi HTML.
+
+    // Thêm chuỗi HTML (các thẻ sản phẩm) vào "khung lớn".
+    contentHtml += productCardsHtml;
+
+    // Đóng các thẻ HTML của "khung lớn".
+    contentHtml += `
+      </div>
+    </section>
+  `;
+
+    // 7. Ghi đè toàn bộ HTML vừa tạo vào khối 'productGridArea'.
     if (productGridArea) productGridArea.innerHTML = contentHtml;
 }
 
 /**
- * Tải (reset) lại nội dung trang chủ SPA (gồm các khối story).
+ * Hàm tải (reset) lại nội dung trang chủ SPA (trang "Menu" ban đầu).
  */
 function loadHomePage() {
-    // 1. Ẩn breadcrumb (vì đang ở trang chủ, không cần)
+    // 1. Ẩn breadcrumb (vì đang ở trang chủ, không cần).
     if (breadcrumbBar) breadcrumbBar.classList.add('hidden');
 
-    // 2. Hiển thị lại các khối nội dung tĩnh
+    // 2. Hiển thị lại tất cả các khối nội dung tĩnh (Story, giới thiệu...).
     if (breadBlock) breadBlock.classList.remove('hidden');
     if (pastryBlock) pastryBlock.classList.remove('hidden');
     if (cakeBlock) cakeBlock.classList.remove('hidden');
     if (storyBlock) storyBlock.classList.remove('hidden');
-    if (bannerBlock) bannerBlock.classList.remove('hidden');
-    
-    // 3. Ẩn khu vực sản phẩm (vì đang ở trang chủ)
+
+    // 3. Ẩn khu vực lưới sản phẩm (vì đang ở trang chủ).
     if (productGridArea) productGridArea.classList.add('hidden');
-    
-    // 4. Reset trạng thái 'active' của thanh category
+
+    // 4. Reset trạng thái 'active' của 5-icon category (bỏ phóng to).
     document.querySelectorAll('.list a').forEach(link => {
         link.classList.remove('category-active');
     });
 
-    // 5. Đặt trạng thái 'active' cho link "Menu" trên header chính
-    navLinks.forEach(a => a.classList.remove('active-page'));
-    if (menuLink) menuLink.classList.add('active-page'); 
+    // 5. Đặt trạng thái 'active' (gạch chân) cho link "Menu" trên header chính.
+    navLinks.forEach(a => a.classList.remove('active-page')); // Xóa gạch chân của tất cả.
+    if (menuLink) menuLink.classList.add('active-page'); // Thêm cho link "Menu".
 }
 
 
 // =======================================================
 // PHẦN 4: KHỞI TẠO CÁC TRÌNH LẮNG NGHE SỰ KIỆN
 // =======================================================
-// Gán các hàm xử lý cho sự kiện (click, scroll) sau khi DOM đã tải xong.
+// Gán các hàm (đã định nghĩa ở PHẦN 3) vào các sự kiện (click, scroll...).
 
-// 'DOMContentLoaded' là sự kiện bắn ra khi HTML đã được tải và phân tích xong.
-// Code bên trong chỉ chạy sau khi trang đã sẵn sàng.
+// Thêm một trình lắng nghe sự kiện 'DOMContentLoaded' cho 'document'.
+// Code bên trong chỉ chạy sau khi toàn bộ tài liệu HTML đã được tải và phân tích xong.
+// Đảm bảo rằng tất cả các phần tử (như 'hamburgerButton') đã tồn tại.
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- I. SỰ KIỆN SIDE MENU ---
-    const closeButton = document.getElementById('closeBtn'); // Cache nút đóng
-    // Gán hàm 'openMenu' cho sự kiện 'click' của nút 3 sọc
-    if (hamburgerButton) hamburgerButton.addEventListener('click', openMenu);
-    // Gán hàm 'closeMenu' cho sự kiện 'click' của nút X
-    if (closeButton) closeButton.addEventListener('click', closeMenu);
-    // Gán hàm 'closeMenu' cho sự kiện 'click' của lớp phủ
-    if (overlay) overlay.addEventListener('click', closeMenu); 
 
-    
-    // --- II. SỰ KIỆN STICKY HEADER ---
-    const stickyHeader = document.getElementById('sticky-header'); // Cache header
+    // --- I. SỰ KIỆN SIDE MENU (MENU 3 SỌC) ---
+    const closeButton = document.getElementById('closeBtn'); // Cache nút X (close)
+    
+    // Nếu nút 3 sọc tồn tại, gán hàm 'openMenu' cho sự kiện 'click' của nó.
+    if (hamburgerButton) hamburgerButton.addEventListener('click', openMenu);
+    // Nếu nút X tồn tại, gán hàm 'closeMenu' cho sự kiện 'click' của nó.
+    if (closeButton) closeButton.addEventListener('click', closeMenu);
+    // Nếu lớp mờ tồn tại, gán hàm 'closeMenu' khi click vào lớp mờ.
+    if (overlay) overlay.addEventListener('click', closeMenu);
+
+
+    // --- II. SỰ KIỆN STICKY HEADER (HEADER DÍNH KHI CUỘN) ---
+    const stickyHeader = document.getElementById('sticky-header'); // Cache header dính
     if (stickyHeader) {
-        // Gán sự kiện 'scroll' cho cửa sổ (window)
-        window.addEventListener('scroll', function() {
-            const scrollThreshold = 100; // Ngưỡng cuộn (px)
-            // 'window.pageYOffset' là vị trí cuộn dọc hiện tại
+        // Gán sự kiện 'scroll' cho toàn bộ cửa sổ (window).
+        window.addEventListener('scroll', function () {
+            const scrollThreshold = 100; // Ngưỡng cuộn: 100px từ đỉnh
+            
+            // 'window.pageYOffset' là vị trí cuộn dọc hiện tại.
             if (window.pageYOffset > scrollThreshold) {
                 // Nếu đã cuộn qua 100px
-                stickyHeader.classList.add('visible'); // Hiện header
+                stickyHeader.classList.add('visible'); // Hiện header dính
                 stickyHeader.classList.remove('hidden');
             } else {
                 // Nếu cuộn ngược lại (gần đầu trang)
-                stickyHeader.classList.add('hidden'); // Ẩn header
+                stickyHeader.classList.add('hidden'); // Ẩn header dính
                 stickyHeader.classList.remove('visible');
-                closeMenu(); // Tự động đóng side menu
+                closeMenu(); // Tự động đóng side menu (nếu nó đang mở)
             }
         });
     }
-    
-    // --- III. SỰ KIỆN THANH SEARCH ---
-    const searchWrapper = document.querySelector('.search .search-bar-wrapper');
-    const searchInput = searchWrapper ? searchWrapper.querySelector('.search-input') : null;
-    const searchIconBtn = searchWrapper ? searchWrapper.querySelector('.search-toggle-btn') : null; 
+
+    // --- III. SỰ KIỆN THANH SEARCH (TÌM KIẾM) ---
+    const searchWrapper = document.querySelector('.search .search-bar-wrapper'); // Toàn bộ khối search
+    const searchInput = searchWrapper ? searchWrapper.querySelector('.search-input') : null; // Ô input
+    const searchIconBtn = searchWrapper ? searchWrapper.querySelector('.search-toggle-btn') : null; // Nút icon kính lúp
+
 
     // Chỉ chạy nếu tìm thấy đủ 3 thành phần
     if (searchWrapper && searchInput && searchIconBtn) {
-        
+
         // Gán sự kiện 'click' cho icon kính lúp
-        searchIconBtn.addEventListener('click', function(e) {
-            // 'e.preventDefault()' ngăn hành vi mặc định (ví dụ: submit form nếu nút là type="submit")
-            e.preventDefault(); 
-            
-            // 'toggle' tự động thêm/xóa class. Trả về 'true' nếu class được thêm.
-            const isActive = searchWrapper.classList.toggle('active'); 
-            
-            if (isActive) { // Nếu vừa bật (thêm class)
-                // 'setTimeout' chạy code sau một khoảng trễ (400ms)
+        searchIconBtn.addEventListener('click', function (e) {
+            // 'e.preventDefault()' ngăn hành vi mặc định (ví dụ: submit form).
+            e.preventDefault();
+
+            // 'toggle' tự động thêm/xóa class 'active'.
+            // 'isActive' sẽ là 'true' nếu class vừa được THÊM, 'false' nếu vừa được XÓA.
+            const isActive = searchWrapper.classList.toggle('active');
+
+            if (isActive) { // Nếu thanh search vừa được BẬT (thêm class)
+                // 'setTimeout' chạy code sau một khoảng trễ (400ms).
+                // Cần trễ vì phải chờ hiệu ứng (transition) 0.4s trong CSS chạy xong.
                 setTimeout(() => {
-                    searchInput.focus(); // Tự động trỏ con trỏ chuột vào ô input
-                }, 400); // 400ms khớp với transition trong CSS
+                    searchInput.focus(); // Tự động trỏ con trỏ chuột vào ô input.
+                }, 400);
             }
         });
-        
-        // Gán sự kiện 'click' cho toàn bộ tài liệu (document) để xử lý "click outside"
-        document.addEventListener('click', function(e) {
-            // 'e.target' là phần tử bị click
-            
-            // Nếu click KHÔNG nằm trong 'searchWrapper' VÀ 'searchWrapper' đang mở
+
+        // Xử lý "click outside" (bấm ra ngoài để đóng thanh search).
+        // Gán sự kiện 'click' cho toàn bộ tài liệu (document).
+        document.addEventListener('click', function (e) {
+            // 'e.target' là phần tử bị click.
+
+            // Điều kiện:
+            // 1. KHÔNG click vào bên trong 'searchWrapper' (!searchWrapper.contains(e.target))
+            // 2. VÀ 'searchWrapper' đang mở (có class 'active')
             if (!searchWrapper.contains(e.target) && searchWrapper.classList.contains('active')) {
-                searchWrapper.classList.remove('active'); // Đóng thanh search
+                searchWrapper.classList.remove('active'); // Đóng thanh search.
             }
         });
     }
-    
-    // --- IV. SỰ KIỆN ĐIỀU HƯỚNG SPA ---
-    
-    // 1. Gán sự kiện cho 5 icon (Category Bar)
-    // Lấy tất cả link <a> trong '.list' và lặp qua chúng
+
+    // --- IV. SỰ KIỆN ĐIỀU HƯỚNG SPA (SPA NAVIGATION) ---
+
+    // 1. Gán sự kiện cho 5 icon category (Bread, Cake...)
+    // Lấy tất cả link (thẻ <a>) trong '.list' và lặp qua chúng
     document.querySelectorAll('.list a').forEach(link => {
         // Gán sự kiện 'click' cho mỗi link
         link.addEventListener('click', (e) => {
-            e.preventDefault(); // Ngăn trình duyệt tải lại trang (thẻ <a>)
-            
+            e.preventDefault(); // Ngăn trình duyệt tải lại trang (hành vi mặc định của <a>).
+
             // Lấy class đầu tiên của link (ví dụ: 'bread', 'cake')
-            const categoryClass = link.classList[0]; 
+            const categoryClass = link.classList[0];
             // Chuyển chữ cái đầu thành viết hoa (ví dụ: 'bread' -> 'Bread')
             const categoryName = categoryClass.charAt(0).toUpperCase() + categoryClass.slice(1);
-            
-            // Gọi hàm tải nội dung với tên category đã chuẩn hóa
+
+            // Gọi hàm tải nội dung SPA với tên category đã chuẩn hóa.
             loadCategory(categoryName);
         });
     });
@@ -279,51 +518,160 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         // Kiểm tra xem link có phải là link "Menu" không
         if (link.textContent.trim() === 'Menu' && link.href.includes('menu-page')) {
-             // Gán sự kiện 'click'
-             link.addEventListener('click', (e) => {
-                 e.preventDefault(); // Ngăn tải lại trang
-                 loadHomePage(); // Gọi hàm reset về trang chủ SPA
-             });
+            // Gán sự kiện 'click'
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Ngăn tải lại trang
+                loadHomePage(); // Gọi hàm reset về trang chủ SPA.
+            });
         }
     });
 
-    // 3. Gán sự kiện cho các nút "Discover more"
-    // Định nghĩa danh sách các nút và category tương ứng
+    // 3. Gán sự kiện cho các nút "Discover more" (trong các khối giới thiệu)
+    // Định nghĩa danh sách các nút và category tương ứng của chúng.
     const discoverButtons = [
         { selector: '.btn.bread-link', category: 'Bread' },
         { selector: '.btn.pastry-link', category: 'Pastry' },
         { selector: '.btn.cake-link', category: 'Cake' }
     ];
 
-    // Cache lại thanh category để dùng cho việc cuộn (scroll)
-    const categoryBar = document.querySelector('.category-bar'); 
+    // Cache lại thanh 5-icon (để cuộn lên)
+    const categoryBar = document.querySelector('.category-bar');
 
     // Lặp qua danh sách 3 nút
     discoverButtons.forEach(item => {
-        // Tìm nút trong tài liệu dựa trên selector
+        // Tìm nút trong tài liệu dựa trên CSS selector
         const button = document.querySelector(item.selector);
-        
+
         if (button) { // Nếu nút tồn tại
             // Gán sự kiện 'click' cho nút
             button.addEventListener('click', (e) => {
                 e.preventDefault(); // Ngăn hành vi mặc định
-                
-                // 1. Tải nội dung category
+
+                // 1. Tải nội dung category tương ứng (ví dụ: 'Bread')
                 loadCategory(item.category);
-                
-                // 2. Cuộn (scroll) lên
-                if (categoryBar) { // Kiểm tra xem thanh category có tồn tại không
+
+                // 2. Cuộn (scroll) mượt lên thanh 5-icon category
+                if (categoryBar) { 
                     // Yêu cầu trình duyệt cuộn đến 'categoryBar'
                     categoryBar.scrollIntoView({
                         behavior: 'smooth', // Cuộn mượt
-                        block: 'start'      // Căn lề trên cùng của 'categoryBar' với lề trên của viewport
+                        block: 'start'      // Căn lề trên cùng của 'categoryBar' với lề trên của màn hình
                     });
                 }
             });
         }
     });
-    
-    // 4. Khởi chạy trang (Hiển thị nội dung trang chủ SPA khi tải)
-    // Đây là hàm chạy đầu tiên, thiết lập trạng thái ban đầu của trang.
+
+    // --- V. SỰ KIỆN GIỎ HÀNG (CART) ---
+
+    // 1. BẮT SỰ KIỆN "ADD TO CART" (THÊM VÀO GIỎ)
+    // Dùng "Event Delegation" (Ủy thác sự kiện).
+    // Thay vì gán sự kiện cho từng nút (tốn kém), ta gán 1 sự kiện cho khối CHA ('productGridArea').
+    // Các nút "ADD TO CART" được tạo động (bởi 'loadCategory') nên phải dùng kỹ thuật này.
+    if (productGridArea) {
+        productGridArea.addEventListener('click', (e) => {
+            // 1. Kiểm tra xem phần tử BỊ CLICK (e.target) có nằm BÊN TRONG một nút "ADD TO CART" không.
+            // 'e.target.closest(...)' sẽ tìm chính nó hoặc cha gần nhất khớp với selector.
+            const cartButton = e.target.closest('.btn-add-to-cart');
+            
+            // 2. Nếu đúng là bấm vào nút "ADD TO CART" (cartButton không phải null)
+            if (cartButton) {
+                // 3. Lấy thẻ (card) sản phẩm cha gần nhất.
+                const productCard = e.target.closest('.product-card');
+                if (productCard) {
+                    // 4. Lấy 'productId' từ 'data-id' của thẻ (card) sản phẩm.
+                    const productId = productCard.dataset.id;
+                    // 5. Gọi hàm thêm vào giỏ hàng.
+                    addToCart(productId);
+                    // 6. (Tùy chọn) Tự động mở giỏ hàng để người dùng thấy.
+                    openCart(); 
+                }
+            }
+        });
+    }
+
+    // 2. SỰ KIỆN MỞ/ĐÓNG GIỎ HÀNG (CART SIDEBAR)
+    // (Định nghĩa 2 hàm trợ giúp nhỏ)
+    function openCart() {
+        if (cartSidebar) cartSidebar.classList.add('active'); // Hiện giỏ hàng
+        if (cartOverlay) cartOverlay.classList.add('active'); // Hiện lớp mờ
+    }
+
+    function closeCart() {
+        if (cartSidebar) cartSidebar.classList.remove('active'); // Ẩn giỏ hàng
+        if (cartOverlay) cartOverlay.classList.remove('active'); // Ẩn lớp mờ
+    }
+
+    // (Gán các hàm này vào sự kiện click)
+    // (Các biến cartToggleBtn, cartCloseBtn, cartOverlay đã được cache ở PHẦN 2)
+    if (cartToggleBtn) { // Click icon giỏ hàng
+        cartToggleBtn.addEventListener('click', openCart);
+    }
+    if (cartCloseBtn) { // Click nút X (close)
+        cartCloseBtn.addEventListener('click', closeCart);
+    }
+    if (cartOverlay) { // Click vào lớp mờ
+        cartOverlay.addEventListener('click', closeCart);
+    }
+
+    // 3. BẮT SỰ KIỆN BÊN TRONG GIỎ HÀNG (Tăng/Giảm/Xóa)
+    // Dùng "Event Delegation" một lần nữa vì các nút +, -, X được tạo động.
+    // Gán 1 sự kiện 'click' cho toàn bộ 'cartSidebar'.
+    if (cartSidebar) {
+        
+        // Dùng Event Delegation cho tất cả các nút
+        cartSidebar.addEventListener('click', (e) => {
+            const target = e.target; // Phần tử được click (có thể là <img> hoặc <button>)
+
+            // Dùng .closest() để tìm đúng nút CHA (phòng trường hợp bấm trúng <img> bên trong)
+
+            // (Tìm nút cha gần nhất, phòng trường hợp bấm trúng <img>)
+            const removeBtn = target.closest('.cart-item-remove'); // Nút thùng rác
+            const increaseBtn = target.closest('.btn-qty-increase'); // Nút +
+            const decreaseBtn = target.closest('.btn-qty-decrease'); // Nút -
+            
+            // Tìm 'cart-item' (sản phẩm) cha gần nhất
+            const cartItem = target.closest('.cart-item');
+            if (!cartItem) return;// Nếu bấm ra ngoài (không phải 3 nút trên, ví dụ bấm vào tên) thì dừng hàm.
+            
+            // Lấy 'productId' từ 'data-id' của 'cartItem'.
+            const productId = cartItem.dataset.id;
+            
+            // Lấy thông tin item từ mảng 'cart' (để lấy số lượng hiện tại).
+            const item = cart.find(i => i.id === productId);
+            if (!item) return; // Không tìm thấy, dừng hàm.
+
+            // 1. Nếu bấm nút XÓA (Thùng rác)
+            if (removeBtn) {
+                removeFromCart(productId); // Gọi hàm xóa
+                return; // Dừng xử lý
+            }
+
+            // 2. Nếu bấm nút TĂNG (+)
+            if (increaseBtn) {
+                // Gọi hàm cập nhật với số lượng + 1
+                updateCartQuantity(productId, item.quantity + 1);
+                return; // Dừng xử lý
+            }
+
+            // 3. Nếu bấm nút GIẢM (-)
+            if (decreaseBtn) {
+                // Gọi hàm cập nhật với số lượng - 1
+                // (Hàm 'updateCartQuantity' sẽ tự động xóa nếu số lượng về 0)
+                updateCartQuantity(productId, item.quantity - 1);
+                return; // Dừng xử lý
+            }
+        });
+        
+        // (Chúng ta không cần sự kiện 'change' nữa vì đã bỏ ô input)
+    }
+
+    // --- VI. KHỞI CHẠY TRANG ---
+    // Đây là 2 hàm chạy đầu tiên ngay sau khi DOM tải xong.
+    
+    // 1. Tải nội dung trang chủ SPA (hiện khối Story, ẩn lưới sản phẩm...)
     loadHomePage();
+    
+    // 2. Cập nhật số lượng giỏ hàng (để đảm bảo nó là 0 khi tải trang, hoặc lấy từ localStorage sau này)
+    updateCartCount();
 });
