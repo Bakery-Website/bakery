@@ -10,7 +10,7 @@
 ## 1. Giới thiệu môn học
 * **Tên môn học:** Internet và công nghệ web
 * **Mã môn học:** IE104
-* **Mã lớp:** IE104.N11.CNCL
+* **Mã lớp:** IE104.Q12.CNVN
 * **Giảng viên:** Võ Tấn Khoa
 
 ---
