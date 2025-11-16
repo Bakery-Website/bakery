@@ -317,15 +317,13 @@ nav.primary {
 .promo-image {
   flex: 1; 
   min-width: 0; 
-  /* Xóa height và display: flex, 
-     để flexbox tự động 'stretch' (kéo dãn) nó */
 }
 
 .promo-image img {
   width: 100%;
-  height: 100%; /* THAY ĐỔI: Buộc ảnh cao 100% bằng cột text */
+  height: 100%; 
   display: block;
-  object-fit: cover; /* THÊM VÀO: Tự động cắt ảnh vừa khung, không bị méo */
+  object-fit: cover; /* Tự động cắt ảnh vừa khung, không bị méo */
 }
 
 
@@ -361,7 +359,7 @@ nav.primary {
   max-width: 600px; 
 }
 
-/* SỬA LẠI: Thanh gạch ngang trang trí */
+/* Thanh gạch ngang trang trí */
 .promo-text .divider {
   width: 80px;
   height: 9px;
@@ -376,7 +374,7 @@ nav.primary {
   background-color: #FFEDCB; 
   /* Viền hình thoi */
   border: 10px solid #FBF3E3;
-  /* THAY ĐỔI: Position: Inside (để viền nằm bên trong 60px) */
+  /* Position: Inside (để viền nằm bên trong 60px) */
   box-sizing: border-box;
   transform: rotate(45deg); 
   position: absolute;
@@ -426,7 +424,7 @@ nav.primary {
 
 /* Tạo khoảng cách cho story-container đầu tiên */
 .story-container:first-of-type {
-  padding-top: 80px; /* Thêm khoảng đệm trên */
+  padding-top: 120px; /* Thêm khoảng đệm trên */
 }
 
 
@@ -436,13 +434,13 @@ nav.primary {
     /* Tăng khoảng cách giữa các cột */
     gap: 100px; 
     margin-bottom: 50px;
-
+    margin-top: 100px;
+  
 }
 
 .story-text {
     flex: 1;
     font-family: 'Overlock', cursive;
-    /* Cập nhật thông số font từ Figma */
     font-size: 20px;
     line-height: 45px;
     text-align: justify;
@@ -451,7 +449,6 @@ nav.primary {
 
 .story-text h2 {
     font-family: 'Overlock', cursive;
-
     font-size: 64px;
     line-height: 45px;
     color: #4C5332;
@@ -502,7 +499,6 @@ nav.primary {
     line-height: 45px;
     text-align: justify;
     color: #4C5332;
-    /* Cập nhật max-width từ Figma */
     max-width: 1289px;
     margin: 0 auto; 
 }
@@ -769,6 +765,166 @@ nav.primary {
         text-align: center;
     }
 }
+
+/*=========================================
+ ----- PHẦN SPECIAL APPRECIATION (ĐÃ SỬA) -----
+=========================================*/
+.special-appreciation {
+    background-color: #FFEDCA; /* Màu nền be */
+    padding: 60px 0 60px 0; /* Đệm trên/dưới (Sửa lỗi khoảng trống) */
+    position: relative; 
+    margin-top: 60px; /* Khoảng cách với phần Who We Are */
+    margin-bottom: 60px;/*Khoảng cách với phần Find a location ở dưới*/
+}
+
+/* Vẽ hình thoi (Giống code cũ) */
+.special-appreciation::before {
+    content: '';
+    width: 60px;  
+    height: 60px; 
+    background-color: #FFEDCB; 
+    border: 10px solid #FBF3E3; 
+    box-sizing: border-box;
+    transform: rotate(45deg); 
+    position: absolute;
+    left: 50%;
+    margin-left: -30px; 
+    top: -30px; 
+    z-index: 5;
+}
+
+/* Container MỚI */
+.appreciation-container {
+    max-width: 1290px; 
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* Row MỚI (Tái sử dụng style từ .story-row) */
+.appreciation-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Cột Text MỚI */
+.appreciation-text {
+    flex: 1.5; /* Cho text rộng hơn */
+    font-family: 'Overlock', cursive;
+    color: #4C5332;
+}
+
+/* Cột Image MỚI */
+.appreciation-image {
+    flex: 1; /* Cho ảnh hẹp hơn */
+    min-width: 0;
+}
+
+.appreciation-image img {
+    width: 100%;
+    max-width: 535px; /* Giới hạn kích thước ảnh */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Canh giữa ảnh */
+    border-radius: 30px; /* Yêu cầu bo góc 30px */
+}
+
+/* Style cho chữ (dùng line-height 1.8 thay vì 45px) */
+.appreciation-text p {
+    font-size: 20px;
+    line-height: 1.8; /* Dùng 1.8 cho dễ đọc */
+    text-align: left; /* Canh trái */
+    margin: 0;
+}
+
+/* Responsive cho section MỚI */
+@media (max-width: 768px) {
+    .appreciation-row {
+        flex-direction: column; /* Xếp chồng */
+    }
+}
+
+/*=========================================
+  ----- KHỐI BANNER TÌM CỬA HÀNG ----- 
+  =========================================*/
+/* vỏ bọc bên ngoài */
+#banner {
+  position: relative;
+  background-color: #FBF3E3;
+  padding: 0;
+  border-radius: 8px;
+}
+
+/* khối chứa ảnh nền và nội dung */
+.banner-wrap {
+  background-image: url('images/shoppic.png');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  height: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* tiêu đề */
+.banner-title {
+  font-size: 60px;
+  color: #ffffff;
+  font-weight: 900;
+  margin: 0 0 30px 0;
+  z-index: 2;
+  font-family: 'Taviraj', serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;
+}
+
+/* nút */
+.banner-btn {
+  background-color: #F7E8C3;
+  color: #000000;
+  font-size: 30px;
+  font-family: 'Taviraj', serif;
+  padding: 15px 100px;
+  border-radius: 20px;
+  font-weight: 900;
+  z-index: 2;
+  margin-top: 0;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* hover cho nút */
+.banner-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: none;
+  box-shadow: none;
+  border-color: #000000;
+  border-style: solid;
+}
+
+/* responsive cho banner */
+@media (max-width: 768px) {
+  .banner-wrap {
+    height: 300px;
+  }
+
+  .banner-title {
+    font-size: 35px;
+  }
+
+  .banner-btn {
+    font-size: 18px;
+    padding: 10px 25px;
+  }
+}
+
 
 /*=========================================
 ----- PHẦN FOOTER -----
