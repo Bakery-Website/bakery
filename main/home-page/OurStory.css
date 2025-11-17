@@ -1,0 +1,125 @@
+/* Phần Our Story */
+
+.OurStory{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  gap:2rem;
+  background-color: #FBF3E3;
+  font-family: 'Overlock', cursive;
+}
+
+.OurStory-content{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 5rem;
+}
+
+.OurStory-content h2{
+  font-size: 5rem;
+  text-align: center;
+  color: #972828;
+}
+/* Chỉnh hình mờ */
+.content-story {
+  position: relative;
+}
+
+.cherrycake{
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.05; 
+  pointer-events: none;
+}
+
+.OurStory-img{
+  margin: 1rem;
+  flex: 1;
+}
+.OurStory-img img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.OurStory > div p{
+  font-size: 2rem;
+  line-height: 1.8;
+  letter-spacing: 0.2rem;
+  margin-top: 1rem;
+  text-align: justify;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+
+ /* 1. Chuyển container chính sang layout cột */
+ .OurStory {
+ flex-direction: column; 
+ align-items: center;  /* Căn giữa các cột theo chiều ngang */
+ gap: 40px;  /* Tăng khoảng cách dọc giữa các cột */
+ }
+
+ /* 2. Cho tất cả các cột chiếm 90% chiều rộng và căn giữa */
+ .OurStory-content, .OurStory-img{
+  width: 90%;    
+  max-width: 350px;  
+  align-items: center;  /* Căn giữa nội dung bên trong cột (logo, text) */
+  text-align: center; /* Căn giữa tất cả chữ */
+  margin: 0; 
+ }
+ .OurStory-content{
+  padding-left: 0;
+}
+.OurStory-content h2{
+  font-size: 2rem;
+
+}
+.OurStory > div p{
+  font-size: 1.5em;
+  line-height: 1.4;
+  letter-spacing: 0.1rem;
+  margin-top: 1em;
+  text-align: justify;
+}
+
+}
+@media screen and (max-width: 768px) {
+  .discover-section {
+    margin: 1em 0.5em; /* Margin rất nhỏ để tận dụng diện tích màn hình */
+    padding: 2em 1em; /* Giảm padding trong */
+  }
+
+  .passion-title {
+    gap: 8px; /* Giảm khoảng cách giữa icon và text */
+    margin-bottom: 15px;
+  }
+
+  .passion-text {
+    font-size: 18px; /* Giảm size chữ tiêu đề phụ */
+    letter-spacing: 1px;
+  }
+
+  .discover-text {
+    font-size: 24px; /* Giảm mạnh size chữ chính để không bị vỡ layout */
+    line-height: 1.3; /* Giảm độ cao dòng */
+    margin-bottom: 20px;
+  }
+
+  .egg-icon {
+    width: 30px; /* Thu nhỏ icon trứng */
+  }
+  
+  .sparkle-icon {
+    width: 20px; /* Thu nhỏ icon lấp lánh */
+  }
+}
