@@ -47,7 +47,7 @@ nav.primary {
   height: 67dvh;
   overflow: hidden;
   color: white;
-  background-image: url('/main/images/aboutus/HeaderBackground.png');
+  background-image: url('/images/aboutus/HeaderBackground.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -861,7 +861,7 @@ nav.primary {
 
 /* khối chứa ảnh nền và nội dung */
 .banner-wrap {
-  background-image: url('/main/images/aboutus/shoppic.png');
+  background-image: url('/images/aboutus/shoppic.png');
   background-size: cover;
   background-position: center 35%;
   background-repeat: no-repeat;
@@ -933,7 +933,7 @@ nav.primary {
 ----- PHẦN FOOTER -----
 =========================================*/
 footer {
-  background-image: url('/main/images/aboutus/FooterBackground.jpg');
+  background-image: url('/images/aboutus/FooterBackground.jpg');
   background-size: cover;
 }
 

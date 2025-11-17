@@ -21,7 +21,7 @@ main {
   height: 67dvh;
   overflow: hidden;
   color: white;
-  background-image: url('/main/images/menu/b1-small.jpg');
+  background-image: url('/images/menu/b1-small.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -807,7 +807,7 @@ main {
 
 /* khối chứa ảnh nền và nội dung */
 .banner-wrap {
-  background-image: url('/main/images/menu/shoppic.png');
+  background-image: url('/images/menu/shoppic.png');
   background-size: cover;
   background-position: center 35%;
   background-repeat: no-repeat;
@@ -982,7 +982,7 @@ main {
 ----- PHẦN FOOTER -----
 =========================================*/
 footer {
-  background-image: url('/main/images/menu/FooterBackground.jpg');
+  background-image: url('/images/menu/FooterBackground.jpg');
   background-size: cover;
 
 }

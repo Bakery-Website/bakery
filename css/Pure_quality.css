@@ -71,7 +71,7 @@
 .Pure-content p::before {
     content: ''; 
     
-    background-image: url('/main/images/home/bread.png'); 
+    background-image: url('/images/home/bread.png'); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
