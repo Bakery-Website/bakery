@@ -48,7 +48,9 @@
 .bread-card,
 .cake-card,
 .pastry-card {
-    flex: 1 1 300px; 
+    flex: 1 1 300px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     max-width: 300px;
     height: auto;
     background-color: #fff;

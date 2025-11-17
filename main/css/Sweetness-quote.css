@@ -16,7 +16,7 @@
 .Sweetness-quote-section::before {
     content: '';
     position: absolute;
-    background-image: url('images/caramel.png');
+    background-image: url('/main/images/home/caramel.png');
     background-repeat: no-repeat;
     background-position: top left;
     background-size: contain;
@@ -91,7 +91,7 @@
     top: 0; 
     left: 0;
 
-    background-image: url('images/tiramisu.png');
+    background-image: url('/main/images/home/tiramisu.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

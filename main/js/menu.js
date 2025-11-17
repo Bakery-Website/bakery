@@ -110,10 +110,10 @@ function renderCartItems() {
             <div class="cart-item-info">
                 <h4 class="cart-item-name">${item.name}</h4>
                 <div class="cart-item-controls">
-                    <button class="btn-qty-decrease"><img src="images/minus.png" alt="-"></button>
+                    <button class="btn-qty-decrease"><img src="images/menu/minus.png" alt="-"></button>
                     <span class="cart-item-quantity">${item.quantity}</span>
-                    <button class="btn-qty-increase"><img src="images/plus.png" alt="+"></button>
-                    <button class="cart-item-remove"><img src="images/trash.png" alt="X"></button>
+                    <button class="btn-qty-increase"><img src="images/menu/plus.png" alt="+"></button>
+                    <button class="cart-item-remove"><img src="images/menu/trash.png" alt="X"></button>
                 </div>
             </div>
 
@@ -315,7 +315,7 @@ function loadCategory(category) {
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-price">${product.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
                         <button class="btn btn-add-to-cart">ADD TO CART
-                            <img src="images/cart.png" >
+                            <img src="images/menu/cart.png" >
                         </button>
                     </div>
                 </div>
@@ -354,10 +354,6 @@ function loadHomePage() {
     document.querySelectorAll('.list a').forEach(link => {
         link.classList.remove('category-active');
     });
-
-    // 5. Đặt trạng thái 'active' (gạch chân) cho link "Menu" trên header chính.
-    navLinks.forEach(a => a.classList.remove('active-page')); // Xóa gạch chân của tất cả.
-    if (menuLink) menuLink.classList.add('active-page'); // Thêm cho link "Menu".
 }
 
 

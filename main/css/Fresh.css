@@ -69,7 +69,7 @@
 
     content: '';
 
-    background-image: url("images/sponge-cake.png");
+    background-image: url("/main/images/home/sponge-cake.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

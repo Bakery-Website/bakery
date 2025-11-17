@@ -308,7 +308,7 @@ body {
 
 /* --------Phần footer--------------*/
 footer {
-  background-image: url('images/FooterBackground.jpg');
+  background-image: url('/main/images/home/FooterBackground.jpg');
   background-size: cover;
  
 }
