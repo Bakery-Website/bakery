@@ -241,7 +241,7 @@ function renderBreadcrumb(category) {
     const breadcrumbHtml = `
         <nav class="breadcrumb">
             <ul>
-                <li><a href="../home-page/index.html">Home</a></li> 
+                <li><a href="index.html">Home</a></li> 
                 <li><a href="javascript:void(0)" onclick="loadHomePage()">Menu</a></li> 
                 <li>${category}</li>
             </ul>
