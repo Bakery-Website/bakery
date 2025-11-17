@@ -1,0 +1,317 @@
+[
+  {
+    "id": "BR01",
+    "category": "Bread",
+    "name": "Purple Sweet Potato Loaf",
+    "image": "images/bread/purples-s-potato.png",
+    "price": 3.5
+  },
+  {
+    "id": "BR02",
+    "category": "Bread",
+    "name": "Blueberry Cream Cheese Bread",
+    "image": "images/bread/blueberry-cream.png",
+    "price": 3
+  },
+  {
+    "id": "BR03",
+    "category": "Bread",
+    "name": "Sorobo Bread",
+    "image": "images/bread/sorobo.png",
+    "price": 2
+  },
+  {
+    "id": "BR04",
+    "category": "Bread",
+    "name": "Taro Cream Bread",
+    "image": "images/bread/taro-cream.png",
+    "price": 3
+  },
+  {
+    "id": "BR05",
+    "category": "Bread",
+    "name": "Red Bean Bread",
+    "image": "images/bread/red-bean.png",
+    "price": 3.2
+  },
+  {
+    "id": "BR06",
+    "category": "Bread",
+    "name": "Milk Cream Bread",
+    "image": "images/bread/milk-cream.png",
+    "price": 1.99
+  },
+  {
+    "id": "BR07",
+    "category": "Bread",
+    "name": "Raisin Bread",
+    "image": "images/bread/raisin.png",
+    "price": 1.2
+  },
+  {
+    "id": "BR08",
+    "category": "Bread",
+    "name": "Potato Cheese Bread",
+    "image": "images/bread/potato.png",
+    "price": 2.7
+  },
+  {
+    "id": "BR09",
+    "category": "Bread",
+    "name": "Buttercream Bread",
+    "image": "images/bread/buttercream.png",
+    "price": 2
+  },
+  {
+    "id": "CK01",
+    "category": "Cake",
+    "name": "Green Tea Cloud Cake",
+    "image": "images/cake/green-cloud.png",
+    "price": 20
+  },
+  {
+    "id": "CK02",
+    "category": "Cake",
+    "name": "Strawberry Cloud Cake",
+    "image": "images/cake/strawberry-cloud.png",
+    "price": 23
+  },
+  {
+    "id": "CK03",
+    "category": "Cake",
+    "name": "Cloud Cake",
+    "image": "images/cake/cloud.png",
+    "price": 16.99
+  },
+  {
+    "id": "CK04",
+    "category": "Cake",
+    "name": "Cheesecake",
+    "image": "images/cake/cheese.png",
+    "price": 19.87
+  },
+  {
+    "id": "CK05",
+    "category": "Cake",
+    "name": "Tiramisu",
+    "image": "images/cake/tiramisu.png",
+    "price": 21
+  },
+  {
+    "id": "CK06",
+    "category": "Cake",
+    "name": "Triple Chocolate Mousse Cake",
+    "image": "images/cake/chocolate.png",
+    "price": 29.99
+  },
+  {
+    "id": "CK07",
+    "category": "Cake",
+    "name": "Peach Cream Piece",
+    "image": "images/cake/peach.png",
+    "price": 23
+  },
+  {
+    "id": "CK08",
+    "category": "Cake",
+    "name": "Orange Cream Piece",
+    "image": "images/cake/orange.png",
+    "price": 23
+  },
+  {
+    "id": "CK09",
+    "category": "Cake",
+    "name": "Chocolate Cloud Piece",
+    "image": "images/cake/choco-pie.png",
+    "price": 21.6
+  },
+  {
+    "id": "PTR01",
+    "category": "Pastry",
+    "name": "Croissant",
+    "image": "images/pastry/croi.png",
+    "price": 6
+  },
+  {
+    "id": "PTR02",
+    "category": "Pastry",
+    "name": "Strawberry Croissant",
+    "image": "images/pastry/straw-croi.png",
+    "price": 6.2
+  },
+  {
+    "id": "PTR03",
+    "category": "Pastry",
+    "name": "Chocolate Croissant",
+    "image": "images/pastry/choco-croi.png",
+    "price": 6.2
+  },
+  {
+    "id": "PTR04",
+    "category": "Pastry",
+    "name": "Almond Croissant",
+    "image": "images/pastry/almond-croi.png",
+    "price": 6.2
+  },
+  {
+    "id": "PTR05",
+    "category": "Pastry",
+    "name": "Caramel Apple Pie",
+    "image": "images/pastry/caramel.png",
+    "price": 5
+  },
+  {
+    "id": "PTR06",
+    "category": "Pastry",
+    "name": "Pain Au Chocolat",
+    "image": "images/pastry/pain-au.png",
+    "price": 5
+  },
+  {
+    "id": "PTR07",
+    "category": "Pastry",
+    "name": "Yuzu Pie",
+    "image": "images/pastry/yuzu.png",
+    "price": 5
+  },
+  {
+    "id": "PTR08",
+    "category": "Pastry",
+    "name": "Apple Jam Mont Blanc Pastry",
+    "image": "images/pastry/apple.png",
+    "price": 5.25
+  },
+  {
+    "id": "PTR09",
+    "category": "Pastry",
+    "name": "Fruit Pastry",
+    "image": "images/pastry/fruit.png",
+    "price": 5
+  },
+  {
+    "id": "CF01",
+    "category": "Coffee",
+    "name": "Cafe Mocha",
+    "image": "images/coffee/c-mocha.png",
+    "price": 12
+  },
+  {
+    "id": "CF02",
+    "category": "Coffee",
+    "name": "Cafe Latte",
+    "image": "images/coffee/c-latte.png",
+    "price": 12
+  },
+  {
+    "id": "CF03",
+    "category": "Coffee",
+    "name": "Cappuccino",
+    "image": "images/coffee/cappuccino.png",
+    "price": 12
+  },
+  {
+    "id": "CF04",
+    "category": "Coffee",
+    "name": "Caramel Macchiato",
+    "image": "images/coffee/macchiato.png",
+    "price": 12
+  },
+  {
+    "id": "CF05",
+    "category": "Coffee",
+    "name": "Lavender Latte",
+    "image": "images/coffee/laven-latte.png",
+    "price": 12
+  },
+  {
+    "id": "CF06",
+    "category": "Coffee",
+    "name": "Vanialla Latte",
+    "image": "images/coffee/vanil-latte.png",
+    "price": 12
+  },
+  {
+    "id": "CF07",
+    "category": "Coffee",
+    "name": "Cafe Americano",
+    "image": "images/coffee/c-americano.jpg",
+    "price": 12
+  },
+  {
+    "id": "CF08",
+    "category": "Coffee",
+    "name": "Iced Cafe Mocha",
+    "image": "images/coffee/iced-mocha.png",
+    "price": 10.9
+  },
+  {
+    "id": "CF09",
+    "category": "Coffee",
+    "name": "Iced Cafe Latte",
+    "image": "images/coffee/ice-latte.png",
+    "price": 10.9
+  },
+  {
+    "id": "T01",
+    "category": "Tea",
+    "name": "Matcha Latte",
+    "image": "images/tea/latte.png",
+    "price": 16.2
+  },
+  {
+    "id": "T02",
+    "category": "Tea",
+    "name": "Iced Matcha Latte",
+    "image": "images/tea/iced-latte.png",
+    "price": 16.2
+  },
+  {
+    "id": "T03",
+    "category": "Tea",
+    "name": "Honey Lavender Matcha Latte",
+    "image": "images/tea/honey-latte.png",
+    "price": 16.2
+  },
+  {
+    "id": "T04",
+    "category": "Tea",
+    "name": "Ube Latte",
+    "image": "images/tea/ube-latte.png",
+    "price": 18
+  },
+  {
+    "id": "T05",
+    "category": "Tea",
+    "name": "Iced Ube Latte",
+    "image": "images/tea/iced-ube-latte.png",
+    "price": 18
+  },
+  {
+    "id": "T06",
+    "category": "Tea",
+    "name": "Iced Green Tea",
+    "image": "images/tea/green-tea.png",
+    "price": 12
+  },
+  {
+    "id": "T07",
+    "category":"Tea",
+    "name": "Iced Black Tea",
+    "image": "images/tea/black-tea.png",
+    "price": 12
+  },
+  {
+    "id": "T08",
+    "category": "Tea",
+    "name": "Hot Green Tea",
+    "image": "images/tea/hot-tea.png",
+    "price": 10
+  },
+  {
+    "id": "T09",
+    "category": "Tea",
+    "name": "Chamomile Tea",
+    "image": "images/tea/cham-tea.png",
+    "price": 12
+  }
+]
