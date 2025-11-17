@@ -1,9 +1,5 @@
 /* --- Cài đặt chung & Fonts --- */
 
-/* Đừng quên import font này vào <head> của file HTML nhé!
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Roboto:wght@400&display=swap" rel="stylesheet">
-*/
-
 .category-intro {
     color: #4a3e36; /* Màu chữ nâu đậm */
     text-align: center;
@@ -60,6 +56,8 @@
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     text-decoration: none; /* Dòng này sẽ bỏ gạch chân */
     color: inherit;        /* Dòng này giữ màu chữ gốc (thường là đen) */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 /* --- Hình ảnh chung --- */
