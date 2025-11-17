@@ -55,6 +55,8 @@ Sau khi cài đặt, bạn chỉ cần nhấn chuột phải vào file index.htm
 
 Trang web sẽ tự động mở trong trình duyệt và tự động tải lại mỗi khi bạn lưu file, giúp việc code nhanh hơn rất nhiều.
 
+**Cách 3:** Hoặc truy cập thẳng vào trang web: [https://chocohohobakery.vercel.app/](https://chocohohobakery.vercel.app/)
+
 
 <img width="1897" height="910" alt="Screenshot 2025-11-17 014732" src="https://github.com/user-attachments/assets/df27829c-fcfb-4e1c-8003-ad9d49add66b" />
 
