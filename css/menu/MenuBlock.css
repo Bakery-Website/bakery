@@ -1,0 +1,160 @@
+/*=========================================
+  ----- KHỐI CHỨA BREAD VÀ CAKE ----- 
+=========================================*/
+
+/* font */
+.my-overlock {
+  font-family: 'Overlock', cursive;
+}
+
+/* khối chứa thông tin */
+.content-block {
+  padding: 0;
+  margin: 0;
+}
+
+.content-block.hidden {
+  display: none !important;
+}
+
+/* nền và bố cục */
+.intro-block {
+  padding: 40px 20px;
+  margin-top: 0;
+  border-radius: 0;
+  max-width: none;
+}
+
+/* màu nền trái */
+.intro-block.bg-left {
+  background-color: #FBF3E3;
+}
+
+/* màu nền phải */
+.intro-block.bg-right {
+  background-color: #FFEDCA;
+}
+
+/* khối chứa ảnh và nội dung */
+.content-wrapper {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* khối ảnh */
+.image-block {
+  margin-top: 10px;
+  max-width: 30%;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ảnh */
+.intro-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* khối nội dung */
+.text-block {
+  flex: 1;
+  padding-top: 0;
+}
+
+/* tiêu đề */
+.title {
+  padding-top: 10px;
+  font-family: 'Overlock', cursive;
+  font-size: 30px;
+  color: #4C5332;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 900;
+  text-shadow:
+    0.5px 0.5px 0 rgba(0, 0, 0, 0.5),
+    /* Tạo đường viền nhẹ, làm chữ dày lên */
+    0 0 0.5px rgba(0, 0, 0, 0.5);
+  /* Tăng độ sắc nét */
+}
+
+/* thông tin */
+.description,
+.summary-list li {
+  font-family: 'Overlock', cursive;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #4C5332;
+  margin-bottom: 15px;
+}
+
+.summary-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.summary-list li {
+  line-height: 1.8;
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+
+/* nút discover */
+.btn {
+  background-color: #7b8d50;
+  color: #fff;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: 900;
+
+  transition: background-color 0.3s, transform 0.3s;
+  font-family: 'Overlock', cursive;
+}
+
+.btn:hover {
+  background-color: #5d6e3c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*=========================================
+----- KHỐI BỐ CỤC ĐẢO NGƯỢC CHỨA PASTRY ----- 
+=========================================*/
+
+/* khối ảnh và thông tin đảo ngược */
+.content-wrapper.layout-right {
+  flex-direction: row-reverse;
+}
+
+/* responsve */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* ap dụng cho bố cục đảo ngược */
+  .content-wrapper.layout-right {
+    flex-direction: column;
+    /* Trên mobile, cả hai đều trở về 1 cột */
+  }
+
+  .image-block {
+    flex: none;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .intro-image {
+    height: auto;
+  }
+}

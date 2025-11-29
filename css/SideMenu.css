@@ -1,0 +1,86 @@
+/*=========================================
+ ----- PHẦN SIDE MENU ----- 
+=========================================*/
+/* menu trượt */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 220px;
+  height: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin-top: 13px;
+  padding: 35px 0 15px 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+/* menu trượt được kích hoạt */
+.side-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* nút đóng menu */
+#closeBtn {
+  position: absolute;
+  right: 20px;
+  font-size: 35px;
+  top: 8px;
+  font-weight: normal;
+  color: #555;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* des cái ul trong menu */
+.side-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side-menu ul li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+}
+
+.side-menu ul li a:hover {
+  background-color: #f4f4f4;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    font-size: 30px;
+  }
+
+  .side-menu{
+    margin-top: 2rem;
+    padding: 3rem 0 1rem 1rem;
+
+  }
+
+  .side-menu ul li a{
+    font-size: 20px;
+  }
+
+  #closeBtn {
+    font-size: 30px;
+  }
+}

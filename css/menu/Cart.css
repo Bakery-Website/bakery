@@ -1,0 +1,369 @@
+/*=========================================
+----- NÚT GIỎ HÀNG -----
+=========================================*/
+/* Định vị nút giỏ hàng */
+.cart-toggle-btn {
+  position: relative;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Chỉnh size icon */
+.cart-toggle-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+/*=========================================
+----- OVERLAY CHO CART -----
+=========================================*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+/* z-index cho Overlay của MAIN MENU */
+/* Phải thấp hơn .side-menu (z-index: 1000) */
+#overlay {
+  z-index: 999;
+}
+
+/* z-index cho Overlay của GIỎ HÀNG */
+/* Phải thấp hơn .cart-sidebar (z-index: 1002) */
+#cartOverlay {
+  z-index: 1001;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/*=========================================
+----- SIDE MENU GIỎ HÀNG  -----
+=========================================*/
+
+/* Chỗ chứa cart */
+.cart-sidebar {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  width: 340px;
+  height: auto;
+  background-color: #FBF3E3;
+  border-radius: 20px 0 0 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) translateX(10px);
+  /* Hiệu ứng hơi trượt xéo */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.cart-sidebar.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) translateX(0);
+}
+
+/* Header bên trong cart */
+.cart-header {
+  display: flex;
+  border-bottom: none;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 15px 0;
+  position: relative;
+}
+
+.cart-header h3 {
+  margin: 0;
+  font-family: 'Overlock', cursive;
+  font-size: 1.8rem;
+  /* To hơn */
+  font-weight: 900;
+  color: #333;
+}
+
+/* Thêm chữ quick delivery ở dưới */
+.cart-header h3::after {
+  content: 'Quick Delivery';
+  font-family: 'Overlock', cursive;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #777;
+  display: block;
+  margin-top: 2px;
+}
+
+/*=========================================
+----- NÚT ĐÓNG GIỎ HÀNG -----
+=========================================*/
+
+.cart-close-btn {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  /* Con trỏ chuột đã thành 'pointer' */
+  padding: 0;
+  font-size: 0;
+  color: transparent;
+}
+
+/* Icon mũi tên */
+.cart-close-btn::after {
+  content: '→';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5d6e3c;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+/* Ẩn cart khi trống */
+.cart-body {
+  padding: 15px 0;
+  border-top: 1px solid #E0DACA;
+  border-bottom: 1px solid #E0DACA;
+  flex-grow: 0;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+.cart-body p {
+  display: block;
+  font-family: 'Overlock', cursive;
+  font-size: 1.1rem;
+  color: #777;
+  text-align: center;
+  padding: 20px 0;
+  margin: 0;
+}
+
+/* cart footer */
+.cart-footer {
+  padding: 20px 0 0 0;
+  background-color: transparent;
+  border-top: none;
+  margin-top: 0;
+}
+
+/* Phần total của cart */
+.cart-total {
+  font-family: 'Overlock', cursive;
+  font-size: 1.2rem;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 0 5px;
+}
+
+/* Nút thanh toán */
+.checkout-btn {
+  background-color: #F7E8C3;
+  color: #000000;
+  font-family: 'Overlock', cursive;
+  font-weight: 900;
+  font-size: 1rem;
+  border-radius: 12px;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.checkout-btn:hover {
+  background-color: #fff;
+  color: #000;
+  transform: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*=========================================
+----- STYLE SẢN PHẨM TRONG GIỎ HÀNG -----
+=========================================*/
+.cart-item {
+  display: flex;
+  align-items: center;
+  /* Căn giữa theo chiều dọc */
+  padding: 15px 0;
+  border-bottom: 1px solid #E0DACA;
+  gap: 15px;
+  /* Khoảng cách giữa Ảnh, Info, và Giá */
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+  padding-bottom: 5px;
+  /* Giảm padding cho món cuối */
+}
+
+.cart-item:first-child {
+  padding-top: 5px;
+  /* Giảm padding cho món đầu */
+}
+
+
+/* (1) Ảnh sản phẩm (thu nhỏ) */
+.cart-item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 12px;
+  /* Bo góc ảnh */
+  border: 1px solid #E0DACA;
+  flex-shrink: 0;
+  /* Không bị co lại */
+}
+
+/* (2) Khối Tên và Nút */
+.cart-item-info {
+  flex-grow: 1;
+  /* Chiếm hết không gian thừa */
+  /* (Chống tràn chữ nếu tên quá dài) */
+  min-width: 0;
+}
+
+.cart-item-name {
+  font-family: 'Overlock', cursive;
+  font-weight: 700;
+  font-size: 1.1rem;
+  /* (Chỉnh size 1.1rem) */
+  color: #333;
+  margin: 0 0 10px 0;
+  /* Tăng khoảng cách dưới */
+  /* (Chống tràn chữ nếu tên quá dài) */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* (3) Khối điều khiển (chứa các nút ảnh) */
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* Khoảng cách giữa các nút */
+}
+
+/* Style chung cho các nút +, -, X */
+.cart-item-controls button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 0;
+  /* Giúp căn ảnh chuẩn */
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.cart-item-controls button:hover {
+  opacity: 1;
+}
+
+/* Style cho ảnh bên trong các nút */
+.cart-item-controls button img {
+  width: 20px;
+  /* Kích thước icon (bạn có thể chỉnh 18px, 22px...) */
+  height: 20px;
+}
+
+/* Nút thùng rác (nếu muốn nó khác biệt) */
+.cart-item-controls .cart-item-remove img {
+  width: 18px;
+  /* Cho thùng rác nhỏ hơn 1 chút */
+  height: 18px;
+}
+
+.cart-item-quantity {
+  font-family: 'Overlock', cursive;
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-width: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* (4) Giá tiền (nằm ở cột cuối) */
+.cart-item-price-total {
+  font-family: 'Overlock', cursive;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: #333;
+  flex-shrink: 0;
+  /* Không bị co lại */
+  min-width: 60px;
+  /* Đảm bảo giá không bị nhảy */
+  text-align: right;
+}
+
+/*=========================================
+----- SỐ LƯỢNG TRÊN ICON GIỎ HÀNG -----
+=========================================*/
+.cart-item-count {
+  position: absolute; /* Đặt vị trí tuyệt đối so với nút (đã có position: relative) */
+  top: 3px;         /* Chỉnh vị trí trên/dưới */
+  right: 3px;       /* Chỉnh vị trí trái/phải */
+  
+  /* Màu sắc */
+  background-color: #B22222; /* Màu đỏ sẫm (giống màu giá tiền) */
+  color: white;
+
+  /* Kích thước và hình dạng */
+  width: 22px;      /* Chiều rộng */
+  height: 22px;     /* Chiều cao */
+  border-radius: 50%; /* Biến nó thành hình tròn */
+
+  /* Căn giữa con số bên trong vòng tròn */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Font chữ */
+  font-family: 'Overlock', cursive;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 1; /* Đảm bảo căn giữa chuẩn */
+
+  z-index: 10; /* Nằm bên trên icon */
+
+  /* --- Hiệu ứng Ẩn/Hiện --- */
+  /* Mặc định ẩn đi (khi số là 0) */
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Lớp này sẽ được thêm bằng JavaScript để làm hiện số */
+.cart-item-count.visible {
+    opacity: 1;
+    transform: scale(1);
+}

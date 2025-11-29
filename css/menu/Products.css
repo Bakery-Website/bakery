@@ -1,0 +1,129 @@
+/*=========================================
+----- LƯỚI SẢN PHẨM -----
+=========================================*/
+/* Khung bọc ngoài cùng của toàn bộ danh sách sản phẩm */
+.product-listing {
+  margin: 20px;
+  padding: 10px;
+}
+
+/* Lưới */
+.product-grid {
+  display: grid;
+  /* Mặc định trên mobile: 1 cột, chiếm 100% */
+  grid-template-columns: 1fr;
+  gap: 5rem;
+  padding: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #FBF3E3;
+}
+
+/* --- RESPONSIVE: Trên tablet/desktop --- */
+@media (min-width: 768px) {
+  .product-grid {
+    /* Chuyển thành 3 cột bằng nhau */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Style từng card --- */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Khu vực hình ảnh --- */
+.product-image-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  /* Để aspect-ratio hoạt động */
+  display: block;
+  aspect-ratio: 8/7;
+  /* Đảm bảo ảnh lấp đầy khung mà không bị méo (tự cắt xén) */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Khi di chuột vào THẺ, thì hình ảnh bên trong sẽ phóng to */
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* Khu vực thông tin (Tên, Giá, Nút) */
+.product-info {
+  padding: 1rem;
+  /* Thiết lập flex để đẩy nút "Add to Cart" xuống đáy */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  /* Tự động lấp đầy khoảng trống còn lại trong thẻ */
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #B22222;
+  margin: 0 0 1rem 0;
+}
+
+/* --- Nút Thêm vào giỏ hàng --- */
+.btn-add-to-cart {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  /* Đảm bảo icon và chữ căn giữa theo chiều dọc */
+  justify-content: center;
+  /* Đảm bảo cả khối chữ + icon căn giữa theo chiều ngang */
+  gap: 10px;
+  /* (Giữ nguyên) Khoảng cách giữa chữ và icon */
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+  background-color: #FFEDCB;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* ảnh giỏ hàng trong cái nút */
+.btn-add-to-cart img {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 1px;
+  /* Nhích xuống 1px để căn giữa mắt thường tốt hơn */
+  right: -2px;
+  /* Dịch sang phải thêm 2px */
+}
+
+.btn-add-to-cart:hover {
+  background-color: #F1DAB2;
+}

@@ -1,0 +1,155 @@
+/*=========================================
+ ------------- PHẦN  OUR STORY ------------
+=========================================*/
+.story-container {
+    max-width: 1290px; 
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* Tạo khoảng cách cho story-container đầu tiên */
+.story-container:first-of-type {
+  padding-top: 120px; /* Thêm khoảng đệm trên */
+}
+
+
+.story-row {
+    display: flex;
+    align-items: center;
+    /* Tăng khoảng cách giữa các cột */
+    gap: 100px; 
+    margin-bottom: 50px;
+    margin-top: 100px;
+  
+}
+
+.story-text {
+    flex: 1;
+    font-family: 'Overlock', cursive;
+    font-size: 20px;
+    line-height: 45px;
+    text-align: justify;
+    color: #4C5332;
+}
+
+.story-text h2 {
+    font-family: 'Overlock', cursive;
+    font-size: 64px;
+    line-height: 45px;
+    color: #4C5332;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.story-text p {
+    margin: 0;
+}
+
+/* Gạch ngang nhỏ */
+.divider-small {
+    width: 92px;
+    height: 9px;
+    background-color: #DBA276; 
+    margin-bottom: 25px;
+}
+
+.story-image {
+    flex: 1.1; 
+    min-width: 0; 
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px; 
+}
+
+/* Dải banner text */
+.story-highlight-banner {
+    background-color: #FFEDCA; 
+    padding: 60px 40px;
+    text-align: center;
+    width: 100%; /* Cho banner full chiều rộng */
+    box-sizing: border-box; /* Đảm bảo padding không làm vỡ layout */
+    position: relative; /* Thêm: Để làm "mẹ" cho hình thoi */
+    /* Tăng margin để chừa chỗ cho hình thoi */
+    margin: 100px auto;
+}
+
+.story-highlight-banner p {
+    font-family: 'Overlock', cursive;
+    font-size: 20px;
+    line-height: 45px;
+    text-align: justify;
+    color: #4C5332;
+    max-width: 1289px;
+    margin: 0 auto; 
+}
+
+/* Vẽ 2 hình thoi bằng pseudo-elements */
+.story-highlight-banner::before,
+.story-highlight-banner::after {
+    content: '';
+    width: 60px;  
+    height: 60px; 
+    background-color: #FFEDCB; 
+    border: 10px solid #FBF3E3;
+    box-sizing: border-box;
+    transform: rotate(45deg); 
+
+    /* Định vị tuyệt đối */
+    position: absolute;
+    left: 50%;
+    margin-left: -30px; /* Canh giữa (âm 1/2 chiều rộng) */
+    z-index: 5;
+}
+
+/* Vị trí hình thoi BÊN TRÊN */
+.story-highlight-banner::before {
+    top: -30px; /* Đẩy lên 1/2 chiều cao */
+}
+
+/* Vị trí hình thoi BÊN DƯỚI */
+.story-highlight-banner::after {
+    bottom: -30px; /* Đẩy xuống 1/2 chiều cao */
+}
+
+/* ----- Responsive cho Our Story  ----- */
+@media (max-width: 768px) {
+    .story-row {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .story-row:first-child {
+        flex-direction: column-reverse;
+    }
+
+    .story-text h2 {
+        font-size: 36px;
+        text-align: center; 
+    }
+
+    .divider-small {
+        margin-left: auto; 
+        margin-right: auto;
+    }
+
+    .story-highlight-banner {
+        padding: 30px 20px;
+        margin: 30px auto;
+    }
+
+    /* Sửa line-height cho mobile */
+    .story-text p,
+    .story-highlight-banner p {
+        line-height: 1.7; /* Reset về 1.7 (45px quá lớn) */
+        text-align: left; /* Canh trái cho dễ đọc */
+    }
+
+    .story-divider {
+        margin: 60px auto;
+    }
+}

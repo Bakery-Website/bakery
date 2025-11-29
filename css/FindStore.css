@@ -1,0 +1,79 @@
+/*=========================================
+  ----- KHỐI BANNER TÌM CỬA HÀNG ----- 
+  =========================================*/
+
+/* vỏ bọc bên ngoài */
+#banner {
+  position: relative;
+  background-color: #FBF3E3;
+  padding: 0;
+}
+
+/* khối chứa ảnh nền và nội dung */
+.banner-wrap {
+  background-image: url('/images/menu/shoppic.png');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  height: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* tiêu đề */
+.banner-title {
+  font-size: 60px;
+  color: #ffffff;
+  font-weight: 900;
+  margin: 0 0 30px 0;
+  z-index: 2;
+  font-family: 'Taviraj', serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;
+}
+
+/* nút */
+.banner-btn {
+  background-color: #F7E8C3;
+  color: #000000;
+  font-size: 30px;
+  font-family: 'Taviraj', serif;
+  padding: 15px 100px;
+  border-radius: 20px;
+  font-weight: 900;
+  z-index: 2;
+  margin-top: 0;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* hover cho nút */
+.banner-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: none;
+  box-shadow: none;
+  border-color: #000000;
+  border-style: solid;
+}
+
+/* responsive cho banner */
+@media (max-width: 768px) {
+  .banner-wrap {
+    height: 300px;
+  }
+
+  .banner-title {
+    font-size: 35px;
+  }
+
+  .banner-btn {
+    font-size: 18px;
+    padding: 10px 25px;
+  }
+}

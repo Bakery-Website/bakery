@@ -1,0 +1,124 @@
+/*=========================================
+ ----- PHẦN PROMO BANNER: WE MAKE IT ----- 
+=========================================*/
+
+.promo-banner {
+  background-color: #FFEDCA; 
+  position: relative;
+  z-index: 10; 
+}
+
+/*Thanh chữ nhật dài dài phía trên banner */
+.promo-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Chiều cao thanh ngang */
+  background-color:  #DBA276; 
+}
+
+.promo-container {
+  display: flex;
+  gap: 25px; 
+}
+
+.promo-image {
+  flex: 1; 
+  min-width: 0; 
+}
+
+.promo-image img {
+  width: 100%;
+  height: 100%; 
+  display: block;
+  object-fit: cover; /* Tự động cắt ảnh vừa khung, không bị méo */
+}
+
+
+.promo-text {
+  flex: 1.2; 
+  font-family: 'Overlock', cursive;
+  padding-right: 20px; 
+  padding-left: 20px;
+  padding-top: 60px; 
+  padding-bottom: 30px; 
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Dòng We make it, you eat it! */
+.promo-text h2 {
+  font-family: 'Overlock', cursive; 
+  font-size: 55px;
+  color: #4C5332; 
+  font-weight: 900;
+  margin-top: 80px; 
+  margin-bottom: 20px;
+}
+
+/*Dòng Our pastry chefs work hard ...together. */
+.promo-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #4C5332; 
+  max-width: 600px; 
+}
+
+/* Thanh gạch ngang trang trí */
+.promo-text .divider {
+  width: 80px;
+  height: 9px;
+  background-color: #DBA276; 
+}
+
+/* Hình thoi trang trí */
+.promo-banner::after {
+  content: '';
+  width: 60px;  
+  height: 60px; 
+  background-color: #FFEDCB; 
+  /* Viền hình thoi */
+  border: 10px solid #FBF3E3;
+  /* Position: Inside (để viền nằm bên trong 60px) */
+  box-sizing: border-box;
+  transform: rotate(45deg); 
+  position: absolute;
+  left: 50%;
+  z-index: 20; /* Nằm trên cùng */
+
+  /* CANH GIỮA*/
+  bottom: -30px; /* Đẩy 1 nửa chiều cao ra ngoài */
+  margin-left: -30px; /* Lùi lại 1 nửa chiều rộng  */
+}
+
+
+/* Responsive*/
+@media (max-width: 768px) {
+  .promo-container {
+      flex-direction: column; /* Xếp chồng 2 cột */
+      gap: 20px;
+  }
+  .promo-text {
+      padding-left: 20px;  /* Giữ padding 2 bên cho mobile */
+      padding-right: 20px;
+      /* Giảm padding-top cho mobile */
+      padding-top: 40px; 
+      /*Chừa chỗ cho hình thoi */
+      padding-bottom: 50px; 
+  }
+
+  .promo-text h2 {
+    font-size: 40px; 
+    margin-top: 0;   
+  }
+
+  .promo-image {
+    height: auto; /* Reset chiều cao về tự động cho mobile */
+    overflow: hidden; /* Đảm bảo ảnh không bị tràn */
+  }
+}

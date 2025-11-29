@@ -1,0 +1,86 @@
+/*=========================================
+ ----- PHẦN SPECIAL APPRECIATION -----
+=========================================*/
+.special-appreciation {
+    background-color: #FFEDCA; /* Màu nền be */
+    padding: 60px 0 60px 0; /* Đệm trên/dưới */
+    position: relative; 
+    margin-top: 60px; /* Khoảng cách với phần Who We Are */
+    margin-bottom: 60px;/*Khoảng cách với phần Find a location ở dưới*/
+}
+
+/* Vẽ hình thoi */
+.special-appreciation::before {
+    content: '';
+    width: 60px;  
+    height: 60px; 
+    background-color: #FFEDCB; 
+    border: 10px solid #FBF3E3; 
+    box-sizing: border-box;
+    transform: rotate(45deg); 
+    position: absolute;
+    left: 50%;
+    margin-left: -30px; 
+    top: -30px; 
+    z-index: 5;
+}
+.special-appreciation h2 {
+    font-family: 'Overlock', cursive;
+    font-size: 60px;
+    line-height: 45px;
+    color: #4C5332;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Container MỚI */
+.appreciation-container {
+    max-width: 1290px; 
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* Row */
+.appreciation-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Cột Text */
+.appreciation-text {
+    flex: 1.5; /* Cho text rộng hơn */
+    font-family: 'Overlock', cursive;
+    color: #4C5332;
+}
+
+/* Cột Image */
+.appreciation-image {
+    flex: 1; /* Cho ảnh hẹp hơn */
+    min-width: 0;
+}
+
+.appreciation-image img {
+    width: 100%;
+    max-width: 535px; /* Giới hạn kích thước ảnh */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Canh giữa ảnh */
+    border-radius: 30px; /* Yêu cầu bo góc 30px */
+}
+
+/* Style cho chữ */
+.appreciation-text p {
+    font-size: 20px;
+    line-height: 1.8; /* Dùng 1.8 cho dễ đọc */
+    text-align: left; /* Canh trái */
+    margin: 0;
+}
+
+/* Responsive cho section */
+@media (max-width: 768px) {
+    .appreciation-row {
+        flex-direction: column; /* Xếp chồng */
+    }
+}

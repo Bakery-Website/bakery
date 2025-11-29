@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+/* chỉnh lề để ảnh không thừa mép trắng */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #FBF3E3;
+  overflow-x: hidden; 
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+/*=========================================
+ ----- PHẦN HEADER ----- 
+=========================================*/
+/* thiết lập cho phần header */
+#main-header {
+  position: relative;
+  height: 67dvh;
+  overflow: hidden;
+  color: white;
+  background-image: url('/images/aboutus/HeaderBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* font của brand */
+.my-pacifico {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* tên brand */
+.brand {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: -3rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* danh sách menu */
+.nav-links {
+  display: flex;
+  /* nằm ngang */
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  /* bỏ dấu chấm */
+  gap: 30px;
+  padding: 0;
+  margin-top: -2.5rem;
+}
+
+/* mục */
+.nav-links li {
+  position: relative;
+}
+
+/* mấy cái mục */
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 26px;
+  padding: 8px 30px;
+  position: relative;
+}
+
+
+/* gạch chân của link active */
+.nav-links li a.active-page::after {
+  text-decoration: underline;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+/* gạch ngăn cách */
+.nav-links li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 25px;
+  background-color: #999;
+}
+
+/* xử lý khung bao ngoài (Thẻ cha) để căn giữa */
+.header-title-overlay {
+    display: flex;             /* Kích hoạt Flexbox */
+    justify-content: center;   /* Căn giữa theo chiều ngang */
+    align-items: center;       /* Căn giữa theo chiều dọc */
+    width: 100%;               /* Chiếm trọn chiều rộng */
+    height: 50%;              /* Chiếm trọn chiều cao của header (quan trọng) */
+    text-align: center;        /* Đảm bảo text căn giữa nếu bị xuống dòng */
+}
+
+/* xử lý Font chữ (Thẻ con) */
+.page-title {
+    font-family: 'Taviraj', cursive; 
+    font-size: 95px;  
+    font-weight: 900; 
+    color: #ffffff;  
+    margin: 0;
+    line-height: 1.2;          /* Giúp dòng chữ thoáng hơn nếu bị xuống dòng */
+}
+
+@media (max-width: 768px) {
+
+  /* XỬ LÝ HEADER (THU NHỎ) */
+  /* Giảm chiều cao của ảnh bìa */
+  #main-header {
+    height: 12.5vh;
+  }
+
+  /* Ẩn menu nav chính */
+  #main-header .nav-links {
+    display: none;
+  }
+
+  /* Giảm font chữ của brand chính */
+  #main-header .brand {
+    font-size: 24px;
+    margin-top: -1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .page-title {
+        font-size: 50px;      /* Giảm từ 95px xuống 50px */
+    }
+}
+
+/* Khi màn hình nhỏ hơn 480px (Điện thoại nhỏ) */
+@media screen and (max-width: 480px) {
+    .page-title {
+        font-size: 36px;      /* Giảm tiếp xuống 36px cho vừa màn hình */
+    }
+}
