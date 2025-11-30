@@ -1,69 +1,65 @@
-/* ----- 1. KHỐI SECTION CHÍNH (CHA) ----- */
+/* ----- 1. KHỐI BAO NGOÀI CÙNG ----- */
 .Sweetness-quote-section {
-    position: relative; 
+    position: relative; /* Làm mốc tọa độ cho các hình trang trí tuyệt đối */
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Căn giữa cái div bọc chữ */
-    text-align: center;
-    
-    padding: 5em;
-    overflow: hidden; 
+    flex-direction: column; /* Xếp dọc các phần tử con */
+    align-items: center;    /* Căn giữa theo chiều ngang */
+    text-align: center;     /* Căn giữa văn bản */
+    padding: 5em;           /* Khoảng cách rộng rãi xung quanh */
+    overflow: hidden;       /* Cắt bỏ những phần hình trang trí bị lòi ra ngoài */
     margin: 0;
 }
 
-
-/* ----- 2. ICON WATERMARK (LỚP 1 - DƯỚI CÙNG) ----- */
+/* ----- 2. HÌNH TRANG TRÍ GÓC (CARAMEL) ----- */
 .Sweetness-quote-section::before {
     content: '';
-    position: absolute;
+    position: absolute; /* Đính chặt vào khung cha */
     background-image: url('/images/home/caramel.png');
     background-repeat: no-repeat;
-    background-position: top left;
     background-size: contain;
-
-    /* SỬA LỖI 1 & 2: Thêm tọa độ và height cố định */
+    
+    /* Vị trí: Góc trên bên trái */
     top: -9%;
     left: 0;
-    width: 200px;
-    height: 300px; /* <-- Đã sửa từ 'auto' */
     
-    /* SỬA LỖI 3: z-index thấp nhất */
-    z-index: 1;
-    opacity: 0.5;
+    width: 200px;
+    height: 300px; 
+    z-index: 1;   /* Nằm dưới lớp chữ nhưng trên nền */
+    opacity: 0.5; /* Làm mờ ảnh đi một nửa */
 }
 
-/* ----- 3. KHỐI BỌC CHỮ (LỚP 2 - NỔI LÊN TRÊN) ----- */
+/* ----- 3. KHỐI CHỨA VĂN BẢN ----- */
 .sweetness-text-wrapper {
     position: relative; 
-    z-index: 2;
+    z-index: 2; /* Đảm bảo chữ luôn nổi lên trên các hình trang trí */
 }
 
-/* ----- 4. TRÍCH DẪN (BLOCKQUOTE) ----- */
+/* ----- 4. DÒNG TRÍCH DẪN LỚN (TIÊU ĐỀ) ----- */
 .Sweetness-quote-section blockquote {
-    font-size: 4em;
-    font-weight: 600;
-    position: relative; /* Bắt buộc cho dấu ngoặc ::before/::after */
+    font-size: 4em;    /* Chữ rất to */
+    font-weight: 600;  /* Chữ đậm */
+    position: relative; 
     display: inline-block;
-    padding: 0.2em 0.5em;
-    margin: 0; /* Xóa margin mặc định của blockquote */
+    padding: 0.2em 0.5em; /* Khoảng cách để không dính vào dấu ngoặc */
+    margin: 0;
 }
 
-/* ----- 5. ĐOẠN VĂN (P) ----- */
+/* ----- 5. ĐOẠN VĂN MÔ TẢ PHÍA DƯỚI ----- */
 .Sweetness-quote-section p {
     font-size: 2em;
-    line-height: 1.4;
-    letter-spacing: 0.1rem;
-    margin-top: 0.5em; /* Thêm chút khoảng cách với blockquote */
-    color: #555;
+    line-height: 1.4;       /* Khoảng cách dòng cho dễ đọc */
+    letter-spacing: 0.1rem; /* Khoảng cách giữa các chữ cái */
+    margin-top: 0.5em;      /* Cách xa dòng trích dẫn một chút */
+    color: #555;            /* Màu xám nhẹ */
 
-    max-width: 58rem;
+    max-width: 58rem;       /* Giới hạn chiều rộng để dòng không quá dài */
     margin-bottom: 0;
-    margin-left: auto;
+    margin-left: auto;      /* Căn giữa đoạn văn */
     margin-right: auto;
 }
 
-
-/* ----- 6. DẤU NGOẶC VUÔNG (Giữ nguyên) ----- */
+/* ----- 6. HỌA TIẾT DẤU NGOẶC VUÔNG ----- */
+/* Dấu ngoặc góc trên bên phải */
 .Sweetness-quote-section blockquote::before {
     content: '';
     position: absolute;
@@ -71,10 +67,11 @@
     right: 0;
     width: 20px;
     height: 20px;
-    border-top: 5px solid black;
-    border-right: 5px solid black;
+    border-top: 5px solid black;   /* Kẻ cạnh trên */
+    border-right: 5px solid black; /* Kẻ cạnh phải */
 }
 
+/* Dấu ngoặc góc dưới bên trái */
 .Sweetness-quote-section blockquote::after {
     content: '';
     position: absolute;
@@ -82,69 +79,64 @@
     left: 0;
     width: 20px;
     height: 20px;
-    border-bottom: 5px solid black;
-    border-left: 5px solid black;
+    border-bottom: 5px solid black; /* Kẻ cạnh dưới */
+    border-left: 5px solid black;   /* Kẻ cạnh trái */
 }
 
+/* ----- 7. HÌNH MỜ GIỮA (TIRAMISU) ----- */
 .sweetness-text-wrapper::before{
     content: '';
-    top: 0; 
-    left: 0;
-
     background-image: url('/images/home/tiramisu.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 
     position: absolute;
+    /* Căn hình vào chính giữa khối chữ */
     top: 70%;
     left: 50%;
-    transform: translate(-50%, -50%) ;
+    transform: translate(-50%, -50%);
     
-    /* Chỉnh kích thước hình mờ tùy ý */
     width: 300px; 
     height: 300px;
     
-    /* Cho nó mờ đi */
-    opacity: 0.08; 
-    
-    /* Cho nó chìm xuống dưới chữ */
-    z-index: 1; 
+    opacity: 0.08; /* Rất mờ (gần như trong suốt) */
+    z-index: 1;    /* Chìm xuống dưới chữ */
 }
+
+/* ----- 8. RESPONSIVE (MÀN HÌNH NHỎ) ----- */
 @media (max-width: 768px) {
 
-    /* 1. Giảm padding cho cả section */
+    /* Thu nhỏ khoảng cách lề */
     .Sweetness-quote-section {
-        /* Giảm padding từ 5em xuống 3em (trên/dưới) 
-           và 1.5em (trái/phải) */
         padding: 3em 1.5em;
     }
 
-    /* 2. Ẩn icon trang trí (caramel) cho gọn */
+    /* Ẩn hình trang trí góc đi cho đỡ rối mắt */
     .Sweetness-quote-section::before {
         display: none;
     }
 
-    /* 3. Giảm cỡ chữ của Trích dẫn */
+    /* Giảm kích thước chữ tiêu đề */
     .Sweetness-quote-section blockquote {
-        font-size: 2.5em; /* Giảm từ 4em */
+        font-size: 2.5em; 
     }
 
-    /* 4. Giảm cỡ chữ của Đoạn văn */
+    /* Giảm kích thước đoạn văn */
     .Sweetness-quote-section p {
-        font-size: 1.25em; /* Giảm từ 2em */
+        font-size: 1.25em; 
         max-width: 40rem;
     }
 
-    /* 5. Giảm kích thước dấu ngoặc vuông */
+    /* Thu nhỏ dấu ngoặc trang trí */
     .Sweetness-quote-section blockquote::before,
     .Sweetness-quote-section blockquote::after {
         width: 15px;
         height: 15px;
-        border-width: 3px; /* Mỏng hơn một chút */
+        border-width: 3px; 
     }
 
-    /* 6. Giảm kích thước watermark (tiramisu) sau lưng chữ */
+    /* Thu nhỏ hình mờ Tiramisu */
     .sweetness-text-wrapper::before {
         width: 200px;
         height: 200px;

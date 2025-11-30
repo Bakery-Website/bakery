@@ -100,8 +100,7 @@
         /* Chuyển 2 cột thành 2 hàng (xếp dọc) */
         flex-direction: column-reverse; 
         gap: 20px;
-        margin-top: 30px;
-        margin-bottom: 0px;
+        margin: 30px;
         padding: 0;
     }
     

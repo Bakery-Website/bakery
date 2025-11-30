@@ -14,7 +14,22 @@ body {
   background-color: #FBF3E3;
   font-family: 'Overlock', cursive;
 }
+@media (max-width: 768px) {
+/* Ẩn video trên thiết bị nhỏ */
+  #main-header{
+    display: none;
+  }
+  /* Luôn hiện sticky header trên mobile */
+  #sticky-header,
+  #sticky-header.hidden {
+    opacity: 1;
+    visibility: visible;
+  }
 
+  .sub-brand {
+    font-size: 24px;
+  }
+}
 /* ----- PHẦN PRIMARY HEADER ----- */
 /* thiết lập cho phần header */
 #main-header {
@@ -562,9 +577,9 @@ footer {
 
 
 .footer-copyright {
-  font-size: 1.4rem; /* Cho chữ copyright nhỏ hơn một chút */
-  color: #555; /* Cho chữ mờ hơn một chút */
-  margin: 0; /* Xóa margin mặc định của thẻ <p> */
+  font-size: 1.4rem; 
+  color: #555; 
+  margin: 0; 
 }
 @media (max-width: 768px) {
 
