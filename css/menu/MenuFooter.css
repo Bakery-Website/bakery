@@ -210,6 +210,28 @@ footer {
   background-color: #333;
 }
 
+/* =========================================
+   STYLE CHO LINK FOOTER (CHỈ IN ĐẬM)
+========================================= */
+
+/* 1. Định dạng mặc định */
+.footer-column2 ul li a,
+.footer-column3 ul li a,
+.footer-column4 ul li a {
+  text-decoration: none;     /* Bỏ gạch chân */
+  color: #333333;            /* Màu gốc */
+  display: inline-block;     /* Giúp hiệu ứng ổn định hơn */
+  transition: transform 0.2s ease; /* Hiệu ứng mượt */
+}
+
+/* 2. Hiệu ứng khi Hover: Chỉ in đậm */
+.footer-column2 ul li a:hover,
+.footer-column3 ul li a:hover,
+.footer-column4 ul li a:hover {
+  font-weight: bold;      /* In đậm chữ */
+  transform: scale(1.05); /* Phóng to cực nhẹ (5%) để chữ trông dày hơn mà không bị vỡ layout */
+}
+
 .footer-bottom {
   /* Căn giữa 2 dòng text */
   text-align: center;
@@ -218,8 +240,6 @@ footer {
   padding-bottom: 20px;
   color: #333333;
   width: 100%;
-
-
 }
 
 .footer-legal-links {
@@ -260,7 +280,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-
  /* 1. Chuyển container chính sang layout cột */
  .footer-content-container {
  flex-direction: column; /* Xếp 4 cột chồng lên nhau */

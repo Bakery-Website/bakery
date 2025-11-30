@@ -63,8 +63,6 @@ footer {
   width: 4rem;
   height: 4rem;
   transition: transform 0.3s;
-
-
 }
 
 .footer-socials img:hover{
@@ -161,7 +159,6 @@ footer {
   font-size: 1.6rem;
 }
 
-
 .footer-column4 form {
   display: flex;
   flex-direction: row;
@@ -177,19 +174,15 @@ footer {
   font-size: 14px;
   outline: none; /* Ẩn viền xanh khi focus */
   box-sizing: border-box;
-
-
 }
 .footer-column4 input[type="email"]::placeholder {
   color: #999; 
 }
 
-
 .footer-column4 input[type="email"]:focus {
   background-color: #fff; /* Khi click vào thì nền sáng hơn chút */
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
-
 
 .footer-column4 input[type="submit"] {
   padding: 10px 16px;
@@ -202,11 +195,9 @@ footer {
   transition: background-color 0.2s ease;
 }
 
-
 .footer-column4 input[type="submit"]:hover {
   background-color: #333;
 }
-
 
 .footer-bottom {
   /* Căn giữa 2 dòng text */
@@ -216,8 +207,6 @@ footer {
   padding-bottom: 20px;
   color: #333333;
   width: 100%;
-
-
 }
 
 
@@ -226,11 +215,9 @@ footer {
   margin-bottom: 15px;
 }
 
-
 .footer-legal-links a {
   /* Bỏ gạch chân */
   text-decoration: none;
- 
   /* Lấy màu chữ từ cha (.footer-bottom) */
   color: inherit;
   margin: 0 10px;
@@ -246,12 +233,9 @@ footer {
   color: #555;
   font-weight: normal;
 }
-
-
 .footer-legal-links a:hover {
   text-decoration: underline; /* Thêm gạch chân khi di chuột vào */
 }
-
 
 .footer-copyright {
   font-size: 1.4rem; 
@@ -259,7 +243,6 @@ footer {
   margin: 0; 
 }
 @media (max-width: 768px) {
-
  /* 1. Chuyển container chính sang layout cột */
  .footer-content-container {
  flex-direction: column; /* Xếp 4 cột chồng lên nhau */

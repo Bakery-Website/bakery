@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    <!--Phần main header-->
     <header id="main-header">
         <nav class="primary">
             <div class="brand">
@@ -41,6 +42,7 @@
         </nav>
     </header>
 
+    <!--Phần category-bar-->
     <section class="category-bar">
         <div class="category">
             <div class="search">
@@ -77,6 +79,7 @@
         </div>
     </section>
 
+    <!--Sticky header-->
     <header id="sticky-header" class="hidden">
         <nav class="sticky">
             <div class="nav-container">
@@ -87,7 +90,7 @@
             </div>
         </nav>
     </header>
-
+    <!--Làm mờ-->
     <div class="overlay" id="overlay"></div>
 
     <aside class="side-menu" id="sideMenu">
@@ -98,7 +101,8 @@
             <li><a href="aboutus.html">About Us</a></li>
         </ul>
     </aside>
-
+    
+    <!--Phần breadcrumb-->
     <section class="breadcrumb-container hidden" id="breadcrumbContainer">
         <section class="breadcrumb-bar" id="breadcrumbBar">
             <div class="breadcrumb-content"></div>
@@ -249,9 +253,9 @@
             <div class='footer-column2'>
                 <h3 class="footer-title2">COMPANY</h3>
                 <ul>
-                    <li>Locations</li>
-                    <li>Community</li>
-                    <li>Careers</li>
+                    <li><a href="index.html#location-section">Locations</a></li>
+                    <li><a href="aboutus.html">Community</a></li>
+                    <li><a href="aboutus.html">Careers</a></li>
                 </ul>
             </div>
 
@@ -259,8 +263,8 @@
             <div class='footer-column3'>
                 <h3 class="footer-title3">HELP</h3>
                 <ul>
-                    <li>FAQs</li>
-                    <li>Contact Us</li>
+                    <li><a href="aboutus.html">FAQs</a></li>
+                    <li><a href="aboutus.html">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -268,10 +272,9 @@
             <div class='footer-column4'>
                 <h3 class="footer-title4">CHOCO'S IN YOURS INBOX</h3>
                 <ul>
-                    <li>Our story</li>
+                    <li><a href="aboutus.html">Our story</a></li>
                     <li>For special offers, new goodies, and the latest news join our mailing list.</li>
                 </ul>
-
                 <form>
                     <input type="email" id="email" name="email" placeholder="Enter your email here" />
                     <input type="submit" value="Send" />
@@ -291,8 +294,6 @@
                 </p>
             </div>
         </div>
-
-
     </footer>
 
     <div class="cart-sidebar" id="cartSidebar">
@@ -312,30 +313,6 @@
             </div>
             <button class="checkout-btn">Check Out</button>
         </div>
-    </div>
-
-    <div class="popup-overlay" id="emptyCartPopup">
-        <div class="popup-content">
-            <div class="popup-icon warning">
-                !
-            </div>
-            <h2>Your Cart is Empty!</h2>
-            <p>Looks like you haven't added any sweets yet.<br>Please add some items before checking out.</p>
-            <button class="popup-close-btn" id="closeEmptyPopupBtn">Browse Menu</button>
-        </div>
-    </div>
-
-    <div class="popup-overlay" id="successPopup">
-        <div class="popup-content">
-            <div class="popup-icon">✓</div>
-            <h2>Payment Successful!</h2>
-            <p>Thank you for your sweet order. <br> Your items will be ready soon!</p>
-            <button class="popup-close-btn" id="closePopupBtn">Continue Shopping</button>
-        </div>
-    </div>
-
-    <div id="scrollToTopBtn" class="scroll-to-top">
-        <img src="images/menu/logo-choco.png" alt="Scroll to Top">
     </div>
 
     <div class="overlay" id="cartOverlay"></div>
