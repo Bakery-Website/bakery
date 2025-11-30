@@ -1,0 +1,41 @@
+/* Trạng thái ban đầu: Ẩn và bị đẩy xuống dưới một chút */
+.reveal {
+    position: relative;
+    transform: translateY(100px); /* Đẩy phần tử xuống 100px */
+    opacity: 0; /* Ẩn hoàn toàn */
+    transition: all 1s ease; /* Chuyển động mượt trong 1 giây */
+    visibility: hidden; /* Không cho tương tác khi chưa hiện */
+}
+
+/* Trạng thái sau khi kích hoạt: Hiện lên và về vị trí cũ */
+.reveal.active {
+    transform: translateY(0); /* Trở về vị trí gốc */
+    opacity: 1; /* Hiện rõ */
+    visibility: visible;
+}
+
+/* (Tuỳ chọn) Hiệu ứng trồi từ trái sang */
+.reveal-left {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 1s ease;
+    visibility: hidden;
+}
+.reveal-left.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* (Tuỳ chọn) Hiệu ứng trồi từ phải sang */
+.reveal-right {
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 1s ease;
+    visibility: hidden;
+}
+.reveal-right.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
