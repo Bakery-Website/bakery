@@ -83,8 +83,8 @@
     transform: translate(-50%, -50%) rotate(-30deg);
     
     /* Chỉnh kích thước hình mờ tùy ý */
-    width: 250px; 
-    height: 250px;
+    width: 24vw; 
+    height: 24vw;
     
     /* Cho nó mờ đi */
     opacity: 0.1; 

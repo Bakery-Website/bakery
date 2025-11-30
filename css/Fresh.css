@@ -79,8 +79,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 200px; 
-    height: 200px; 
+    width: 20vw; 
+    height: 20vw; 
     
     /* Cho nó mờ đi */
     opacity: 0.1; 

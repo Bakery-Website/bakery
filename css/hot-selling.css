@@ -6,6 +6,8 @@
             padding-bottom: 30px; 
             margin-top: 30px;     
             margin-bottom: 10px;  
+            overflow: hidden;
+            position: relative;
         }
 
         /* --- KHUNG NỘI DUNG CHÍNH --- */
@@ -161,38 +163,77 @@
         /* --- RESPONSIVE (CO GIÃN THEO MÀN HÌNH) --- */
         
         /* Màn hình Tablet (iPad) trở lên */
-        @media (min-width: 768px) {
-            .slider-track {
-                gap: 30px; /* Tăng khoảng cách giữa các bánh */
-            }
-            .slider-item {
-                /* Tính toán để hiển thị 2 bánh trên 1 hàng */
-                width: calc((100% - 30px) / 2); 
-            }
-        }
+        /* --- 1. MÀN HÌNH TABLET (Từ 768px trở lên) --- */
+@media (min-width: 768px) {
+    .slider-track {
+        gap: 30px; /* Tăng khoảng cách giữa các bánh */
+    }
+    .slider-item {
+        /* Hiển thị 2 bánh trên 1 hàng */
+        width: calc((100% - 30px) / 2); 
+    }
+}
 
-        /* Màn hình Desktop (Laptop/PC) trở lên */
-        @media (min-width: 1024px) {
-            .slider-track {
-                gap: 30px; 
-            }
-            .slider-item {
-                /* Tính toán để hiển thị 3 bánh trên 1 hàng (trừ đi 2 khoảng gap) */
-                width: calc((100% - 60px) / 3); 
-            }
-            /* Đẩy nút ra ngoài khung một chút cho thoáng */
-            .prev-btn { left: -10px; }
-            .next-btn { right: -10px; }
-        }
+/* --- 2. MÀN HÌNH DESKTOP (Từ 1024px trở lên) --- */
+@media (min-width: 1024px) {
+    .slider-item {
+        /* Hiển thị 3 bánh trên 1 hàng */
+        width: calc((100% - 60px) / 3); 
+    }
+    
+    /* Đẩy nút ra ngoài khung cho thoáng */
+    .prev-btn { left: -20px; }
+    .next-btn { right: -20px; }
+}
 
-        /* Màn hình nhỏ (Điện thoại dọc) */
-        @media (max-width: 768px) {
-            .hot-selling h2 { font-size: 3.5rem; } /* Giảm cỡ chữ tiêu đề */
-            .product-card h3 { font-size: 1.5rem; padding: 15px; } /* Giảm cỡ chữ tên bánh */
-            .badge { font-size: 0.8rem; width: 50px; height: 50px; top: -10px; left: 10px; } /* Thu nhỏ badge */
-        }
+/* --- 3. MÀN HÌNH MOBILE (Dưới 768px) - TẤT CẢ FIX LỖI NẰM Ở ĐÂY --- */
+@media (max-width: 768px) {
+    /* A. Điều chỉnh cỡ chữ (Typography) */
+    .hot-selling h2 { font-size: 3.5rem; }
+    .product-card h3 { font-size: 1.5rem; padding: 15px; }
+    .badge { font-size: 0.8rem; width: 50px; height: 50px; top: -10px; left: 10px; }
 
-        @media (max-width: 480px) {
-            .hot-selling h2 { font-size: 2.5rem; }
-            .product-card h3 { font-size: 1.2rem; }
-        }
+    /* B. Fix lỗi layout bị lệch & mất nút */
+    .hot-selling {
+        padding: 0; /* Xóa padding thừa để tận dụng chiều rộng */
+        position: relative;
+    }
+
+    .slider-viewport {
+        padding: 20px 0; /* Giữ padding trên/dưới */
+    }
+
+    /* C. Fix nút bấm: Nhỏ lại, đưa vào trong & nổi lên trên */
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        position: absolute;
+        z-index: 100;       /* Quan trọng: Để nút nổi lên trên ảnh */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .prev-btn { left: 5px; }   /* Sát lề trái */
+    .next-btn { right: 5px; }  /* Sát lề phải */
+
+    /* D. Fix căn giữa thẻ sản phẩm */
+    .slider-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 90% !important; /* Chiếm 90% chiều rộng để hở biên cho đẹp */
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+/* --- 4. MÀN HÌNH RẤT NHỎ (Dưới 480px) --- */
+@media (max-width: 480px) {
+    .hot-selling h2 { font-size: 2.5rem; }
+    .product-card h3 { font-size: 1.2rem; }
+}

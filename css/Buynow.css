@@ -1,111 +1,117 @@
-
+/* --- HERO SECTION CHUẨN --- */
 .hero-section {
-  padding: 20px 20px;
-  min-height: 70vh;
-  text-align: center;
-  overflow: hidden;
-  font-family: 'Overlock', cursive;
-  margin: 2em 0;
-  position: relative;
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  background-image: url('/images/home/Buynow.jpg');
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center;
-  background-clip: border-box;
-  /* Kiểu chữ */
-  color: #ffffff; /* Màu chữ trắng */
-  text-shadow: 
-  1px 1px 0 #000,    /* Bóng đổ 1px về Dưới-Phải */
-  -1px -1px 0 #000,  /* Bóng đổ 1px về Trên-Trái */
-  1px -1px 0 #000,   /* Bóng đổ 1px về Trên-Phải */
-  -1px 1px 0 #000;   /* Bóng đổ 1px về Dưới-Trái */
+    padding: 20px;
+    min-height: 70vh; /* Giữ chiều cao lớn để tạo ấn tượng */
+    
+    /* Flexbox để căn giữa nội dung tuyệt đối */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* QUAN TRỌNG: Căn giữa nội dung theo chiều dọc */
+    align-items: center;     /* Căn giữa chiều ngang */
+    
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Overlock', cursive;
+    margin: 2em 0;
+    
+    /* --- XỬ LÝ ẢNH NỀN --- */
+    background-image: url('/images/home/Buynow.jpg');
+    background-repeat: no-repeat;
+
+    /* FIX LỖI: Dùng 'cover' thay vì '100% auto' */
+    /* Cover giúp ảnh luôn tràn đầy khung, không bị lùn tịt trên mobile */
+    background-size: cover; 
+    background-position: center;
+    
+    /* Màu chữ và bóng */
+    color: #ffffff;
+    text-shadow: 
+        1px 1px 0 #000, 
+        -1px -1px 0 #000, 
+        1px -1px 0 #000, 
+        -1px 1px 0 #000,
+        0 4px 10px rgba(0,0,0,0.5); /* Thêm bóng mờ nhẹ để chữ nổi bật hơn trên nền ảnh */
 }
 
-
-.hero-section h2{
-  font-size: 8rem;
-  font-weight: 500;
-  margin: 1vw;
-  text-align: center;
-  font-family: 'Pacifico', cursive;
-
+.hero-section h2 {
+    font-size: 8rem;
+    font-weight: 500;
+    margin: 10px 0;
+    font-family: 'Pacifico', cursive;
+    line-height: 1.2;
 }
 
 .hero-section p {
     font-size: 4em;
     font-weight: 600;
-    padding: 0.2em 0.5em;
-    margin: 1vw;
+    margin: 10px 0;
+    line-height: 1.4;
 }
 
+/* NÚT BẤM (CTA) */
 .cta-button {
-    /* Loại bỏ gạch chân của thẻ <a> */
-    text-decoration: none; 
+    text-decoration: none;
     text-shadow: none;
-    /* Màu nền & Độ trong suốt (giống màu trắng hơi mờ trong ảnh) */
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.1); /* Nền trắng mờ nhẹ cực sang */
+    color: #ffffff;
+    border: 3px solid #ffffff; 
+    padding: 15px 60px;
+    border-radius: 50px; 
+    display: inline-block;
     
-    /* Màu chữ và viền (Màu nâu đậm, phù hợp với theme) */
-    color: #ffffff; 
-    border: 2px solid #ffffff;
+    font-size: 2.5em; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    margin-top: 30px;
     
-    /* Tạo hình dạng nút */
-    padding: 15px 80px; 
-    border-radius: 30px; /* Bo góc nhẹ */
-    display: inline-block; /* Quan trọng để áp dụng padding và width */
-    
-    /* Font chữ */
-    font-size: 3em;
-    font-weight: 600;
-    text-transform: uppercase; /* Viết hoa toàn bộ chữ */
-    letter-spacing: 1px;
-    
-    /* Tạo hiệu ứng mượt mà khi di chuột */
-    transition: all 0.3s ease-in-out; 
-    margin-top: 2vw; /* Tạo khoảng cách với slogan phía trên */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* --- Hiệu ứng Hover --- */
 .cta-button:hover {
-    /* Khi di chuột, đổi màu nền và màu chữ */
-    background-color: #ffffff; /* Nền nâu đậm */
-    color: #4a3e36; /* Chữ trắng sáng */
-    cursor: pointer;
-}
-/* Màn hình TABLET (Max-width: 992px) */
-@media (max-width: 768px) {
-    .hero-section {
-        min-height: 60vh; /* Giảm nhẹ chiều cao Hero Section */
-    }
+    background-color: #ffffff;
+    color: #4a3e36;
+    transform: translateY(-5px); /* Bay lên nhẹ khi hover */
 }
 
-/* Màn hình ĐIỆN THOẠI (Max-width: 576px) */
+
+/* =========================================
+   RESPONSIVE (MOBILE & TABLET)
+   ========================================= */
+
+/* Tablet & Laptop nhỏ (Dưới 992px) */
+@media (max-width: 992px) {
+    .hero-section { min-height: 60vh; }
+    .hero-section h2 { font-size: 6rem; }
+    .hero-section p { font-size: 3em; }
+    .cta-button { font-size: 2em; padding: 12px 50px; }
+}
+
+/* Mobile (Dưới 576px) - FIX LỖI CHỮ TO & ẢNH BÉ */
 @media (max-width: 576px) {
     .hero-section {
-        min-height: 50vh; /* Giảm đáng kể chiều cao Hero Section */
+        min-height: 50vh; /* Chiều cao vừa vặn cho mobile */
+        padding: 40px 15px; 
     }
-    
-    /* Giảm kích thước chữ và khoảng cách trên điện thoại */
+
     .hero-section h2 {
-        /* Đảm bảo size chữ không vượt quá 60px */
-        font-size: clamp(30px, 10vw, 60px); 
-        margin: 5px 0;
+        /* Dùng clamp() giúp chữ co giãn mượt mà */
+        font-size: clamp(2.5rem, 12vw, 4rem); 
+        margin-bottom: 5px;
     }
 
     .hero-section p {
-        /* Đảm bảo size chữ không vượt quá 20px */
-        font-size: clamp(16px, 4vw, 20px); 
-        padding: 0 10px; /* Giảm padding ngang */
-        margin: 5px 0;
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+        margin-bottom: 20px;
+        padding: 0;
     }
 
     .cta-button {
-        /* Giảm kích thước nút bấm trên mobile */
-        font-size: 16px; 
-        padding: 10px 40px;
-        margin-top: 15px;
+        font-size: 1.2rem; /* Nút nhỏ gọn lại */
+        padding: 12px 35px;
+        border-width: 2px;
+        margin-top: 10px;
     }
 }
