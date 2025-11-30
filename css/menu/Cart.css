@@ -329,12 +329,12 @@
 ----- SỐ LƯỢNG TRÊN ICON GIỎ HÀNG -----
 =========================================*/
 .cart-item-count {
-  position: absolute; /* Đặt vị trí tuyệt đối so với nút (đã có position: relative) */
+  position: absolute; /* Đặt vị trí tuyệt đối so với nút */
   top: 3px;         /* Chỉnh vị trí trên/dưới */
   right: 3px;       /* Chỉnh vị trí trái/phải */
   
   /* Màu sắc */
-  background-color: #B22222; /* Màu đỏ sẫm (giống màu giá tiền) */
+  background-color: #B22222; /* Màu đỏ sẫm */
   color: white;
 
   /* Kích thước và hình dạng */
@@ -366,4 +366,18 @@
 .cart-item-count.visible {
     opacity: 1;
     transform: scale(1);
+}
+
+/* Đổi màu icon sang Cam khi cảnh báo */
+.popup-icon.warning {
+    background: #FF9800; /* Màu cam */
+    box-shadow: 0 0 0 10px rgba(255, 152, 0, 0.2); /* Viền tỏa sáng màu cam */
+}
+
+/* Đổi màu nút bấm khi ở trạng thái cảnh báo */
+.popup-overlay .popup-icon.warning ~ .popup-close-btn {
+    background: #FF9800;
+}
+.popup-overlay .popup-icon.warning ~ .popup-close-btn:hover {
+    background: #e68900;
 }

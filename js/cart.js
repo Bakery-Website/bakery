@@ -151,6 +151,55 @@ export function initCart() {
         });
     }
     
-    // Khởi tạo hiển thị số lượng ban đầu (thường là 0)
+    //3. SỰ KIỆN NÚT CHECKOUT (THANH TOÁN)
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    
+    // Popup Thành công
+    const successPopup = document.getElementById('successPopup');
+    const closeSuccessBtn = document.getElementById('closePopupBtn');
+
+    // Popup Giỏ hàng trống (MỚI)
+    const emptyPopup = document.getElementById('emptyCartPopup');
+    const closeEmptyBtn = document.getElementById('closeEmptyPopupBtn');
+
+    // Hàm đóng tất cả popup
+    function closeAllPopups() {
+        if(successPopup) successPopup.classList.remove('active');
+        if(emptyPopup) emptyPopup.classList.remove('active');
+    }
+
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', () => {
+            // TRƯỜNG HỢP 1: GIỎ HÀNG TRỐNG
+            if (cart.length === 0) {
+                // Đóng sidebar giỏ hàng lại cho gọn
+                closeCart();
+                // Hiện popup cảnh báo
+                if (emptyPopup) emptyPopup.classList.add('active');
+                return;
+            }
+
+            // TRƯỜNG HỢP 2: THANH TOÁN THÀNH CÔNG
+            cart.length = 0; // Xóa dữ liệu
+            updateCart();    // Cập nhật giao diện
+            closeCart();     // Đóng sidebar
+            
+            // Hiện popup thành công
+            if (successPopup) successPopup.classList.add('active');
+        });
+    }
+
+    // Sự kiện đóng các popup
+    if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeAllPopups);
+    if (closeEmptyBtn) closeEmptyBtn.addEventListener('click', closeAllPopups);
+
+    // Bấm ra ngoài vùng tối để đóng
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('popup-overlay')) {
+            closeAllPopups();
+        }
+    });
+
+    // Khởi tạo hiển thị số lượng ban đầu
     updateCartCount();
 }

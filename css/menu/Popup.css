@@ -1,0 +1,98 @@
+/* =========================================
+   STYLE CHO POPUP THÔNG BÁO
+   ========================================= */
+
+/* Lớp phủ mờ toàn màn hình */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Nền tối mờ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Luôn nằm trên cùng */
+    
+    /* Ẩn mặc định */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Khi popup hiện lên */
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hộp nội dung chính */
+.popup-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    
+    /* Hiệu ứng phóng to khi hiện */
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.popup-overlay.active .popup-content {
+    transform: scale(1);
+}
+
+/* Icon dấu tích xanh */
+.popup-icon {
+    width: 80px;
+    height: 80px;
+    background: #4CAF50; /* Màu xanh lá */
+    color: white;
+    font-size: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0.2); /* Hiệu ứng tỏa sáng nhẹ */
+}
+
+/* Tiêu đề */
+.popup-content h2 {
+    font-family: 'Overlock', cursive;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Nội dung chữ */
+.popup-content p {
+    font-family: sans-serif;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Nút bấm đóng */
+.popup-close-btn {
+    background: #7b8d50; /* Màu xanh chủ đạo của web bạn */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Overlock', cursive;
+    font-weight: bold;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.popup-close-btn:hover {
+    background: #5d6e3c;
+}

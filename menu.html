@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/menu/MenuStory.css">
     <link rel="stylesheet" href="css/FindStore.css">
     <link rel="stylesheet" href="css/menu/Cart.css">
+    <link rel="stylesheet" href="css/menu/Popup.css">
     <link rel="stylesheet" href="css/menu/MenuFooter.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -309,6 +310,26 @@
                 <span id="cartTotalPrice">$0</span>
             </div>
             <button class="checkout-btn">Check Out</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="emptyCartPopup">
+        <div class="popup-content">
+            <div class="popup-icon warning">
+                !
+            </div>
+            <h2>Your Cart is Empty!</h2>
+            <p>Looks like you haven't added any sweets yet.<br>Please add some items before checking out.</p>
+            <button class="popup-close-btn" id="closeEmptyPopupBtn">Browse Menu</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="successPopup">
+        <div class="popup-content">
+            <div class="popup-icon">✓</div>
+            <h2>Payment Successful!</h2>
+            <p>Thank you for your sweet order. <br> Your items will be ready soon!</p>
+            <button class="popup-close-btn" id="closePopupBtn">Continue Shopping</button>
         </div>
     </div>
 
