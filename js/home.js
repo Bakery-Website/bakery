@@ -8,6 +8,7 @@
 import { initHamburger } from './hamburger.js';
 import { initStickyHeader } from './stickyheader.js';
 import { initScrollReveal } from './scrollReveal.js';
+import { initScrollTop } from './scroll.js';
 
 // 2. Khởi chạy khi web tải xong
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,5 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initHamburger();    // Kích hoạt menu 3 sọc mobile
     initStickyHeader(); // Kích hoạt header dính khi cuộn
     initScrollReveal(); // Kích hoạt hiệu ứng scroll mới thêm của bạn 2 yêu cầu
+    initScrollTop();    // Kích hoạt nút scroll
 
 });

@@ -11,6 +11,7 @@ import { initSearch } from './search.js';            // Tìm kiếm
 import { initNavbar } from './navbar.js';            // Active link menu
 import { initCart, addToCart } from './cart.js';     // Giỏ hàng
 import { initCategoryEvents, loadCategory, loadHomePage } from './category.js'; // SPA Logic & Breadcrumb
+import { initScrollTop } from './scroll.js';      // Nút scroll to top
 
 // 2. KHỞI CHẠY KHI TRANG HTML ĐÃ LOAD XONG
 document.addEventListener('DOMContentLoaded', async () => {
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initStickyHeader();   // Kích hoạt cuộn header
     initSearch();         // Kích hoạt thanh tìm kiếm
     initNavbar();         // Xử lý link menu active
+    initScrollTop();      // Kích hoạt nút scroll
     
     // --- C. KHỞI TẠO LOGIC NGHIỆP VỤ ---
     initCart();           // Kích hoạt logic giỏ hàng (nút +/-, xóa...)

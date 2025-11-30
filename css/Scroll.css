@@ -1,0 +1,52 @@
+/* =========================================
+   NÚT SCROLL TO TOP
+   ========================================= */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    cursor: pointer;
+    
+    /* Biến khung thành hình tròn */
+    border-radius: 50%;
+    
+    /* [QUAN TRỌNG] Cắt bỏ mọi thứ lòi ra ngoài hình tròn */
+    overflow: hidden; 
+
+    /* Thêm bóng đổ cho nổi */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+    
+    /* Nếu logo bạn nền trong suốt, hãy thêm màu nền cho nút */
+    background-color: #FBF3E3; /* Màu kem nhạt hợp với web */
+    /* Nếu logo đã có nền sẵn thì bỏ dòng background-color này đi */
+
+    /* Ẩn mặc định */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Dịch xuống dưới để tạo hiệu ứng trồi lên */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Hiệu ứng nảy nhẹ */
+}
+
+/* Ảnh logo bên trong */
+.scroll-to-top img {
+    width: 100%;
+    height: 100%;
+    /* Ảnh sẽ phóng to để lấp đầy khung tròn, phần thừa sẽ bị cắt đi.*/
+    object-fit: cover; 
+}
+
+/* Khi hiện lên */
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Trở về vị trí gốc */
+}
+
+/* Hiệu ứng khi di chuột vào */
+.scroll-to-top:hover {
+    transform: scale(1.15) rotate(10deg); /* Phóng to và xoay nhẹ */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
