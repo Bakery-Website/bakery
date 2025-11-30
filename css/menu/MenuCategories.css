@@ -157,7 +157,7 @@
     flex-direction: column;
     gap: 30px;
     /* Khoảng cách giữa Search và List */
-    padding-top: 0;
+    margin-top: 50px;
   }
 
     /* XỬ LÝ 5 MỤC */

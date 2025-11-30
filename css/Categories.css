@@ -7,7 +7,7 @@
 
 }
 
-/* CẬP NHẬT TỪ h1 THÀNH h2 */
+
 .category-intro h2 { 
     font-size: 60px; 
     font-weight: 700;
@@ -54,8 +54,8 @@
     /* Chuẩn bị cho hiệu ứng hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    text-decoration: none; /* Dòng này sẽ bỏ gạch chân */
-    color: inherit;        /* Dòng này giữ màu chữ gốc (thường là đen) */
+    text-decoration: none; /* Bỏ gạch chân */
+    color: inherit;        /* Giữ màu chữ gốc */
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 }

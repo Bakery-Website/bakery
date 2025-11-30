@@ -26,7 +26,7 @@
             margin-bottom: 30px;
         }
 
-        /* --- KHUNG NHÌN SLIDER (QUAN TRỌNG) --- */
+        /* --- KHUNG NHÌN SLIDER --- */
         .slider-viewport {
             overflow: hidden; /* Chỉ hiện những gì trong khung, phần thừa bị ẩn */
             width: 100%;
@@ -160,7 +160,7 @@
             transform: scale(1.2); /* Phóng to nhẹ */
         }
 
-        /* --- RESPONSIVE (CO GIÃN THEO MÀN HÌNH) --- */
+        /* --- RESPONSIVE --- */
         
         /* Màn hình Tablet (iPad) trở lên */
         /* --- 1. MÀN HÌNH TABLET (Từ 768px trở lên) --- */
@@ -186,14 +186,14 @@
     .next-btn { right: -20px; }
 }
 
-/* --- 3. MÀN HÌNH MOBILE (Dưới 768px) - TẤT CẢ FIX LỖI NẰM Ở ĐÂY --- */
+/* --- 3. MÀN HÌNH MOBILE (Dưới 768px) --- */
 @media (max-width: 768px) {
     /* A. Điều chỉnh cỡ chữ (Typography) */
     .hot-selling h2 { font-size: 3.5rem; }
     .product-card h3 { font-size: 1.5rem; padding: 15px; }
     .badge { font-size: 0.8rem; width: 50px; height: 50px; top: -10px; left: 10px; }
 
-    /* B. Fix lỗi layout bị lệch & mất nút */
+    /* Tránh layout bị lệch & mất nút */
     .hot-selling {
         padding: 0; /* Xóa padding thừa để tận dụng chiều rộng */
         position: relative;
@@ -203,14 +203,14 @@
         padding: 20px 0; /* Giữ padding trên/dưới */
     }
 
-    /* C. Fix nút bấm: Nhỏ lại, đưa vào trong & nổi lên trên */
+    /* Nút bấm Nhỏ lại, đưa vào trong & nổi lên trên */
     .slider-btn {
         width: 35px;
         height: 35px;
         background: rgba(255, 255, 255, 0.9);
         box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         position: absolute;
-        z-index: 100;       /* Quan trọng: Để nút nổi lên trên ảnh */
+        z-index: 100;       /* Để nút nổi lên trên ảnh */
         top: 50%;
         transform: translateY(-50%);
     }
@@ -218,7 +218,7 @@
     .prev-btn { left: 5px; }   /* Sát lề trái */
     .next-btn { right: 5px; }  /* Sát lề phải */
 
-    /* D. Fix căn giữa thẻ sản phẩm */
+    /* Căn giữa thẻ sản phẩm */
     .slider-item {
         display: flex;
         justify-content: center;

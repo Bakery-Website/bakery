@@ -1,12 +1,12 @@
-/* --- HERO SECTION CHUẨN --- */
+/* --- HERO SECTION --- */
 .hero-section {
     padding: 20px;
-    min-height: 70vh; /* Giữ chiều cao lớn để tạo ấn tượng */
+    min-height: 70vh; /* Giữ chiều cao lớn */
     
     /* Flexbox để căn giữa nội dung tuyệt đối */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* QUAN TRỌNG: Căn giữa nội dung theo chiều dọc */
+    justify-content: center; /* Căn giữa nội dung theo chiều dọc */
     align-items: center;     /* Căn giữa chiều ngang */
     
     text-align: center;
@@ -19,8 +19,7 @@
     background-image: url('/images/home/Buynow.jpg');
     background-repeat: no-repeat;
 
-    /* FIX LỖI: Dùng 'cover' thay vì '100% auto' */
-    /* Cover giúp ảnh luôn tràn đầy khung, không bị lùn tịt trên mobile */
+    /* Cover  ảnh luôn tràn đầy khung */
     background-size: cover; 
     background-position: center;
     
@@ -53,7 +52,7 @@
 .cta-button {
     text-decoration: none;
     text-shadow: none;
-    background-color: rgba(255, 255, 255, 0.1); /* Nền trắng mờ nhẹ cực sang */
+    background-color: rgba(255, 255, 255, 0.1); /* Nền trắng mờ nhẹ */
     color: #ffffff;
     border: 3px solid #ffffff; 
     padding: 15px 60px;
@@ -89,7 +88,7 @@
     .cta-button { font-size: 2em; padding: 12px 50px; }
 }
 
-/* Mobile (Dưới 576px) - FIX LỖI CHỮ TO & ẢNH BÉ */
+
 @media (max-width: 576px) {
     .hero-section {
         min-height: 50vh; /* Chiều cao vừa vặn cho mobile */
