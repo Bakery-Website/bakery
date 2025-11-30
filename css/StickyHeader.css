@@ -78,16 +78,20 @@
 }
 
 @media (max-width: 768px) {
-
-
+/* Ẩn video trên thiết bị nhỏ */
+  #main-header{
+    display: none;
+    
+  
+  }
   /* Luôn hiện sticky header trên mobile */
   #sticky-header,
   #sticky-header.hidden {
     opacity: 1;
     visibility: visible;
   }
-
+  
   .sub-brand {
-    font-size: 24px;
+    font-size: 12px;
   }
 }

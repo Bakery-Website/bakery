@@ -1,0 +1,113 @@
+/* ----- PHẦN NỘI DUNG "QỦA TRỨNG & DISCOVER"  ----- */
+
+.discover-section {
+  background-color: #FBF3E3;
+  padding: 2em 2em;
+  margin: 2em;
+  text-align: center;
+  /* Đảm bảo nó nằm ngay dưới header video */
+  position: relative; 
+  z-index: 10;
+  font-family: 'Taviraj', serif;/* Áp dụng font Taviraj cho toàn bộ section */
+}
+
+.discover-content {
+  max-width: 1200px; /* Giới hạn chiều rộng nội dung */
+  margin: 0 auto;  /* Căn giữa */
+}
+
+.egg-icon {
+  width: 40px; 
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.passion-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; 
+  margin-bottom: 20px;
+}
+
+.sparkle-icon {
+  width: 25px; 
+  height: 25px;
+}
+
+.passion-text {
+  font-size: 24px;
+  font-weight: 700; 
+  color: #4A3E3E; 
+  letter-spacing: 2px; 
+  margin: 0;
+}
+
+.discover-text {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: italic;
+  color: #4A3E3E;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  max-width: 880px; 
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.discover-line {
+  border: none;
+  height: 2px;
+  background-color: #4A3E3E;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 768px) {
+    /* Tạo khoảng trống cho icon trứng */
+    .discover-content{
+        margin-top: 40px;
+    }
+    /* 1. Thu gọn khung bao ngoài */
+    .discover-section {
+        /* Giảm khoảng cách lề trong và lề ngoài */
+        padding: 30px 15px; 
+        margin: 20px 0; /* Bỏ margin 2 bên để không bị hẹp ngang */
+    }
+
+    /* 2. Thu nhỏ icon Quả trứng */
+    .egg-icon {
+        width: 30px; /* Giảm từ 40px xuống 30px */
+        margin-bottom: 10px;
+    }
+
+    /* 3. Thu nhỏ dòng tiêu đề phụ (Passion) */
+    .passion-title {
+        gap: 8px; /* Giảm khoảng cách giữa icon và chữ */
+        margin-bottom: 10px;
+    }
+
+    .passion-text {
+        font-size: 16px; /* Giảm từ 24px xuống 16px cho vừa mắt */
+        letter-spacing: 1px;
+    }
+
+    .sparkle-icon {
+        width: 18px; /* Icon lấp lánh nhỏ lại */
+        height: 18px;
+    }
+
+    /* 4. Thu nhỏ đoạn văn chính (Discover Text) - QUAN TRỌNG NHẤT */
+    .discover-text {
+        font-size: 20px; /* Giảm mạnh từ 40px xuống 20px */
+        line-height: 1.5; /* Tăng chiều cao dòng để dễ đọc hơn */
+        margin-bottom: 20px;
+    }
+
+    /* 5. Đường kẻ line */
+    .discover-line {
+        width: 80%; /* Rút ngắn chiều dài đường kẻ lại một chút cho đẹp */
+    }
+}

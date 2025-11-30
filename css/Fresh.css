@@ -11,32 +11,27 @@
     flex: 1;
     min-width: 0;
 
-    /* Ép container này phải theo tỷ lệ 16:9 (giống ảnh 480x270) */
+    /* Ép container này phải theo tỷ lệ 16:9 */
     aspect-ratio: 16 / 9;
     /* Ẩn đi các phần ảnh bị thừa ra ngoài */
     overflow: hidden;
-    /* Chuyển bo góc từ ảnh sang div này */
     border-radius: 20px;
 }
 
 .Fresh-gif img {
 
     width: 100%;
-    /* Bắt ảnh phải lấp đầy 100% chiều cao của div */
     height: 100%;
-    
     display: block; 
     
-    /* (CHÌA KHÓA) Bảo ảnh tự co giãn để lấp đầy mà không bị méo */
+    /* Bảo ảnh tự co giãn để lấp đầy mà không bị méo */
     object-fit: cover;
 
 }
 
 .Fresh-content {
-    /* 8. Cho cột này cũng chiếm 1 phần (50%) */
+    /* Cho cột này cũng chiếm 1 phần (50%) */
     flex: 1; 
-    
-    /* 9. Cần có để chứa hình mờ (xem ở dưới) */
     position: relative; 
 }
 
@@ -79,13 +74,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 200px; 
-    height: 200px; 
-    
-    /* Cho nó mờ đi */
+    width: 20vw; 
+    height: 20vw; 
     opacity: 0.1; 
-    
-    /* Cho nó chìm xuống dưới chữ */
     z-index: 1; 
 }
 
@@ -97,8 +88,6 @@
 .banner-image-full img {
     width: 100%;
     display: block;
-    
-    /* (Tùy chọn) Nếu muốn ảnh có chiều cao cố định và tự cắt */
     height: 25vw;
     object-fit: cover;
 }

@@ -2,7 +2,6 @@
 
 .location-section {
   background-color: #FBF3E3;
-  padding: 20px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -48,9 +47,10 @@
 @media (max-width: 768px) {
 .section-title {
   font-size: 2em;
-  
 }
-    
+  .bg-icon{
+    display: none;
+  }
 
 }
 

@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Choco Hoho</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/Footer.css">
+  <link rel="stylesheet" href="css/BakeWithPassion.css">
+  <link rel="stylesheet" href="css/StickyHeader.css">
+  <link rel="stylesheet" href="css/SideMenu.css">
+  <link rel="stylesheet" href="css/index_header.css">
+  
   <link rel="stylesheet" href="css/Quality_styles.css">
   <link rel="stylesheet" href="css/Pure_quality.css">
   <link rel="stylesheet" href="css/Sweetness-quote.css">
@@ -13,10 +18,13 @@
   <link rel="stylesheet" href="css/Categories.css">
   <link rel="stylesheet" href="css/Buynow.css">
   <link rel="stylesheet" href="css/OurStory.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />  
   <link rel="stylesheet" href="css/hot-selling.css">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -114,57 +122,74 @@
   </secton>
   <!------------Phần Hot selling--------------->
   <section class="hot-selling-wrapper">
-    <div class="hot-selling">
-      <h2>Hot Selling</h2>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="badge">OUR CHOICE</div>
-              <div class="product-image">
-                <img src="images/home/GreenTeaCloudCake.webp" alt="Green Tea Cloud Cake">
-              </div>
-              <h3>Green Tea Cloud Cake</h3>
-            </div>
-          </div>
+        <div class="hot-selling">
+            <h2>Hot Selling</h2>
+            
+            <!-- Slider Container -->
+            <div class="slider-viewport">
+                <div class="slider-track" id="track">
+                    
+                    <!-- Slide 1 -->
+                    <div class="slider-item">
+                        <div class="product-card">
+                            <div class="badge">OUR CHOICE</div>
+                            <div class="product-image">
+                                <img src="images/home/GreenTeaCloudCake.webp" alt="Green Tea Cloud Cake">
+                            </div>
+                            <h3>Green Tea Cloud Cake</h3>
+                        </div>
+                    </div>
 
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="images/home/Orange20Piece.png" alt="Orange Cream Piece">
-              </div>
-              <h3>Orange Cream Piece</h3>
-            </div>
-          </div>
+                    <!-- Slide 2 -->
+                    <div class="slider-item">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/home/Orange20Piece.png" alt="Orange Cream Piece">
+                            </div>
+                            <h3>Orange Cream Piece</h3>
+                        </div>
+                    </div>
 
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="images/home/ChocolateCroissant.webp" alt="Chocolate Croissant">
-              </div>
-              <h3>Chocolate Croissant</h3>
-            </div>
-          </div>
-          
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="images/home/PurpleSweetPotatoLoaf.webp" alt="Purple Sweet Potato Loaf">
-              </div>
-              <h3>Purple Sweet Potato Loaf</h3>
-            </div>
-          </div>
+                    <!-- Slide 3 -->
+                    <div class="slider-item">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/home/ChocolateCroissant.webp" alt="Chocolate Croissant">
+                            </div>
+                            <h3>Chocolate Croissant</h3>
+                        </div>
+                    </div>
 
+                    <!-- Slide 4 -->
+                    <div class="slider-item">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/home/PurpleSweetPotatoLoaf.webp" alt="Purple Sweet Potato Loaf">
+                            </div>
+                            <h3>Purple Sweet Potato Loaf</h3>
+                        </div>
+                    </div>
+                     <!-- Slide 5  -->
+                     <div class="slider-item">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/home/Heart.png" alt="Heart Chocolate Cake">
+                            </div>
+                            <h3>Heart Chocolate Cake</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button class="slider-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+
+            <!-- Pagination Dots -->
+            <div class="slider-dots" id="dotsContainer"></div>
         </div>
-        
-        <div class="swiper-pagination"></div>
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
   <!------------Phần Crafted quote------------->
   <section class="Quality-section">
@@ -362,7 +387,6 @@
 
 
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/home.js"></script>
   <script src="js/hot-selling.js"></script>
 </body>

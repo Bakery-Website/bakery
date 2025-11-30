@@ -1,146 +1,239 @@
-.hot-selling-wrapper {
-  width: 100%;
-  background-color: #F1DAB2; 
-  padding-top: 10px;    
-  padding-bottom: 30px; 
-  margin-top: 30px;     
-  margin-bottom: 10px;  
+        /* --- PHẦN BAO NGOÀI (WRAPPER) --- */
+        .hot-selling-wrapper {
+            width: 100%;
+            background-color: #F1DAB2; /* Màu nền kem chủ đạo */
+            padding-top: 10px;    
+            padding-bottom: 30px; 
+            margin-top: 30px;     
+            margin-bottom: 10px;  
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* --- KHUNG NỘI DUNG CHÍNH --- */
+        .hot-selling {
+            width: 100%;
+            max-width: 1200px; /* Giới hạn chiều rộng để đẹp hơn trên Desktop */
+            margin: 0 auto;    /* Căn giữa màn hình */
+            padding: 0 20px;   /* Khoảng cách an toàn 2 bên lề */
+            position: relative; /* Làm mốc tọa độ cho nút bấm tuyệt đối */
+        }
+
+        .hot-selling h2 {
+            font-size: 5rem;
+            color: #a52a2a; 
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* --- KHUNG NHÌN SLIDER --- */
+        .slider-viewport {
+            overflow: hidden; /* Chỉ hiện những gì trong khung, phần thừa bị ẩn */
+            width: 100%;
+            padding: 20px 0 40px 0; /* Tạo khoảng trống cho bóng đổ và dots */
+        }
+
+        /* --- THANH TRƯỢT (TRACK) --- */
+        .slider-track {
+            display: flex; /* Xếp các slide thành hàng ngang */
+            transition: transform 0.5s ease-in-out; /* Hiệu ứng trượt mượt mà (0.5s) */
+            gap: 20px; /* Khoảng cách giữa các bánh (Mặc định Mobile) */
+        }
+
+        /* --- Ô CHỨA TỪNG BÁNH --- */
+        .slider-item {
+            flex-shrink: 0; /* Đảm bảo ô không bị co lại khi thiếu chỗ */
+            width: 100%; /* Mặc định Mobile là 1 ô chiếm hết màn hình */
+            display: flex;
+            justify-content: center; /* Căn giữa thẻ bánh trong ô */
+        }
+
+        /* --- GIAO DIỆN THẺ SẢN PHẨM --- */
+        .product-card {
+            width: 100%; 
+            max-width: 300px; /* Kích thước tối đa của thẻ bánh */
+            background-color: #fcf6e8;
+            border-radius: 12px; /* Bo tròn góc */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ */
+            text-align: center;
+            position: relative; /* Làm mốc cho cái Badge "Our Choice" */
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden; /* Cắt phần ảnh thừa nếu ảnh quá to */
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            background-color: #ddd; 
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Giữ tỷ lệ ảnh đẹp, không bị méo */
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05); /* Zoom ảnh lên xíu khi di chuột vào */
+        }
+
+        .product-card h3 {
+            font-size: 2rem;
+            color: #333;
+            padding: 20px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        /* --- NHÃN "OUR CHOICE" --- */
+        .badge {
+            position: absolute; /* Nằm đè lên trên thẻ sản phẩm */
+            top: -15px;
+            left: 15px;
+            background-color: #a52a2a;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 50%; /* Làm tròn thành hình tròn */
+            z-index: 10;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.2;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- NÚT BẤM (MŨI TÊN) --- */
+        .slider-btn {
+            position: absolute; /* Trôi nổi trên giao diện */
+            top: 55%; /* Căn giữa theo chiều dọc */
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            color: #a52a2a;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* Nút tròn */
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10; /* Luôn nằm trên cùng */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .slider-btn:hover {
+            background: #a52a2a; /* Đổi màu khi di chuột vào nút */
+            color: #fff;
+        }
+
+        .prev-btn { left: 10px; }  /* Nút trái nằm bên trái */
+        .next-btn { right: 10px; } /* Nút phải nằm bên phải */
+
+        /* --- DẤU CHẤM TRÒN (DOTS) --- */
+        .slider-dots {
+            display: flex;
+            justify-content: center; /* Căn giữa hàng chấm */
+            margin-top: 10px;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ccc; /* Màu xám khi chưa chọn */
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .dot.active {
+            background-color: #a52a2a; /* Màu đỏ khi đang chọn */
+            transform: scale(1.2); /* Phóng to nhẹ */
+        }
+
+        /* --- RESPONSIVE --- */
+        
+        /* Màn hình Tablet (iPad) trở lên */
+        /* --- 1. MÀN HÌNH TABLET (Từ 768px trở lên) --- */
+@media (min-width: 768px) {
+    .slider-track {
+        gap: 30px; /* Tăng khoảng cách giữa các bánh */
+    }
+    .slider-item {
+        /* Hiển thị 2 bánh trên 1 hàng */
+        width: calc((100% - 30px) / 2); 
+    }
 }
 
-/* --- LỚP .hot-selling (CŨ) ĐÃ SỬA --- */
-/* Class này bây giờ CHỈ CĂN GIỮA NỘI DUNG */
-.hot-selling {
-  width: 100%;
-  max-width: 1000px; /* Giữ nguyên max-width */
-  margin: 0 auto;      /* CHỈ căn giữa, xóa margin dọc */
-  padding: 0 20px;     /* CHỈ lót ngang, xóa padding dọc */
-  /* background-color: transparent; */ /* Xóa màu nền ở đây */
+/* --- 2. MÀN HÌNH DESKTOP (Từ 1024px trở lên) --- */
+@media (min-width: 1024px) {
+    .slider-item {
+        /* Hiển thị 3 bánh trên 1 hàng */
+        width: calc((100% - 60px) / 3); 
+    }
+    
+    /* Đẩy nút ra ngoài khung cho thoáng */
+    .prev-btn { left: -20px; }
+    .next-btn { right: -20px; }
 }
 
-/* --- TẤT CẢ CODE CÒN LẠI GIỮ NGUYÊN --- */
-
-.hot-selling h2 {
-  font-size: 5rem;
-  color: #a52a2a; /* Màu đỏ sậm */
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-/* --- Cấu trúc Slider (Swiper) --- */
-.swiper {
-  width: 100%;
-  padding-top: 20px; /* Thêm không gian cho badge */
-  padding-bottom: 40px; /* Thêm không gian cho pagination */
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* --- Kiểu dáng Card Sản Phẩm --- */
-.product-card {
-  width: 100%; /* Kích thước LINH HOẠT (tự co theo slide) */
-  max-width: 300px;
-  background-color: #fcf6e8;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  position: relative;
-  margin-bottom: 20px; /* Khoảng cách cho pagination */
-}
-
-.product-image {
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.product-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.product-card h3 {
-  font-size: 2rem;
-  color: #333;
-  padding: 20px;
-  font-weight: normal;
-  margin: 0;
-}
-
-/* --- Badge "Our Choice" --- */
-.badge {
-  position: absolute;
-  top: -15px; /* Đẩy badge lên trên */
-  left: 15px;
-  background-color: #a52a2a; /* Màu đỏ của badge */
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 8px;
-  border-radius: 50%;
-  z-index: 10;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  line-height: 1.2;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* --- Tùy chỉnh Nút Bấm và Dấu chấm --- */
-:root {
-  --swiper-theme-color: #a52a2a; /* Màu đỏ sậm */
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--swiper-theme-color);
-  transform: scale(0.8); /* Thu nhỏ nút một chút */
-}
-
-.swiper-pagination-bullet-active {
-  background: var(--swiper-theme-color);
-}
-
+/* --- 3. MÀN HÌNH MOBILE (Dưới 768px) --- */
 @media (max-width: 768px) {
-  
-  /* Giảm cỡ chữ tiêu đề "Hot Selling" */
-  .hot-selling h2 {
-    font-size: 3.5rem; /* Giảm từ 5rem */
-  }
+    /* A. Điều chỉnh cỡ chữ (Typography) */
+    .hot-selling h2 { font-size: 3.5rem; }
+    .product-card h3 { font-size: 1.5rem; padding: 15px; }
+    .badge { font-size: 0.8rem; width: 50px; height: 50px; top: -10px; left: 10px; }
 
-  /* Giảm cỡ chữ tên sản phẩm */
-  .product-card h3 {
-    font-size: 1.5rem; /* Giảm từ 2rem */
-    padding: 15px;
-  }
+    /* Tránh layout bị lệch & mất nút */
+    .hot-selling {
+        padding: 0; /* Xóa padding thừa để tận dụng chiều rộng */
+        position: relative;
+    }
 
-  /* Thu nhỏ cái badge "Our Choice" */
-  .badge {
-    font-size: 0.8rem; /* Giảm từ 1rem */
-    width: 50px;   /* Giảm từ 60px */
-    height: 50px;  /* Giảm từ 60px */
-    top: -10px;    /* Đẩy lên ít hơn một chút */
-    left: 10px;
-  }
+    .slider-viewport {
+        padding: 20px 0; /* Giữ padding trên/dưới */
+    }
+
+    /* Nút bấm Nhỏ lại, đưa vào trong & nổi lên trên */
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        position: absolute;
+        z-index: 100;       /* Để nút nổi lên trên ảnh */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .prev-btn { left: 5px; }   /* Sát lề trái */
+    .next-btn { right: 5px; }  /* Sát lề phải */
+
+    /* Căn giữa thẻ sản phẩm */
+    .slider-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 90% !important; /* Chiếm 90% chiều rộng để hở biên cho đẹp */
+        max-width: 320px;
+        margin: 0 auto;
+    }
 }
 
-/* Tùy chỉnh thêm cho màn hình điện thoại rất nhỏ */
+/* --- 4. MÀN HÌNH RẤT NHỎ (Dưới 480px) --- */
 @media (max-width: 480px) {
-  
-  .hot-selling h2 {
-    font-size: 2.5rem; /* Giảm thêm */
-  }
-
-  .product-card h3 {
-    font-size: 1.2rem; /* Giảm thêm */
-  }
+    .hot-selling h2 { font-size: 2.5rem; }
+    .product-card h3 { font-size: 1.2rem; }
 }

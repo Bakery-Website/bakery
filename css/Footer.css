@@ -1,13 +1,11 @@
-/*=========================================
------ PHẦN FOOTER -----
-=========================================*/
+/* --------Phần footer--------------*/
 footer {
-  background-image: url('/images/menu/FooterBackground.jpg');
+  background-image: url('/images/home/FooterBackground.jpg');
   background-size: cover;
-
+ 
 }
 
-.footer-content-container {
+.footer-content-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -15,18 +13,15 @@ footer {
   gap: 60px;
 }
 
-.footer-column2,
-.footer-column3 {
-  width: 100px;
+
+ .footer-column2, .footer-column3{  
+  width: 100px;    
+  margin: 10px;            
+}
+.footer-column1, .footer-column4{
+  width: 300px;    
   margin: 10px;
 }
-
-.footer-column1,
-.footer-column4 {
-  width: 300px;
-  margin: 10px;
-}
-
 /* css cho cột 1 trong footer */
 .footer-column1 {
   display: flex;
@@ -36,24 +31,25 @@ footer {
   margin-bottom: 0px;
 }
 
-.footer-brand-container {
+
+.footer-brand-container{
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 25px;
 }
-
-.footer-brand {
+.footer-brand{
   font-family: "Pacifico", cursive;
-  font-size: 2rem;
+  font-size: 3.6rem;
   color: #333333;
+ 
 }
-
-.footer-logo {
-  width: 100px;
-  height: 100px;
+.footer-logo{
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
 }
+
 
 .footer-socials {
   display: flex;
@@ -62,13 +58,16 @@ footer {
   margin-bottom: 20px;
 }
 
-.footer-socials img {
-  width: 40px;
-  height: 40px;
+
+.footer-socials img{
+  width: 4rem;
+  height: 4rem;
   transition: transform 0.3s;
+
+
 }
 
-.footer-socials img:hover {
+.footer-socials img:hover{
   transform: scale(1.1);
 }
 
@@ -79,9 +78,9 @@ footer {
   font-size: 1.5rem;
 }
 
-.footer-contact img {
-  width: 20px;
-  height: 20px;
+.footer-contact img{
+  width: 2rem;
+  height: 2rem;
 }
 
 /* css cột Company của footer */
@@ -93,24 +92,24 @@ footer {
   margin-bottom: 0px;
 }
 
-.footer-title2 {
+.footer-title2{
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   margin-bottom: 30px;
   margin-top: 50px;
-}
 
-.footer-column2 ul {
+}
+.footer-column2 ul{
   padding: 0;
   margin: 0;
 }
-
 .footer-column2 li {
   list-style: none;
   margin-bottom: 20px;
+  font-size: 1.6rem;
 }
-
 /* Css cho cột 3 help của footer */
+
 .footer-column3 {
   display: flex;
   flex-direction: column;
@@ -119,21 +118,20 @@ footer {
   margin-bottom: 0px;
 }
 
-.footer-title3 {
+.footer-title3{
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   margin-bottom: 30px;
   margin-top: 50px;
 }
-
-.footer-column3 ul {
+.footer-column3 ul{
   padding: 0;
   margin: 0;
 }
-
 .footer-column3 li {
   list-style: none;
   margin-bottom: 20px;
+  font-size: 1.6rem;
 }
 
 /* Css cho cột 4 */
@@ -145,23 +143,24 @@ footer {
   margin-bottom: 0px;
 }
 
-.footer-title4 {
+
+.footer-title4{
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   margin-bottom: 30px;
   text-wrap: nowrap;
   margin-top: 50px;
 }
-
-.footer-column4 ul {
+.footer-column4 ul{
   padding: 0;
   margin: 0;
 }
-
 .footer-column4 li {
   list-style: none;
   margin-bottom: 20px;
+  font-size: 1.6rem;
 }
+
 
 .footer-column4 form {
   display: flex;
@@ -169,31 +168,28 @@ footer {
   gap: 10px;
   width: 100%;
 }
-
-.footer-column4 input[type='email'] {
+.footer-column4 input[type='email']{
   width: 100%;
   padding: 12px 16px;
   border: none;
   border-radius: 12px;
-  background-color: #f5f5f5;
-  /* Nền xám nhạt */
+  background-color: #f5f5f5; 
   font-size: 14px;
-  outline: none;
-  /* Ẩn viền xanh khi focus */
+  outline: none; /* Ẩn viền xanh khi focus */
   box-sizing: border-box;
 
+
+}
+.footer-column4 input[type="email"]::placeholder {
+  color: #999; 
 }
 
-.footer-column4 input[type="email"]::placeholder {
-  color: #999;
-  /* Màu placeholder nhạt */
-}
 
 .footer-column4 input[type="email"]:focus {
-  background-color: #fff;
-  /* Khi click vào thì nền sáng hơn chút */
+  background-color: #fff; /* Khi click vào thì nền sáng hơn chút */
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
+
 
 .footer-column4 input[type="submit"] {
   padding: 10px 16px;
@@ -206,9 +202,11 @@ footer {
   transition: background-color 0.2s ease;
 }
 
+
 .footer-column4 input[type="submit"]:hover {
   background-color: #333;
 }
+
 
 .footer-bottom {
   /* Căn giữa 2 dòng text */
@@ -222,20 +220,24 @@ footer {
 
 }
 
+
 .footer-legal-links {
   /* Tạo khoảng cách giữa hàng link và hàng copyright */
   margin-bottom: 15px;
 }
 
+
 .footer-legal-links a {
   /* Bỏ gạch chân */
   text-decoration: none;
-
+ 
   /* Lấy màu chữ từ cha (.footer-bottom) */
   color: inherit;
   margin: 0 10px;
   font-weight: 600;
+  font-size: 1.6rem;
 }
+
 
 /* Thêm dấu gạch đứng "|" vào sau mỗi link (trừ link cuối cùng) */
 .footer-legal-links a:not(:last-child)::after {
@@ -245,20 +247,17 @@ footer {
   font-weight: normal;
 }
 
+
 .footer-legal-links a:hover {
-  text-decoration: underline;
-  /* Thêm gạch chân khi di chuột vào */
+  text-decoration: underline; /* Thêm gạch chân khi di chuột vào */
 }
+
 
 .footer-copyright {
-  font-size: 0.9rem;
-  /* Cho chữ copyright nhỏ hơn một chút */
-  color: #555;
-  /* Cho chữ mờ hơn một chút */
-  margin: 0;
-  /* Xóa margin mặc định của thẻ <p> */
+  font-size: 1.4rem; 
+  color: #555; 
+  margin: 0; 
 }
-
 @media (max-width: 768px) {
 
  /* 1. Chuyển container chính sang layout cột */
