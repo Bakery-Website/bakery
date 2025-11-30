@@ -121,6 +121,7 @@
             height: 40px;
             border-radius: 50%; /* Nút tròn */
             font-size: 20px;
+            font-weight: bold;
             cursor: pointer;
             z-index: 10; /* Luôn nằm trên cùng */
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
