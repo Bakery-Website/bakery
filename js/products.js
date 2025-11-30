@@ -12,7 +12,7 @@ import { setProducts } from './shop.js'; // Import hàm setter từ kho dữ li�
 export async function fetchProducts() {
     try {
         // Gửi yêu cầu lấy file products.json
-        const response = await fetch('/products.json');
+        const response = await fetch('products.json');
         
         // Kiểm tra lỗi HTTP (ví dụ 404 Not Found)
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
