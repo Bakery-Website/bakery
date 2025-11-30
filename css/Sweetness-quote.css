@@ -13,7 +13,7 @@
 /* ----- 2. HÌNH TRANG TRÍ GÓC (CARAMEL) ----- */
 .Sweetness-quote-section::before {
     content: '';
-    position: absolute; /* Đính chặt vào khung cha */
+    position: absolute; 
     background-image: url('/images/home/caramel.png');
     background-repeat: no-repeat;
     background-size: contain;
