@@ -180,7 +180,7 @@
     .who-we-are-intro p,
     .profile-card p {
         line-height: 1.8; /* Reset về 1.8 (45px quá lớn) */
-        text-align: left; /* Canh trái cho dễ đọc */
+        text-align: justify;
     }
 
     .profile-card h3 {

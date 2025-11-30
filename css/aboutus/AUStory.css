@@ -146,7 +146,7 @@
     .story-text p,
     .story-highlight-banner p {
         line-height: 1.7; /* Reset về 1.7 (45px quá lớn) */
-        text-align: left; /* Canh trái cho dễ đọc */
+        text-align: justify;; 
     }
 
     .story-divider {

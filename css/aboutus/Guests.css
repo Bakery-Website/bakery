@@ -2,7 +2,7 @@
  ----- PHẦN SPECIAL APPRECIATION -----
 =========================================*/
 .special-appreciation {
-    background-color: #FFEDCA; /* Màu nền be */
+    background-color: #FFEDCA; 
     padding: 60px 0 60px 0; /* Đệm trên/dưới */
     position: relative; 
     margin-top: 60px; /* Khoảng cách với phần Who We Are */
@@ -74,7 +74,7 @@
 .appreciation-text p {
     font-size: 20px;
     line-height: 1.8; /* Dùng 1.8 cho dễ đọc */
-    text-align: left; /* Canh trái */
+    text-align: justify; 
     margin: 0;
 }
 
