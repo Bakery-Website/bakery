@@ -67,6 +67,7 @@ main {
 
 /* mấy cái mục */
 .nav-links li a {
+  font-family: "Overlock", cursive;
   text-decoration: none;
   color: #ffffff;
   font-size: 26px;
