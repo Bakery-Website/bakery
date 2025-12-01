@@ -1,4 +1,3 @@
-// hamburger.js
 // ==============================================================
 // FILE: MENU MOBILE (HAMBURGER)
 // ==============================================================
@@ -28,6 +27,6 @@ export function initHamburger() {
     if (hamburgerButton) hamburgerButton.addEventListener('click', openMenu);
     if (closeButton) closeButton.addEventListener('click', closeMenu);
     
-    // Click vào vùng tối (overlay) cũng đóng menu -> tăng trải nghiệm UX
+    // Click vào vùng tối (overlay) cũng đóng menu
     if (overlay) overlay.addEventListener('click', closeMenu);
 }

@@ -1,4 +1,3 @@
-// js/category.js
 // ==============================================================
 // FILE: QUẢN LÝ DANH MỤC & SPA
 // ==============================================================
@@ -17,8 +16,6 @@ const staticBlocks = [
     document.getElementById('cake'),
     document.getElementById('story')
 ];
-
-// --- (ĐÃ XÓA HÀM renderBreadcrumb CŨ Ở ĐÂY) ---
 
 // Hàm Chính: Tải nội dung 1 danh mục (Bread, Cake...)
 export function loadCategory(category) {
@@ -77,7 +74,6 @@ export function loadHomePage() {
 }
 
 export function initCategoryEvents() {
-    // ... (Giữ nguyên code sự kiện click như cũ) ...
     document.querySelectorAll('.list a').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();

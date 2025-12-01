@@ -1,10 +1,8 @@
-// js/breadcrumb.js
 // ==============================================================
 // FILE: BREADCRUMB (THANH ĐIỀU HƯỚNG)
 // ==============================================================
 
 // Import loadHomePage để khi bấm vào chữ "Menu" thì quay về
-// (Lưu ý: Import vòng tròn này được JS hỗ trợ tốt với hàm)
 import { loadHomePage } from './category.js'; 
 
 const breadcrumbBar = document.getElementById('breadcrumbBar');

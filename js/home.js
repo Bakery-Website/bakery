@@ -1,4 +1,3 @@
-// js/aboutus.js
 // =========================================================
 // ENTRY POINT CHO TRANG ABOUT US
 // Chỉ nạp các hiệu ứng giao diện (Menu & Header)

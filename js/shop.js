@@ -1,4 +1,3 @@
-// state.js
 // ==============================================================
 // FILE: QUẢN LÝ TRẠNG THÁI (STATE MANAGEMENT)
 // ==============================================================
@@ -11,8 +10,7 @@ export let PRODUCTS = [];
 export let cart = [];
 
 /**
- * Hàm cập nhật danh sách sản phẩm.
- * Tại sao cần hàm này? Để đảm bảo tính toàn vẹn dữ liệu.
+ * Hàm cập nhật danh sách sản phẩm để đảm bảo tính toàn vẹn dữ liệu.
  * Các file khác không được gán trực tiếp PRODUCTS = [...] mà phải qua hàm này.
  */
 export function setProducts(data) {
