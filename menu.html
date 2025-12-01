@@ -319,6 +319,27 @@
       <img src="images/menu/logo-choco.png" alt="Scroll to Top">
     </div>
 
+    <div class="popup-overlay" id="emptyCartPopup">
+        <div class="popup-content">
+            <div class="popup-icon warning">
+                !
+            </div>
+            <h2>Your Cart is Empty!</h2>
+            <p>Looks like you haven't added any sweets yet.<br>Please add some items before checking out.</p>
+            <button class="popup-close-btn" id="closeEmptyPopupBtn">Browse Menu</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="successPopup">
+        <div class="popup-content">
+            <div class="popup-icon">✓</div>
+            <h2>Payment Successful!</h2>
+            <p>Thank you for your sweet order. <br> Your items will be ready soon!</p>
+            <button class="popup-close-btn" id="closePopupBtn">Continue Shopping</button>
+        </div>
+    </div>
+
+
     <div class="overlay" id="cartOverlay"></div>
 
     <script type="module" src="js/menu.js"></script>
